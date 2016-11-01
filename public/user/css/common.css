@@ -1,0 +1,22 @@
+body{
+    font-family: "Microsoft YaHei",'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+/* 页面底部 */
+.footer {
+    padding: 20px 0;
+    border-top: 1px solid #e7e7e7;
+    text-align: center;
+}
+
+/* 通用样式 */
+
+.error {
+    display: block;
+    color: #fa0606;
+}
+
+#tip {
+    color: #fa0606;
+}
+
+
