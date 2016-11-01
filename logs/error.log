@@ -1336,3 +1336,345 @@ Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\v
     at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
     at Immediate.immediate._onImmediate (timers.js:435:18)
     at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 16:43:56 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:70:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 16:44:22 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:70:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 16:44:23 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:70:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 16:44:23 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:70:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 16:44:24 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:70:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 16:44:24 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:70:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 16:44:25 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:70:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 16:45:01 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:70:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 16:49:53 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:70:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 16:51:30 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:70:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 17:05:12 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:74:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 17:23:18 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:75:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 17:23:19 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:75:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 17:25:15 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:75:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 17:26:44 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:75:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 17:26:45 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:75:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 17:26:45 GMT+0800 (中国标准时间)]/user/login
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:75:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 01 2016 17:46:38 GMT+0800 (中国标准时间)]/user/c_say
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:75:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at E:\Jungle\github\Usay\app.js:65:3
+    at Layer.handle [as handle_request] (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:256:14)
+[Tue Nov 01 2016 17:50:21 GMT+0800 (中国标准时间)]/user/c_say
+Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\views"
+    at EventEmitter.render (E:\Jungle\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (E:\Jungle\github\Usay\node_modules\express\lib\response.js:960:7)
+    at E:\Jungle\github\Usay\app.js:75:13
+    at Layer.handle_error (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at E:\Jungle\github\Usay\app.js:65:3
+    at Layer.handle [as handle_request] (E:\Jungle\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:256:14)

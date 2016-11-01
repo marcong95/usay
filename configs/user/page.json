@@ -1,0 +1,56 @@
+{
+	"usay":{
+		"name": "你说",
+		"label": "Usay",
+		"logo": "#",
+		"copyright": "2018",
+		"link": "/"
+	},
+	"header":{
+		"topics":[
+			{
+				"name": "首页",
+				"label": "index",
+				"link": "/user/index"
+			},
+			{
+				"name": "分享收藏",
+				"label": "c_say",
+				"link": "/user/c_say"
+			},
+			{
+				"name": "用户收藏",
+				"label": "c_user",
+				"link": "/user/c_user"
+			}
+		],
+		"right":{
+			"login":{
+				"name": "登录",
+				"label": "login",
+				"link": "/user/login"
+			},
+			"reg":{
+				"name": "注册",
+				"label": "reg",
+				"link": "/user/reg"
+			},
+			"logout":{
+				"name": "退出",
+				"label": "logout",
+				"link": "/user/logout"
+			},
+			"profile":{
+				"name": "个人中心",
+				"label": "profile",
+				"link": "/user/profile"
+			}
+		}
+	},
+	"footer":{
+
+	},
+	"content":{
+
+	}
+}

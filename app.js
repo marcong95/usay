@@ -36,6 +36,12 @@ app.use(session({
   saveUninitialized: true,
 }));
 
+//读取页面配置文件
+try{
+  app.locals.Upage = require("./configs/user/page");
+}catch(e){
+  console.error("read file ./configs/user/page.json fail!!");
+}
 app.use(logger('dev'));
 app.use(logger('dev', {stream: accessLogfile}));
 
