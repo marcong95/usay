@@ -2,13 +2,14 @@ var db = require("./db");
 var mongoose = require("mongoose"); 
     
 var UserSchema = new mongoose.Schema({
-      name: String,
+      account: String,
       password: String,
-      image: String,
-      gender: String,
-      email: String,
       phone: String,
-      motto: String,
+      nikeName: String,
+      photo: String,
+      sign: String,
+      created: Date,
+      banned: Boolean,
       role: Number
 });
 var UserModel = mongoose.model('user', UserSchema);

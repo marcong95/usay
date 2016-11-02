@@ -33,7 +33,7 @@
               <li <% if(index==right.login.label){ %> class="active" <% } %>><a href="<%= right.login.link %>"><%= right.login.name %></a></li>
               <li <% if(index==right.reg.label){ %> class="active" <% } %>><a href="<%= right.reg.link %>"><%= right.reg.name %></a></li>
             <% }else{ %>
-              <li <% if(index==right.profile.label){ %> class="active" <% } %>><a href="<%= right.profile.link %>"><%= user.name %></a></li>
+              <li <% if(index==right.profile.label){ %> class="active" <% } %>><a href="<%= right.profile.link %>"><%= user.account %></a></li>
               <li <% if(index==right.logout.label){ %> class="active" <% } %>><a href="<%= right.logout.link %>"><%= right.logout.name %></a></li>
             <% } %>
         </ul> 
