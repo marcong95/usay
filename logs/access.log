@@ -3601,3 +3601,13 @@
 [0mPOST /user/login [32m200 [0m13.423 ms - 35[0m
 [0mPOST /user/login [32m200 [0m9.288 ms - 54[0m
 [0mGET / [32m200 [0m4.638 ms - 1980[0m
+[0mGET / [32m200 [0m40.060 ms - 1972[0m
+[0mGET / [36m304 [0m14.468 ms - -[0m
+[0mGET / [32m200 [0m13.042 ms - 1972[0m
+[0mGET / [36m304 [0m5.951 ms - -[0m
+[0mGET /user/c_say [31m500 [0m9.303 ms - 1986[0m
+[0mGET /user/c_say [31m500 [0m3.132 ms - 1986[0m
+[0mGET /user/login [32m200 [0m19.058 ms - 3501[0m
+[0mGET /user/index [32m200 [0m7.606 ms - 1972[0m
+[0mGET /user/index [36m304 [0m6.322 ms - -[0m
+[0mGET /user/login [36m304 [0m7.540 ms - -[0m

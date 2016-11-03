@@ -1876,3 +1876,39 @@ Error: Failed to lookup view "error" in views directory "E:\Jungle\github\Usay\v
     at Immediate.<anonymous> (E:\Jungle\github\Usay\node_modules\express\lib\router\index.js:618:15)
     at Immediate.immediate._onImmediate (timers.js:435:18)
     at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Thu Nov 03 2016 23:05:03 GMT+0800 (China Standard Time)]/user/c_say
+Error: Failed to lookup view "error" in views directory "C:\Users\marco\Documents\Programs\Usay\views"
+    at EventEmitter.render (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\response.js:960:7)
+    at C:\Users\marco\Documents\Programs\Usay\app.js:75:13
+    at Layer.handle_error (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:310:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at C:\Users\marco\Documents\Programs\Usay\app.js:65:3
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:256:14)
+[Thu Nov 03 2016 23:05:04 GMT+0800 (China Standard Time)]/user/c_say
+Error: Failed to lookup view "error" in views directory "C:\Users\marco\Documents\Programs\Usay\views"
+    at EventEmitter.render (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\response.js:960:7)
+    at C:\Users\marco\Documents\Programs\Usay\app.js:75:13
+    at Layer.handle_error (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:310:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at C:\Users\marco\Documents\Programs\Usay\app.js:65:3
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:256:14)
