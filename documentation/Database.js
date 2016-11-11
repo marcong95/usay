@@ -2,6 +2,7 @@ let user = {
   _id: ObjectID,
   username: String,
   password: String,
+  authority: String,
   salt: String,
   nickname: String,
   avatar: {

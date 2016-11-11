@@ -13,13 +13,13 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
     //检验用户输入
-    if(req.body.account == undefined || req.body.account == ''){
+    if(req.body.username == undefined || req.body.username == ''){
         res.send({
             done: false,
             msg: "账号不能为空"
         });
         return;
-    }else if(req.body.account.legnth > 15){
+    }else if(req.body.username.legnth > 15){
         res.send({
             done: false,
             msg: "账号长度不能大于15"
@@ -53,12 +53,12 @@ router.post('/', function(req, res, next) {
     
     //获取待处理数据
     var newUser = {
-        account: req.body.account,
+        username: req.body.username,
         password: password
     };
     
     //检查用户名是否已存在
-    User.searchOne({account: newUser.account}, function(err, user) {
+    User.searchOne({username: newUser.username}, function(err, user) {
         if(user)
             err = '该账户名已存在';
         if(err) {

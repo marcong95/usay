@@ -14,6 +14,11 @@
 				"link": "/user/index"
 			},
 			{
+				"name": "分享",
+				"label": "post_form",
+				"link": "/user/post_form"
+			},
+			{
 				"name": "分享收藏",
 				"label": "c_say",
 				"link": "/user/c_say"

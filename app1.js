@@ -13,6 +13,7 @@ var fs = require('fs');
 var accessLogfile = fs.createWriteStream('./logs/access.log', {flags: 'a'});
 var errorLogfile = fs.createWriteStream('./logs/error.log', {flags: 'a'});
 
+
 var app = express();
 
 // view engine setup

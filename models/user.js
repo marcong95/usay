@@ -2,16 +2,26 @@ var db = require("./db");
 var mongoose = require("mongoose"); 
     
 var UserSchema = new mongoose.Schema({
-      account: String,
-      password: String,
-      phone: String,
-      nikeName: String,
-      photo: String,
-      sign: String,
-      created: Date,
-      banned: Boolean,
-      role: Number
-});
+                    username: String,
+                    password: String,
+                    authority: String,
+                    salt: String,
+                    nickname: String,
+                    avatar: {
+                      url: String
+                    },
+                    bio: String,
+                    created: Date,
+                    lastOnline: Date,
+                    favourites: [{
+                      to: String,
+                      created: Date
+                    }],
+                    upvoteds: [{
+                      to: String,
+                      created: Date
+                    }]
+                });
 var UserModel = mongoose.model('user', UserSchema);
 
 function User(){};

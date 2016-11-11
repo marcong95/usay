@@ -10,6 +10,8 @@
     <link href="/user/css/common.css" rel="stylesheet">
 </head>
     <nav class="navbar navbar-inverse" role="navigation">
+
+    <div id="container" class="container">
      <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" 
            data-target="#navbar-collapse">
@@ -19,8 +21,14 @@
            <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/"><%= Upage.usay.label %><sup></sup></a>
+        <div class="search-input">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="输入感兴趣的内容...">
+            <a class="input-group-addon">搜索</a>
+          </div>
+        </div>
      </div>
-     <div class="collapse navbar-collapse" id="navbar-collapse">
+     <div class="collapse navbar-collapse" id="navbar-collapse">        
         <ul class="nav navbar-nav">
           <% var topics = Upage.header.topics; %>
           <% for(var i in topics){ var topic = topics[i]; %><!-- for1 -->
@@ -33,9 +41,10 @@
               <li <% if(index==right.login.label){ %> class="active" <% } %>><a href="<%= right.login.link %>"><%= right.login.name %></a></li>
               <li <% if(index==right.reg.label){ %> class="active" <% } %>><a href="<%= right.reg.link %>"><%= right.reg.name %></a></li>
             <% }else{ %>
-              <li <% if(index==right.profile.label){ %> class="active" <% } %>><a href="<%= right.profile.link %>"><%= user.account %></a></li>
+              <li <% if(index==right.profile.label){ %> class="active" <% } %>><a href="<%= right.profile.link %>"><%= user.username %></a></li>
               <li <% if(index==right.logout.label){ %> class="active" <% } %>><a href="<%= right.logout.link %>"><%= right.logout.name %></a></li>
             <% } %>
         </ul> 
      </div>
+    </div>
   </nav>
