@@ -14,6 +14,16 @@ body{
 	text-decoration: none;
     cursor: pointer;
 }
+@media only screen and (max-width: 500px)  and (min-width: 361px){
+    .search-input {
+        width: 65%;
+    }
+}
+@media only screen and (max-width: 360px){
+    .search-input {
+        width: 100%;
+    }
+}
 /* 页面底部 */
 .footer {
     padding: 20px 0;
@@ -21,6 +31,43 @@ body{
     text-align: center;
 }
 
+.collect {
+    margin-left: 5px;
+    font-size: 15px;
+}
+.navbar {
+    margin-bottom: 0;
+}
+
+/* 用户详情 */
+.user-view {
+    position: relative;
+    overflow: hidden;
+}
+.user-view .banner {
+    position: absolute;
+    left: 0;
+    top: 0;    
+    z-index: -1;
+}
+.user-view .profile {
+    width: 300px;
+    margin: 10px auto;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.16);
+}
+.user-view .profile .evator {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+.user-view .profile .name{
+    margin: 5px;
+    font-size: 24px;
+}
 
 /* 分享列表 */
 .post-item {
@@ -64,6 +111,34 @@ body{
     margin-left: 45px;
 	background-color: #dedada;
 }
+/* 评论 */
+
+.operation {
+    padding: 5px 0;
+    border-top: 1px solid #c6b8b8;
+}
+.operation-list {
+    padding: 0 8px;
+}
+.operation-list-item {
+    list-style: none;
+    display: inline-block;    
+    margin-right: 5px;
+    font-size: 18px;
+    margin: 0 8px;
+}
+.op-right {
+    float: right;
+}
+.say-input {
+	display: inline-block;
+    line-height: 20px;
+    padding: 8px;
+}
+.say-input a{
+	text-decoration: none;
+    cursor: pointer;
+}
 /* 点赞列表 */
 .like-list {
 	padding: 0 5px;
@@ -102,11 +177,31 @@ body{
 	margin-left: 35px;
 }
 
+/* 分享编辑 */
 .post-form .content {
-	width: 100%;
+	width: 100%;    
+    height: 12em;
 }
+.post-form .picture{
+}
+
+.post-form .picture img{
+	display: inline-block;
+    margin: 0 0.1% 5px 0;
+}
+
 /* 通用样式 */
 
+.link-no-decaration,
+.link-no-decaration:hover,
+.link-no-decaration:visited {
+    text-decoration: none;
+}
+.f-cb:after {
+    content:"";
+    display: block;
+    clear: both;
+}
 .error {
     display: block;
     color: #fa0606;

@@ -1,5 +1,5 @@
-    <div id="container" class="container post-form">
-        <form class="form-horizontal" method="post" role="form" id="regForm">
+    <div id="container" class="container post-form kv-main">
+        <form class="form-horizontal" method="post" role="form" id="regForm"  enctype="multipart/form-data">
             <fieldset>
                 <legend>分享</legend>
                 <div class="form-group">
@@ -7,11 +7,7 @@
                         <textarea class="input-xlarge content" id="content" name="content" placeholder="此刻的想法..."></textarea>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <input type="password" class="input-xlarge" id="password" name="password">
-                    </div>
-                </div>
+                <% include _upload_file.html %> 
                 <div class="form-group hidden return-tip">
                     <div class="col-sm-offset-2 col-sm-10">
                         <label id="tip"></label>
@@ -19,7 +15,7 @@
                 </div>
                 <div class="form-group"> 
                     <div class="col-sm-12"> 
-                        <button type="submit" id="submit" class="btn btn-primary">注册</button> 
+                        <button type="submit" id="submit" class="btn btn-primary">提交</button> 
                     </div> 
                 </div>
             </fieldset>
