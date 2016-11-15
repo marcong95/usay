@@ -6592,3 +6592,165 @@ Error: Failed to lookup view "error" in views directory "F:\github\Usay\views"
     at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
     at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
     at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+[Tue Nov 15 2016 22:46:53 GMT+0800 (中国标准时间)]/user/post_view
+Error: Failed to lookup view "error" in views directory "F:\github\Usay\views"
+    at EventEmitter.render (F:\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\app.js:75:13
+    at Layer.handle_error (F:\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\app.js:65:3
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+[Tue Nov 15 2016 22:49:10 GMT+0800 (中国标准时间)]/user/c_user
+Error: Failed to lookup view "error" in views directory "F:\github\Usay\views"
+    at EventEmitter.render (F:\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\app.js:75:13
+    at Layer.handle_error (F:\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (F:\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (F:\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 15 2016 22:49:14 GMT+0800 (中国标准时间)]/user/c_user
+Error: Failed to lookup view "error" in views directory "F:\github\Usay\views"
+    at EventEmitter.render (F:\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\app.js:75:13
+    at Layer.handle_error (F:\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (F:\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (F:\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 15 2016 22:50:04 GMT+0800 (中国标准时间)]/user/user_view
+Error: Failed to lookup view "error" in views directory "F:\github\Usay\views"
+    at EventEmitter.render (F:\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\app.js:75:13
+    at Layer.handle_error (F:\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (F:\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (F:\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 15 2016 22:50:08 GMT+0800 (中国标准时间)]/user/user_view
+Error: Failed to lookup view "error" in views directory "F:\github\Usay\views"
+    at EventEmitter.render (F:\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\app.js:75:13
+    at Layer.handle_error (F:\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (F:\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (F:\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 15 2016 22:51:26 GMT+0800 (中国标准时间)]/user/user_view
+Error: Failed to lookup view "error" in views directory "F:\github\Usay\views"
+    at EventEmitter.render (F:\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\app.js:75:13
+    at Layer.handle_error (F:\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (F:\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (F:\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Tue Nov 15 2016 23:06:48 GMT+0800 (中国标准时间)]/user/post_view
+Error: Failed to lookup view "error" in views directory "F:\github\Usay\views"
+    at EventEmitter.render (F:\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\app.js:75:13
+    at Layer.handle_error (F:\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\app.js:65:3
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+[Tue Nov 15 2016 23:25:04 GMT+0800 (中国标准时间)]/user/c_post
+Error: Failed to lookup view "error" in views directory "F:\github\Usay\views"
+    at EventEmitter.render (F:\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\app.js:75:13
+    at Layer.handle_error (F:\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Layer.handle_error (F:\github\Usay\node_modules\express\lib\router\layer.js:67:12)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at Immediate.next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Immediate.<anonymous> (F:\github\Usay\node_modules\express\lib\router\index.js:618:15)
+    at Immediate.immediate._onImmediate (timers.js:435:18)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+[Wed Nov 16 2016 00:20:49 GMT+0800 (中国标准时间)]/user/post_view
+Error: Failed to lookup view "error" in views directory "F:\github\Usay\views"
+    at EventEmitter.render (F:\github\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\app.js:75:13
+    at Layer.handle_error (F:\github\Usay\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:310:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\app.js:65:3
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)

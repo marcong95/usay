@@ -14,14 +14,14 @@ body{
 	text-decoration: none;
     cursor: pointer;
 }
-@media only screen and (max-width: 500px)  and (min-width: 361px){
+@media only screen and (max-width: 500px)  and (min-width: 381px){
     .search-input {
         width: 65%;
     }
 }
-@media only screen and (max-width: 360px){
+@media only screen and (max-width: 380px){
     .search-input {
-        width: 100%;
+        width: 180px;
     }
 }
 /* 页面底部 */
@@ -109,10 +109,25 @@ body{
 }
 .post-item .bottom {
     margin-left: 45px;
-	background-color: #dedada;
+	background-color: #e2e2e2;;
+}
+/* 用户中心展示评论 */
+.show {
+    padding: 5px 0;
+}
+.show-list {
+    padding: 0 8px;
+}
+.show-list-item {
+    list-style: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 0 5px;
+}
+.show-list-item i{
+  margin-right: 5px;
 }
 /* 评论 */
-
 .operation {
     padding: 5px 0;
     border-top: 1px solid #c6b8b8;
@@ -177,17 +192,86 @@ body{
 	margin-left: 35px;
 }
 
-/* 分享编辑 */
-.post-form .content {
-	width: 100%;    
-    height: 12em;
+/* 分享详情 */
+.post-view {
+	padding: 10px;
 }
-.post-form .picture{
+.post-view .author {
+	margin-top: 10px;
+    font-size: 18px;
 }
-
-.post-form .picture img{
+.post-view .author img{
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+.post-view .author small{    
+	display: block;
+    margin: 5px 0;
+}
+.post-view .content {
+	margin-left: 45px;
+}
+.post-view .content .detail{
+    display: block;
+    margin-bottom: 5px;
+	text-decoration: none;
+    color: #333;
+}
+.post-view .content .picture {
+	
+}
+.post-view .content .picture img{
 	display: inline-block;
     margin: 0 0.1% 5px 0;
+}
+.post-view .comment {
+	
+}
+.post-view .bottom {
+    margin-left: 45px;
+	background-color: #e2e2e2;;
+}
+
+/* 分享列表 */
+.post-item {
+	padding: 10px;
+}
+.post-item .author {
+	margin-top: 10px;
+    font-size: 18px;
+}
+.post-item .author img{
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+.post-item .author small{    
+	display: block;
+    margin: 5px 0;
+}
+.post-item .content {
+	margin-left: 45px;
+}
+.post-item .content .detail{
+    display: block;
+    margin-bottom: 5px;
+	text-decoration: none;
+    color: #333;
+}
+.post-item .content .picture {
+	
+}
+.post-item .content .picture img{
+	display: inline-block;
+    margin: 0 0.1% 5px 0;
+}
+.post-item .comment {
+	
 }
 
 /* 通用样式 */

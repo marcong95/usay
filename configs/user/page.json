@@ -14,6 +14,16 @@
 				"link": "/user/index"
 			},
 			{
+				"name": "关注",
+				"label": "c_user",
+				"link": "/user/c_user"
+			},
+			{
+				"name": "收藏",
+				"label": "c_post",
+				"link": "/user/c_post"
+			},
+			{
 				"name": "分享",
 				"label": "post_form",
 				"link": "/user/post_form"
@@ -27,16 +37,6 @@
 				"name": "用户",
 				"label": "user_view",
 				"link": "/user/user_view"
-			},
-			{
-				"name": "收藏",
-				"label": "c_post",
-				"link": "/user/c_post"
-			},
-			{
-				"name": "关注",
-				"label": "c_user",
-				"link": "/user/c_user"
 			}
 		],
 		"right":{

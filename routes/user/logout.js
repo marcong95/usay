@@ -7,7 +7,6 @@ router.get('/', function(req, res, next) {
     req.session.user = null;
     res.render('user/login', {
         title: 'Login',
-        index: 'login',
         user: req.session.user
     });
 });

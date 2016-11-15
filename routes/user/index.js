@@ -6,6 +6,7 @@ router.get('/', function(req, res, next) {
     res.render('user/index', {
         title: 'Home',
         index: 'index',
+        toSearch: true,
         user: req.session.user
     });
 });

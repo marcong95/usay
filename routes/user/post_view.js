@@ -3,9 +3,10 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('user/index', {
+    res.render('user/post_view', {
         title: 'Home',
-        index: 'index',
+        index: 'post',
+        toBack: true,
         user: req.session.user
     });
 });

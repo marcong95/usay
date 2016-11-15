@@ -9,7 +9,9 @@ router.get('/', function(req, res, next) {
     res.render('user', {
         title: 'User',
         index: 'user',
-         user: req.session.user
+        toBack: true,
+        toSearch: true,
+        user: req.session.user
     });
 });
 
