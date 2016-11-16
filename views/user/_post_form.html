@@ -1,10 +1,14 @@
     <div id="container" class="container post-form kv-main">
+        <div class="page-header">
+            <h1>分享
+                <small>编辑</small>
+            </h1>
+        </div>
         <form class="form-horizontal" method="post" role="form" id="regForm"  enctype="multipart/form-data">
             <fieldset>
-                <legend>分享</legend>
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <textarea class="input-xlarge content" id="content" name="content" placeholder="此刻的想法..."></textarea>
+                        <textarea class="input-xlarge content" id="content" name="content" placeholder="此刻的想法..." rows="8"></textarea>
                     </div>
                 </div>
                 <% include _upload_file.html %> 

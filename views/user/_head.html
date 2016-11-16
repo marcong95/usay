@@ -34,11 +34,12 @@
         <% }else{ %>
         <a class="navbar-brand" href="/"><%= Upage.usay.label %><sup></sup></a>
         <% } %>
+            
         <% if(locals.toSearch){ %>
         <div class="search-input">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="输入感兴趣的内容...">
-            <a class="input-group-addon"><i class="glyphicon glyphicon-search"></i></a>
+            <input type="text" class="form-control search" placeholder="输入感兴趣的内容...">
+            <a href="javascript:void(0)" onclick="toSearch()" class="input-group-addon"><i class="glyphicon glyphicon-search"></i></a>
           </div>
         </div>
         <% } %>

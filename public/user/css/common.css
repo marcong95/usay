@@ -10,6 +10,9 @@ body{
     line-height: 20px;
     padding: 8px;
 }
+.on-focus {
+    position:absolute;
+}
 .search-input a{
 	text-decoration: none;
     cursor: pointer;
@@ -39,6 +42,10 @@ body{
     margin-bottom: 0;
 }
 
+/* 编辑评论 */
+.post-form .content {
+    width: 100%;
+}
 /* 用户详情 */
 .user-view {
     position: relative;
@@ -156,17 +163,14 @@ body{
 }
 /* 点赞列表 */
 .like-list {
-	padding: 0 5px;
+	padding: 5px;
     border-bottom: 1px solid #c6b8b8;
 }
-.like-list-item {
-    padding: 5px 0;
-    list-style: none;
-}
-.like-list-item .glyphicon {
+
+.like-list .glyphicon {
 	color: #337ab7;
 }
-.like-list-item a{
+.like-list a{
 	display: inline-block;
     text-decoration: none;
     margin-left: 5px;
@@ -179,8 +183,7 @@ body{
     padding: 2px 0;
     list-style: none;
 }
-.comment-list-item .from,
-.comment-list-item .to {
+.comment-list-item a {
     padding: 0;
     margin: 0;
     text-decoration: none;
@@ -290,7 +293,12 @@ body{
     display: block;
     color: #fa0606;
 }
-
+.temp-hide {
+    display:none;
+}
+.to-show {
+    display: block;
+}
 #tip {
     color: #fa0606;
 }
