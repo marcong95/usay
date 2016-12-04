@@ -1,7 +1,12 @@
-var express = require('express');
-var crypto = require('crypto');
-var User = require("../../models/user");
-var router = express.Router();
+const co = require('co')
+const express = require('express');
+const CONST = require('../../models/constants')
+const db = require('../../models/db')
+const pwd = require('../../models/password')
+const User = require('../../models/user')
+const router = express.Router()
+
+// require('../../common/promise-extend')
 
 router.get('/', function(req, res, next) {
     res.render('user/login', {
@@ -40,43 +45,39 @@ router.post('/', function(req, res, next) {
         });
         return;
     } 
-    //生成口令的数列值
-    var md5 = crypto.createHash('md5');
-    var password = md5.update(req.body.password).digest('base64');
     
-    //获取待处理数据
-    var newUser = {
-        username: req.body.username,
-        password: password
-    };
-        
-    //检查用户名是否已存在
-    User.searchOne({username: newUser.username}, function(err, user) {
-        if(!user)
-            err = '该账户名不存在';
-        if(err) {
-             res.send({
-                done: false,
-                msg: err
-             });
-            return;
-        }  
-        //密码是否匹配
-        if(password != user.password){
-             res.send({
-                done: false,
-                msg: "密码错误"
-             });
-            return;
-        
-        }    
-        req.session.user = {username: user.username};
+    co(function*() {
+		return yield User.login(req.body.username, req.body.password)
+	}).then(function(user) {
+        console.log(user)
+		req.session.user = user
+		res.send({
+			done: true,
+			url: '/',
+			user: req.session.user
+		})
+	}, function(err) {
+		let respBody = { done: false }
+		switch(err) {
+			case CONST.ERR_USER_NOT_FOUND:
+				respBody.msg = '该账户名不存在'
+				break
+			case CONST.ERR_WRONG_PASSWORD:
+				respBody.msg = '密码错误'
+				break
+			default:
+				respBody.msg = '未知错误'
+				debug(err + ' returned when login with ' + req.body)
+				break
+		}
+        res.send(respBody)
+	}).catch(function(err) {
         res.send({
-            done: true,
-            url: '/',
-            user: req.session.user
-        });
-    });
+            done: false,
+            msg: err.toString()
+        })
+        console.log(err.stack)
+    })
 });
 
 module.exports = router;
