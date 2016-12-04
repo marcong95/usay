@@ -32944,3 +32944,39 @@ Error: Failed to lookup view "error" in views directory "F:\github\Usay\views"
     at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
     at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
     at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+[Sun Dec 04 2016 21:10:38 GMT+0800 (China Standard Time)]/
+Error: Failed to lookup view "user/index" in views directory "C:\Users\marco\Documents\Programs\Usay\views"
+    at Function.render (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\application.js:579:17)
+    at ServerResponse.render (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\response.js:960:7)
+    at C:\Users\marco\Documents\Programs\Usay\routes\user\index.js:6:9
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+[Sun Dec 04 2016 21:24:25 GMT+0800 (China Standard Time)]/
+Error: ENOENT: no such file or directory, open 'C:\Users\marco\Documents\Programs\Usay\views\user\_head.html'
+    at Object.fs.openSync (fs.js:557:18)
+    at Object.fs.readFileSync (fs.js:467:33)
+    at includeSource (C:\Users\marco\Documents\Programs\Usay\node_modules\ejs\lib\ejs.js:210:17)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\ejs\lib\ejs.js:578:26
+    at Array.forEach (native)
+    at Template.generateSource (C:\Users\marco\Documents\Programs\Usay\node_modules\ejs\lib\ejs.js:554:15)
+    at Template.compile (C:\Users\marco\Documents\Programs\Usay\node_modules\ejs\lib\ejs.js:457:12)
+    at Object.compile (C:\Users\marco\Documents\Programs\Usay\node_modules\ejs\lib\ejs.js:313:16)
+    at handleCache (C:\Users\marco\Documents\Programs\Usay\node_modules\ejs\lib\ejs.js:169:18)
+    at View.exports.renderFile [as engine] (C:\Users\marco\Documents\Programs\Usay\node_modules\ejs\lib\ejs.js:381:14)
+    at View.render (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\response.js:960:7)
+    at C:\Users\marco\Documents\Programs\Usay\routes\user\index.js:6:9
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)

@@ -2,11 +2,14 @@
   "name": "usay",
   "version": "0.0.1",
   "description": "A B/S-based SNS system as a course project.",
+  "main": "app.js",
   "scripts": {
     "dev": "cross-env DEBUG=usay:server,usay:database nodemon bin/www",
     "start": "cross-env DEBUG=usay:server node bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "Marco, et al.",
+  "license": "WTFPL",
   "dependencies": {
     "body-parser": "^1.15.2",
     "co": "^4.6.0",

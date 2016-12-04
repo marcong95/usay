@@ -7642,3 +7642,10 @@
 [0mGET /user/index [32m200 [0m10.313 ms - 11140[0m
 [0mGET /browser-sync/browser-sync-client.js [31m500 [0m3.775 ms - 1578[0m
 [0mGET /browser-sync/browser-sync-client.js [31m500 [0m4.874 ms - 1578[0m
+[0mGET / [31m500 [0m10.853 ms - 1896[0m
+[0mGET / [31m500 [0m19.451 ms - 1697[0m
+[0mGET / [32m200 [0m21.582 ms - 10911[0m
+[0mGET /user/login [32m200 [0m9.730 ms - 3945[0m
+[0mPOST /user/login [32m200 [0m27.871 ms - 35[0m
+[0mPOST /user/login [32m200 [0m28.217 ms - 877[0m
+[0mGET /user/index [32m200 [0m17.235 ms - 11001[0m

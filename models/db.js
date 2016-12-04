@@ -1,9 +1,3 @@
-<<<<<<< HEAD
- var mongoose = require("mongoose"); 
-var db = mongoose.connect("mongodb://119.29.91.217:27017/Usay"); 
-//var db = null;
- exports.db = db;
-=======
 let config = require('../configs/global.js')
 let mongoose = require('mongoose')
 let debug = require('debug')('usay:database')
@@ -23,4 +17,3 @@ db.once('close', function() {
 })
 
 module.exports = db
->>>>>>> refs/remotes/origin/pr/1
