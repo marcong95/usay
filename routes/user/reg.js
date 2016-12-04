@@ -1,7 +1,11 @@
-var express = require('express');
-var crypto = require('crypto');
-var User = require("../../models/user");
-var router = express.Router();
+const co = require('co')
+const debug = require('debug')('usay:server')
+const express = require('express');
+const CONST = require('../../models/constants')
+const db = require('../../models/db')
+const pwd = require('../../models/password')
+const User = require('../../models/user')
+const router = express.Router()
 
 router.get('/', function(req, res, next) {
     res.render('user/reg', {
@@ -48,43 +52,33 @@ router.post('/', function(req, res, next) {
         return;
     }
     
-    //生成口令的数列值
-    var md5 = crypto.createHash('md5');
-    var password = md5.update(req.body.password).digest('base64');
-    
-    //获取待处理数据
-    var newUser = {
-        username: req.body.username,
-        password: password
-    };
-    
-    //检查用户名是否已存在
-    User.searchOne({username: newUser.username}, function(err, user) {
-        if(user)
-            err = '该账户名已存在';
-        if(err) {
-             res.send({
-                done: false,
-                msg: err
-             });
-            return;
-        }
-        //如果不存在新用户则新增加
-        User.save(newUser, function(err) {
-            if(err){
-                res.send({
-                    done: false,
-                    msg: err
-                });
-                return;
-            }
-            res.send({
-                done: true,
-                url: '/user/login'
-            });
-        });
-    });
+    co(function*() {
+		return yield User.register(req.body.username, req.body.password)
+	}).then(function(user) {
+		res.send({
+			done: true,
+			url: '/user/login'
+		})
+        debug(user.username + ' registered')
+	}, function(err) {
+		let respBody = { done: false }
+		switch(err) {
+			case CONST.ERR_USERNAME_ALREADY_EXISTS:
+				respBody.msg = '该账户名已被占用'
+				break
+			default:
+				respBody.msg = '未知错误'
+				debug(err + ' returned when login with ' + req.body)
+				break
+		}
+        res.send(respBody)
+	}).catch(function(err) {
+        res.send({
+            done: false,
+            msg: err.toString()
+        })
+        debug(err.stack)
+    })
 });
-
 
 module.exports = router;

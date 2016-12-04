@@ -9,6 +9,8 @@ $(function(){
 $().ready(function() {
     $.validator.setDefaults({
         submitHandler: function() {
+            // issue: ajax request repeatable
+            // issue: ajax request has not timeout mechanism
             $.ajax({
                 url: "/user/login",
                 type: "post",
@@ -26,7 +28,8 @@ $().ready(function() {
                     }
                 },
                 error:function(err, data){
-                    alert("访问异常");
+                    // alert("访问异常");
+                    console.error('访问异常: ' + err);
                 }
             });
         }

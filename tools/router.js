@@ -1,12 +1,15 @@
 /**
  * 动态遍历目录加载路由工具
  * author: bling兴哥
+ * 
+ * edited by Marco, added file extention filtering
  */
 var fs = require("fs");
 // 动态路由
 var router = {
     folder : './routes',
     fileList: [],
+    acceptExts: ['js'],
     // 遍历目录
     listDir : function(path){
         var fileList = fs.readdirSync(this.folder+path,'utf-8');
@@ -16,7 +19,11 @@ var router = {
             if (stat.isDirectory()) {
                 this.listDir(path + fileList[i]  + '/');
             } else {
-                this.addFile(path + fileList[i]);
+                var splited = fileList[i].split('.')
+                var ext = splited[splited.length - 1]
+                if (this.acceptExts.includes(ext)) {
+                    this.addFile(path + fileList[i]);
+                }
             }
         }
     },

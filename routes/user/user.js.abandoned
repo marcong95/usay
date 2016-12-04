@@ -1,0 +1,160 @@
+// This is a abandoned code file which may contain wrong code and 
+// should not be used anywhere
+
+// let co = require('co')
+// let express = require('express');
+// let CONST = require('../../models/constants')
+// let db = require('../../models/db')
+// let pwd = require('../../models/password')
+// let User = require('../../models/user')
+// let router = express.Router()
+
+// require('../../common/promise-extend')
+
+// /* GET home page. */
+// router.get('/', function(req, res, next) {
+//     res.render('user', {
+//         title: 'User',
+//         index: 'user',
+//         toBack: true,
+//         toSearch: true,
+//         user: req.session.user
+//     });
+// });
+
+// router.get('/login', function(req, res, next) {
+//     res.render('user/login', {
+//         title: 'Login',
+//         index: 'login',
+//         user: req.session.user
+//     });
+// });
+
+// router.post('/login', function(req, res, next) {       
+//     //检验用户输入
+//     if(req.body.username == undefined || req.body.username == ''){
+//         res.send({
+//             done: false,
+//             msg: "账号不能为空"
+//         });
+//         return;
+//     }else if(req.body.username.legnth > 15){
+//         res.send({
+//             done: false,
+//             msg: "账号长度不能大于15"
+//         });
+//         return;
+//     }
+//     if(req.body.password == undefined || req.body.password == ''){
+//         res.send({
+//             done: false,
+//             msg: "密码不能为空"
+//         });
+//         return;
+//     }else if(req.body.password.length <6 || req.body.password.legnth > 20){
+//         res.send({
+//             done: false,
+//             msg: "请确保密码长度为6-20"
+//         });
+//         return;
+//     }
+    
+// 	co(function*() {
+// 		let user = yield User.login(req.body.username, req.body.password)
+// 	}).then(function(user) {
+// 		req.session.user = {name: user.username}
+// 		res.send({
+// 			done: true,
+// 			url: '/',
+// 			user: req.session.user
+// 		})
+// 	}, function(err) {
+// 		let respBody = { done: false }
+// 		switch(err) {
+// 			case CONST.ERR_USER_NOT_FOUND:
+// 				respBody.msg = '该账户名不存在'
+// 				break
+// 			case CONST.ERR_WRONG_PASSWORD:
+// 				respBody.msg = '密码错误'
+// 				break
+// 			default:
+// 				respBody.msg = '未知错误'
+// 				console.error(err + ' returned when login with ' + req.body)
+// 				break
+// 		}
+// 	}).finally(() => db.close())
+// });
+
+// router.get('/reg', function(req, res, next) {
+//     res.render('reg', {
+//         title: 'Register',
+//         index: 'reg',
+//         user: req.session.user
+//     });
+// });
+
+// router.post('/reg', function(req, res, next) {
+//     //检验用户输入
+//     if(req.body.username == undefined || req.body.username == ''){
+//         res.send({
+//             done: false,
+//             msg: "账号不能为空"
+//         });
+//         return;
+//     }else if(req.body.username.legnth > 15){
+//         res.send({
+//             done: false,
+//             msg: "账号长度不能大于15"
+//         });
+//         return;
+//     }
+//     if(req.body.password == undefined || req.body.password == ''){
+//         res.send({
+//             done: false,
+//             msg: "密码不能为空"
+//         });
+//         return;
+//     }else if(req.body.password.length <6 || req.body.password.legnth > 20){
+//         res.send({
+//             done: false,
+//             msg: "请确保密码长度为6-20"
+//         });
+//         return;
+//     }
+//     if(req.body.confirm_password != req.body.password){
+//         res.send({
+//             done: false,
+//             msg: "两次输入的口令不一致"
+//         });
+//         return;
+//     }
+    
+// 	co(function*() {
+// 		let user = yield User.register(req.body.username, req.body.password)
+// 	}).then(function(user) {
+// 		req.session.user = {name: user.username}
+// 		res.send({
+// 			done: true,
+// 			url: '/user/login'
+// 		})
+// 	}, function(err) {
+// 		let respBody = { done: false }
+// 		switch(err) {
+// 			case CONST.ERR_USERNAME_ALREADY_EXISTS:
+// 				respBody.msg = '该账户名不存在'
+// 				break
+// 			default:
+// 				respBody.msg = '未知错误'
+// 				console.error(err + ' returned when login with ' + req.body)
+// 				break
+// 		}
+// 	}).finally(() => db.close())
+// });
+
+
+// router.get('/logout', function(req, res, next) {
+//     req.session.user = null;
+//     res.redirect('/user/login')
+// });
+
+// module.exports = router;

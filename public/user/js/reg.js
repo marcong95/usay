@@ -1,6 +1,7 @@
 $().ready(function() {
     $.validator.setDefaults({
         submitHandler: function() {
+            // same issues as login
             $.ajax({
                 url: "/user/reg",
                 type: "post",
@@ -18,7 +19,8 @@ $().ready(function() {
                     }
                 },
                 error:function(err, data){
-                    alert("访问异常");
+                    // alert("访问异常");
+                    console.error('访问异常: ' + err);
                 }
             });
         }
