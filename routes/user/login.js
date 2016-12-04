@@ -11,8 +11,15 @@ router.get('/', function(req, res, next) {
     });
 });
 
+router.get('/check_session', function(req, res, next) {
+    if(req.session.user){
+        res.send(true);
+    }else{
+        res.send(false);
+    }
+});
 
-router.post('/', function(req, res, next) {       
+router.post('/', function(req, res, next) {
     //检验用户输入
     if(req.body.username == undefined || req.body.username == ''){
         res.send({
@@ -70,10 +77,9 @@ router.post('/', function(req, res, next) {
             return;
         
         }    
-        req.session.user = {username: user.username};
+        req.session.user = {username: user.username, userId: "123"};
         res.send({
             done: true,
-            url: '/',
             user: req.session.user
         });
     });

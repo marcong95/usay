@@ -1,3 +1,11 @@
+
+var targetUrl = "";
+$(function(){
+    targetUrl = queryUrl("url");
+    if(!targetUrl){
+        targetUrl = "/user/index";
+    }
+});
 $().ready(function() {
     $.validator.setDefaults({
         submitHandler: function() {
@@ -8,7 +16,7 @@ $().ready(function() {
                 dataType: "json",
                 success: function(data){
                     if(data.done){
-                        location.href = data.url;
+                        location.href = targetUrl;
                     }else{
                         $("#tip").html(data.msg);
                         $(".return-tip").removeClass("hidden");

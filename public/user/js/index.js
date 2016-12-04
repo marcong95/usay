@@ -1,3 +1,5 @@
+var postId = "";
+var userId = "";
 var page = {
     records: null,
     currentPage: 1,
@@ -27,6 +29,7 @@ function renderPosts(){
         var bottom = $(this).closest(".bottom");
         var input = $(bottom).find(".say-input");
         $(this).bind("click", function(){
+            checkSession();
             $(".operation .to-show").removeClass("to-show");
             input.addClass("to-show");
             $(bottom).find(".say").attr("data-to", "");
@@ -42,19 +45,35 @@ function renderPosts(){
                             <a href="javascript:void(0)" onclick="toDelete(this)">'
                         + text +
                       '</a></li>';
-            $(bottom).find(".comment-list").append(say);
+            ajaxSay(
+                postId,
+                userId,
+                function(){
+                    $(bottom).find(".comment-list").append(say);
+                }
+            );
             toSay.val("");
             $(bottom).find(".to-show").removeClass("to-show");
         });
     });
     $(".operation .toFavorite").on("click", function(){
+        checkSession();
         var bottom = $(this).closest(".bottom");
         var like = '<a href="#">我,</a>';
-        $(bottom).find(".like-start").after(like);
+        ajaxFavorite(
+            postId,
+            function(){
+                $(bottom).find(".like-start").after(like);
+            }
+        );
     });
     
     $(".operation .toUpvote").on("click", function(){
-        alert("收藏");
+        checkSession();
+        ajaxUpvote(
+            postId,
+            function(){}
+        );
     });
 }
 
@@ -78,17 +97,18 @@ function toDelete(elem) {
 function getPostStr(post) {
     var postStr = '<li class="list-group-item post-item"> \
 				<h1 class="author"> \
-					<a href="#"><img src="../../../common/images/picture/test2.jpg"></a> \
-					分享者姓名<a href="#" class="collect link-no-decaration glyphicon glyphicon-star"></a> \
+					<a href="/user/user_view"><img src="../../../common/images/picture/test2.jpg"> \
+					分享者姓名 \
+                    </a> \
                     <small>2016年11月11日 15:30:00</small> \
 				</h1> \
 				<div class="content"> \
-					<a class="detail" href="#">文本。这是一个示例文本。</a> \
+					<a class="detail" href="/user/post_view">文本。这是一个示例文本。</a> \
 					<div class="picture"> \
-						<img src="../../../common/images/picture/test2.jpg" width="32%"> \
+						<img src="../../../common/images/picture/test2.jpg" width="32%"><img src="../../../common/images/picture/test2.jpg" width="32%"><img src="../../../common/images/picture/test2.jpg" width="32%"><img src="../../../common/images/picture/test2.jpg" width="32%"><img src="../../../common/images/picture/test2.jpg" width="32%"><img src="../../../common/images/picture/test2.jpg" width="32%"> \
 					</div> \
 				</div> \
-				<div class="bottom"> \
+				<div class="bottom" data-postId="123"> \
 					<div class="like-list"> \
 						<span class="like-start glyphicon glyphicon-heart-empty"></span><a href="#">姓名,</a><a href="#">姓名</a> \
 					</div> \
@@ -109,7 +129,7 @@ function getPostStr(post) {
                         <div class="say-input temp-hide"> \
                           <div class="input-group"> \
                             <input type="text" class="toSay form-control" placeholder="输入评论内容..."> \
-                            <a class="input-group-addon say" data-to="">发布</a> \
+                            <a class="input-group-addon say" data-to=""><i class="glyphicon glyphicon-share-alt"></i></a> \
                           </div> \
                         </div> \
                     </div> \

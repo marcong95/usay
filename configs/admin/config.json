@@ -1,0 +1,40 @@
+{
+	"right":[
+		{
+			"header": "首页",
+			"list": [
+				{
+					"title": "首页",
+					"icon" : "fa-home",
+					"data_role": "index"
+				}
+			]
+		},
+		{
+			"header": "数据管理",
+			"list": [
+				{
+					"title": "分享",
+					"icon" :"fa-file-image-o",
+					"data_role": "post"	
+				},
+				{
+					"title": "用户",
+					"icon" :"fa-user",
+					"data_role": "user"	
+				}
+			]
+		},
+		{
+			"header": "统计分析",
+			"list": [
+				{
+					"title": "统计",
+					"icon" : "fa-bar-chart",
+					"data_role": "statistics"
+				}
+			]
+		}
+
+	]
+}

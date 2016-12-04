@@ -22,21 +22,6 @@
 				"name": "收藏",
 				"label": "c_post",
 				"link": "/user/c_post"
-			},
-			{
-				"name": "分享",
-				"label": "post_form",
-				"link": "/user/post_form"
-			},
-			{
-				"name": "详情",
-				"label": "post_view",
-				"link": "/user/post_view"
-			},
-			{
-				"name": "用户",
-				"label": "user_view",
-				"link": "/user/user_view"
 			}
 		],
 		"right":{
@@ -57,8 +42,8 @@
 			},
 			"profile":{
 				"name": "个人中心",
-				"label": "profile",
-				"link": "/user/profile"
+				"label": "user_view",
+				"link": "/user/user_view"
 			}
 		}
 	},

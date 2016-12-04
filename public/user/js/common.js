@@ -16,4 +16,42 @@ $(document).ready(function(){
             }
         });
     });
-})
+});
+
+function ajaxSay(postId, userId, callback) {
+   // $.ajax();
+    callback();
+}
+
+function ajaxFavorite(postId, callback) {
+   // $.ajax();
+    callback();
+}
+function ajaxUpvote(postId, callback){
+    callback();
+}
+
+function ajaxFollow(postId, userId, callback) {
+   // $.ajax();
+    callback();
+}
+function ajaxCancelFollow(userId, callback){
+    callback();
+}
+
+
+function checkSession(){
+    var userId = $("#userId").val();
+    if(!userId){
+        location.href = "/user/login?url=" + encodeURI(location.pathname);
+    }
+}
+function queryUrl(key){
+    var seg = location.search.replace(/^\?/,'').split('&');  
+     for(var i=0, len=seg.length; i<len; i++) {  
+         if (!seg[i]) { continue; }  
+         s = seg[i].split('=');  
+         if(s[0] == key) return s[1];  
+     }  
+     return null;  
+}

@@ -1,7 +1,18 @@
 <% include _head.html %>
 
- 
-<% include _user_view.html %>  
-<% include _post_list_u.html %>    
+<div id="container" class="container">
+	<div class="row clearfix">
+        <% include _user_view.html %>
+    </div>
+     <div class="row clearfix">
+        <div class="col-sm-8 col-xs-12">
+            <% include _post_list_u.html %> 
+        </div>
+        <div class="col-sm-4 hidden-xs">
+            <% include _user_view_aside.html %> 
+        </div>      
+   </div>
+</div>   
 <% include _footer.html %>
+<script src="/user/js/user_view.js"></script>
 <% include _bottom.html %>

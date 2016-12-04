@@ -109,13 +109,14 @@ body{
 }
 .post-item .content .picture img{
 	display: inline-block;
-    margin: 0 0.1% 5px 0;
+    margin: 0 1% 5px 0;
 }
 .post-item .comment {
 	
 }
 .post-item .bottom {
     margin-left: 45px;
+    margin-right: 1%;
 	background-color: #e2e2e2;;
 }
 /* 用户中心展示评论 */
@@ -130,6 +131,7 @@ body{
     display: inline-block;
     font-size: 18px;
     margin: 0 5px;
+    color: #337ab7;
 }
 .show-list-item i{
   margin-right: 5px;
@@ -163,24 +165,25 @@ body{
 }
 /* 点赞列表 */
 .like-list {
-	padding: 5px;
     border-bottom: 1px solid #c6b8b8;
 }
 
 .like-list .glyphicon {
 	color: #337ab7;
+    padding: 5px;
 }
 .like-list a{
 	display: inline-block;
     text-decoration: none;
-    margin-left: 5px;
+    margin: 5px 5px 5px 0;
 }
 /* 评论列表 */
 .comment-list {
-	padding: 3px 5px;
+	padding: 0;
+    margin: 0;
 }
 .comment-list-item {
-    padding: 2px 0;
+    padding: 3px 5px;;
     list-style: none;
 }
 .comment-list-item a {
@@ -197,7 +200,6 @@ body{
 
 /* 分享详情 */
 .post-view {
-	padding: 10px;
 }
 .post-view .author {
 	margin-top: 10px;
@@ -238,44 +240,6 @@ body{
 	background-color: #e2e2e2;;
 }
 
-/* 分享列表 */
-.post-item {
-	padding: 10px;
-}
-.post-item .author {
-	margin-top: 10px;
-    font-size: 18px;
-}
-.post-item .author img{
-    display: block;
-    float: left;
-    width: 40px;
-    height: 40px;
-    margin-right: 5px;
-}
-.post-item .author small{    
-	display: block;
-    margin: 5px 0;
-}
-.post-item .content {
-	margin-left: 45px;
-}
-.post-item .content .detail{
-    display: block;
-    margin-bottom: 5px;
-	text-decoration: none;
-    color: #333;
-}
-.post-item .content .picture {
-	
-}
-.post-item .content .picture img{
-	display: inline-block;
-    margin: 0 0.1% 5px 0;
-}
-.post-item .comment {
-	
-}
 
 /* 通用样式 */
 

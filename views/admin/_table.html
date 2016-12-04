@@ -1,0 +1,66 @@
+<div class="row">
+<div class="col-xs-12">  
+<div class="box box-info">
+    <div class="box-header">
+      
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <table id="<%= table.id %>" class="table table-bordered table-striped">
+        <thead>
+        <tr>
+        <%  var colNum = 0;  %>
+        <%  if(table && table.titles){ %>
+        <%  colNum = table.titles.length; %>
+        <%  for(var i=0; i<colNum; i++) {     %> 
+            <th><%= table.titles[i].name %></th>
+        <%      }   %>
+        <%   }  %>
+        </tr>
+        </thead>
+        <tbody>
+        <%if(table && table.list){ %>
+        <%   var listNum = table.list.length;   %>
+        <%   for(var i=0; i<listNum; i++){ %>                           
+            <tr>
+                <td>
+                    <a href="javascript:show('<%= table.list[i]._id %>')">
+                        <%= table.list[i][table.titles[0].label] %>
+                    </a>
+                </td>
+        <%    for(var j=1; j<colNum; j++){ %>
+        <%       if(table.titles[j].label){ %>
+                    <td> <%= table.list[i][table.titles[j].label] %></td>
+        <%       } else { %>
+        <%          var opers = table.titles[j].opers;  %>
+                    <td>
+        <%             for(var k=0; k<opers.length; k++) { %>
+                       <a href="javascript: <%= opers[k].oper %>('<%= table.list[i]._id %>')" style="padding-right:15px">
+                           <%= opers[k].name %>
+                        </a>
+        <%             } %>
+                    </td>
+        <%      } %>
+        <%    } %>
+            </tr>
+        <%  } %>
+        <% }else{  %>
+          <tr><td></td></tr>
+        <% } %>
+        </tbody>
+ <!-- <tfoot>
+        <tr>
+          <th>Rendering engine</th>
+          <th>Browser</th>
+          <th>Platform(s)</th>
+          <th>Engine version</th>
+          <th>CSS grade</th>
+        </tr>
+        </tfoot>-->
+      </table>
+    </div>
+    <!-- /.box-body -->
+  </div>
+  <!-- /.box -->
+</div>
+</div>

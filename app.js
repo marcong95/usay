@@ -50,6 +50,7 @@ var default_routes = "/user";
 var routes = './routes';
 //系统默认访问路径
 app.use('/', require(routes + default_routes + '/index'));
+app.use('/admin', require(routes + '/admin/index'));
 
 console.log('/', routes + default_routes + '/index');
 //自动添加访问路径

@@ -1,0 +1,102 @@
+
+   <!-- Left side column. contains the logo and sidebar -->
+ <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="<%= user.image %>" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p><%= user.name %></p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      
+      <ul class="sidebar-menu">
+        <li class="header">首页</li>
+        <li class="main-link active">
+            <a href="javascript:void(0)" data-role="index" class="main-block">
+                <i class="fa fa-home"></i> <span class="title">首页</span>
+            </a>
+        </li>
+        
+        <% if(user.role==1) { %>
+        <li class="header">数据管理</li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-file-text-o"></i> <span>博文</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+              <li class="main-link">
+                  <a href="javascript:void(0)" data-role="blog" class="main-block">
+                      <i class="fa fa-circle-o"></i> <span class="title">文章</span>
+                  </a>
+              </li>
+              <li class="main-link">
+                  <a href="javascript:void(0)" data-role="tag" class="main-block">
+                      <i class="fa fa-circle-o"></i> <span class="title">分类</span>
+                  </a>
+              </li>
+          </ul>
+        </li>
+        <li class="main-link">
+            <a href="javascript:void(0)" data-role="blogger" class="main-block">
+                <i class="fa fa-graduation-cap"></i> <span class="title">博主</span>
+            </a>
+        </li>
+        <li class="main-link">
+            <a href="javascript:void(0)" data-role="user" class="main-block">
+                <i class="fa fa-user"></i> <span class="title">读者</span>
+            </a>
+        </li>
+        <li class="main-link">
+            <a href="javascript:void(0)" data-role="manager" class="main-block">
+                <i class="fa fa-user-secret"></i> <span class="title">管理员</span>
+            </a>
+        </li>
+        <li class="header">统计分析</li>
+        <li class="main-link">
+            <a href="javascript:void(0)" data-role="statistics" class="main-block">
+                <i class="fa fa-bar-chart"></i> <span class="title">统计</span>
+            </a>
+        </li>
+        <li class="header">系统设置</li>
+        <li class="main-link">
+            <a href="javascript:void(0)" data-role="set" class="main-block">
+                <i class="fa fa-cog"></i><span class="title">设置</span>
+            </a>
+        </li>
+        <% } else if(user.role==10) { %>
+        <li class="header">管理中心</li>
+        <li class="main-link">
+            <a href="javascript:void(0)" data-role="blog" class="main-block">
+                <i class="fa fa-pencil-square-o"></i> <span class="title">博文</span>
+            </a>
+        </li>
+        <li class="main-link">
+            <a href="javascript:void(0)" data-role="picture" class="main-block">
+                <i class="fa fa-file-picture-o"></i> <span class="title">照片墙</span>
+            </a>
+        </li>
+        <li class="header">系统设置</li>
+        <li class="main-link">
+            <a href="javascript:void(0)" data-role="item" class="main-block">
+                <i class="fa fa-th-large"></i> <span class="title">模块管理</span>
+            </a>
+        </li>
+        <% } %>
+        <li class="header">个人中心</li>
+        <li class="main-link">
+            <a href="javascript:void(0)" data-role="profile" class="main-block">
+                <i class="fa fa-user"></i> <span class="title">个人信息</span>
+            </a>
+        </li>
+      </ul>
+    </section>
+  </aside>
