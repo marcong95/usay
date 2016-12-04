@@ -53,7 +53,7 @@ router.post('/', function(req, res, next) {
         return;
     } 
     
-<<<<<<< HEAD
+/*<<<<<<< HEAD
     //获取待处理数据
     var newUser = {
         username: req.body.username,
@@ -86,7 +86,7 @@ router.post('/', function(req, res, next) {
             user: req.session.user
         });
     });
-=======
+=======*/
     co(function*() {
 		return yield User.login(req.body.username, req.body.password)
 	}).then(function(user) {
@@ -119,7 +119,7 @@ router.post('/', function(req, res, next) {
         })
         console.log(err.stack)
     })
->>>>>>> refs/remotes/origin/pr/1
+/*>>>>>>> refs/remotes/origin/pr/1*/
 });
 
 module.exports = router;
