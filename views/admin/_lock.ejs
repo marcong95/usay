@@ -4,18 +4,18 @@
         <a href="/" target="_blank"><b>U</b>say</a>
       </div>
       <!-- User name -->
-      <div class="lockscreen-name"><% if(user.nickname){ %><%= user.nickname %><%}else{%><%= user.username%><%}%></div>
+      <div class="lockscreen-name"><% if(manager.nickname){ %><%= manager.nickname %><%}else{%><%= manager.username%><%}%></div>
       <!-- START LOCK SCREEN ITEM -->
       <div class="lockscreen-item">
         <!-- lockscreen image -->
         <div class="lockscreen-image">
-          <img src="<%= user.avator %>" alt="User Image">
+          <img src="<%= manager.avator %>" alt="User Image">
         </div>
         <!-- /.lockscreen-image -->
 
         <!-- lockscreen credentials (contains the form) -->
         <form class="lockscreen-credentials" id="lockForm">
-          <input type="hidden" value="<%= user.username %>" id="name" name="username">
+          <input type="hidden" value="<%= manager.username %>" id="name" name="username">
           <div class="input-group">
             <input type="password" class="form-control" placeholder="password" id="password" name="password">
 

@@ -17,14 +17,14 @@ try{
 }
 
 router.all("/", function(req, res, next) {
-    if(!req.session.user) res.redirect("/manager/login");
+    if(!req.session.manager) res.redirect("/manager/login");
     next();
 });
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('admin/index', {
         title: '首页',
-        user: req.session.user,
+        manager: req.session.manager,
         config: config
     });
 });
@@ -55,20 +55,20 @@ router.get('/login', function(req, res, next) {
 });
 /* GET login page. */
 router.post('/login', function(req, res, next) {
-    req.session.user = { 
+    req.session.manager = { 
         username: "Wen",
         nickname: "jungleW",
         avator: "/admin/img/user2-160x160.jpg"
     };
-    if(req.session.user){
+    if(req.session.manager){
         res.redirect("/admin/index");
     }else{
-        res.redirect("/admin/login");
+        res.redirect("/manager/login");
     }
 });
 /* GET login page. */
 router.post('/ajax/login', function(req, res, next) {
-    req.session.user = { 
+    req.session.manager = { 
         username: "Wen",
         nickname: "jungleW",
         avator: "/admin/img/user2-160x160.jpg"
@@ -79,15 +79,14 @@ router.post('/ajax/login', function(req, res, next) {
 });
 /* GET home page. */
 router.get('/ajax/tableOptions', function(req, res, next) {
-    req.session.user = user;
+    req.session.manager = manager;
     res.send({
         done: false
     });
 });
 //锁屏
 router.get('/ajax/lock', function(req, res, next) {
-    res.render('admin/_lock', { user: req.session.user }, function(err, html){
-            console.log(req.session.user);
+    res.render('admin/_lock', { manager: req.session.manager }, function(err, html){
             if(err){
                 res.send( {
                     done: false,
