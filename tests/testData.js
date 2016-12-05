@@ -13,7 +13,7 @@ const rl = readline.createInterface({
 
 rl.question('Running this program will DROP database `usay` in the MongoDB ' + 
   'located at ' + config.db.url + ' and insert test data, which may cause ' + 
-  'PERMANENT DATA LOSS. Input AGREE to continue or any other word to abort: ', 
+  'PERMANENT DATA LOSS. Input AGREE to continue, NODROP to avoid dropping table or any other word to abort: ', 
   (answer) => {
   if (answer === 'AGREE') {
     co(function*() {

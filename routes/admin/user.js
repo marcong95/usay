@@ -4,6 +4,7 @@ var User = require("../../models/user");
 var router = express.Router();
 var path = require('path');
 var ejs = require('ejs');
+var moment = require('moment');
 let app = express();
 
 // view engine setup
@@ -19,6 +20,14 @@ router.get('/ajax', function(req, res, next) {
     //搜用户
     User.getUsers({}, projection, skip, limit, true).then(function(data) {
         console.log(data);
+        for (let elmt of data) {
+            for (let prop in elmt) {
+                if (typeof elmt[prop] === 'array') {
+                    elmt[prop] = elmt[prop].length
+                }
+            }
+            elmt.created = moment(elmt.created).format('YYYY-MM-DD HH:mm:ss')
+        }
         res.render('admin/_user', {
             table:{
                 id: "table",
