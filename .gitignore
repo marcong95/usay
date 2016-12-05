@@ -26,4 +26,4 @@ Temporary Items
 # Something too big and unnecessary to upload
 node_modules/
 logs/
-*.log
+logs/*.log
