@@ -13,8 +13,7 @@ app.set('view engine', 'ejs')
 
 /* GET User page. */
 router.get('/ajax', function(req, res, next) {
-        console.log("ok");
-    var projection = {"username":true};
+    var projection = {"username":true, 'nickname':true, 'authority':true,'followers':true, 'favourites':true,'upvoteds':true,'created':true};
     var skip = 0;
     var limit = 12;
     //搜用户
@@ -24,12 +23,16 @@ router.get('/ajax', function(req, res, next) {
             table:{
                 id: "table",
                 titles: [
-                    {name: '读者', label: 'name', url: ''}, 
-                    {name: '注册时间', label: 'buildTime'},
+                    {name: '账号', label: 'username', url: ''}, 
+                    {name: '昵称', label: 'nickname'},
+                    {name: '角色', label: 'authority'},
+                    {name: '关注数', label: 'followers'},
+                    {name: '收藏数', label: 'favourites'},
+                    {name: '点赞数', label: 'upvoteds'},
+                    {name: '注册时间', label: 'created'},
                     {name: '操作', opers: 
                         [  
                             {name: '详情',  oper: 'show'}, 
-                            {name: '编辑',  oper: 'edit'}, 
                             {name: '删除',  oper: 'del'}
                         ]
                     }
