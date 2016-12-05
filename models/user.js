@@ -1,12 +1,13 @@
-let mongoose = require('mongoose')
-let co = require('co')
-let debug = require('debug')('usay:database')
-let config = require('../configs/global')
-let CONST = require('./constants')
-let db = require('./db')
-let pwd = require('./password')
+const co = require('co')
+const debug = require('debug')('usay:database')
+const mongoose = require('mongoose')
 
-let userSchema = mongoose.Schema({
+const config = require('../configs/global')
+const CONST = require('./constants')
+const db = require('./db')
+const pwd = require('./password')
+
+const userSchema = mongoose.Schema({
   username: String,
   password: String,
   authority: String,
@@ -25,16 +26,26 @@ let userSchema = mongoose.Schema({
   upvoteds: [{
     to: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     created: Date
+  }],
+  follow: [{
+    to: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    created: Date
   }]
 })
 
-let UserModel = mongoose.model('User', userSchema)
+const UserModel = mongoose.model('User', userSchema)
 
-let User = function() {}
+let User = function(model) {
+  let modelObj = model.toObject()
+  for (let prop in modelObj) {
+    this[prop] = modelObj[prop]
+  }
+  this._model = model
+}
 
 User.checkUsername = function(username) {
   return new Promise((resolve, reject) => {
-    if (!username.match(config.user.usernameRule)) {
+    if (!username.match(config.user.usernameRule.regexp)) {
       reject(CONST.ERR_USERNAME_ILLEGAL)
     } else {
       UserModel.find({ username }).exec().then(function(users) {
@@ -52,6 +63,9 @@ User.register = function(username, password) {
   return new Promise((resolve, reject) => {
     co(function*() {
       yield User.checkUsername(username)
+      if (!password.match(config.user.passwordRule.regexp)) {
+        reject(CONST.ERR_PASSWORD_ILLEGAL)
+      } 
       let salt = pwd.getSalt()
       let user = new UserModel({
         username,
@@ -61,8 +75,9 @@ User.register = function(username, password) {
         created: new Date()
       })
       yield user.save()
-      resolve(wrapUserObject.call(user))
+      return new User(user)
     }).then(resolve, reject)
+      .catch(reject)
   })
 }
 
@@ -77,34 +92,42 @@ User.login = function(username, password) {
       } else {
         user.lastOnline = new Date()
         yield user.save()
-        resolve(wrapUserObject.call(user))
       }
+      return new User(user)
     }).then(resolve, reject)
+      .catch(reject)
   })
 }
 
-function wrapUserObject() {
-  let ret = this.toObject()
+User.getUsers = function(condition, skip, limit) {
+  // db.users.find({}).skip(skip).limit(count)
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let query = UserModel.find(condition)
+      skip && query.skip(skip)
+      limit && query.limit(limit)
+      let users = yield query.exec()
+      return users.map((user) => new User(user))
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
 
-  ret._model = this
-
-  ret.modify = function(key, value) {
-    if (key == 'password') {
-      value = pwd.encrypt(value, this.salt)
-    }
-
-    let that = this
-    return new Promise((resolve, reject) => {
-      co(function*() {
-        that._model[key] = value
-        yield that._model.save()
-        that[key] = value
-        resolve(that)
-      }).then(resolve, reject)
-    })
+User.prototype.modify = function(key, value) {
+  if (key == 'password') {
+    value = pwd.encrypt(value, this.salt)
   }
 
-  return ret
+  let that = this
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      that._model[key] = value
+      yield that._model.save()
+      that[key] = value
+      resolve(that)
+    }).then(resolve, reject)
+      .catch(reject)
+  })
 }
 
 module.exports = User

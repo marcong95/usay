@@ -1,6 +1,7 @@
 const co = require('co')
 const express = require('express');
 const CONST = require('../../models/constants')
+const cfg = require('../../configs/global')
 const db = require('../../models/db')
 const pwd = require('../../models/password')
 const User = require('../../models/user')
@@ -52,41 +53,7 @@ router.post('/', function(req, res, next) {
         });
         return;
     } 
-    
-/*<<<<<<< HEAD
-    //获取待处理数据
-    var newUser = {
-        username: req.body.username,
-        password: password
-    };
-        
-    //检查用户名是否已存在
-    User.searchOne({username: newUser.username}, function(err, user) {
-        if(!user)
-            err = '该账户名不存在';
-        if(err) {
-             res.send({
-                done: false,
-                msg: err
-             });
-            return;
-        }  
-        //密码是否匹配
-        if(password != user.password){
-             res.send({
-                done: false,
-                msg: "密码错误"
-             });
-            return;
-        
-        }    
-        req.session.user = {username: user.username, userId: "123"};
-        res.send({
-            done: true,
-            user: req.session.user
-        });
-    });
-=======*/
+
     co(function*() {
 		return yield User.login(req.body.username, req.body.password)
 	}).then(function(user) {
@@ -108,7 +75,7 @@ router.post('/', function(req, res, next) {
 				break
 			default:
 				respBody.msg = '未知错误'
-				debug(err + ' returned when login with ' + req.body)
+				debug(err.toString() + ' returned when login with ' + req.body)
 				break
 		}
         res.send(respBody)
@@ -119,7 +86,6 @@ router.post('/', function(req, res, next) {
         })
         console.log(err.stack)
     })
-/*>>>>>>> refs/remotes/origin/pr/1*/
 });
 
 module.exports = router;

@@ -20,7 +20,7 @@ $().ready(function() {
                 },
                 error:function(err, data){
                     // alert("访问异常");
-                    console.error('访问异常: ' + err);
+                    console.error('访问异常');
                 }
             });
         }

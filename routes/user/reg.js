@@ -2,6 +2,7 @@ const co = require('co')
 const debug = require('debug')('usay:server')
 const express = require('express');
 const CONST = require('../../models/constants')
+const cfg = require('../../configs/global')
 const db = require('../../models/db')
 const pwd = require('../../models/password')
 const User = require('../../models/user')
@@ -22,12 +23,6 @@ router.post('/', function(req, res, next) {
         res.send({
             done: false,
             msg: "账号不能为空"
-        });
-        return;
-    }else if(req.body.username.legnth > 15){
-        res.send({
-            done: false,
-            msg: "账号长度不能大于15"
         });
         return;
     }
@@ -64,14 +59,16 @@ router.post('/', function(req, res, next) {
 		let respBody = { done: false }
 		switch(err) {
 			case CONST.ERR_USERNAME_ALREADY_EXISTS:
-				respBody.msg = '该账户名已被占用'
+				respBody.msg = '该用户名已被占用'
 				break
+            case CONST.ERR_USERNAME_ILLEGAL:
+                respBody.msg = cfg.user.usernameRule.msg
+                break
+            case CONST.ERR_PASSWORD_ILLEGAL:
+                respBody.msg = cfg.user.passwordRule.msg
+                break
 			default:
 				respBody.msg = '未知错误'
-                // for mysterious reason req.body has no any methods here
-                // the one sentence above throws 
-                // TypeError: Function.prototype.toString is not generic
-                debug(Object.toString.call(req.body))
 				debug(err.toString().slice(7, -1) + ' returned when register ' 
                     + req.body.username)
 				break
