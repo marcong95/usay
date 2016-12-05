@@ -13,7 +13,8 @@ app.set('view engine', 'ejs')
 
 /* GET User page. */
 router.get('/ajax', function(req, res, next) {
-    var projection = {"_id":true,  "username":true};
+        console.log("ok");
+    var projection = {"username":true};
     var skip = 0;
     var limit = 12;
     //搜用户
