@@ -103,6 +103,16 @@ User.login = function(username, password) {
   })
 }
 
+User.getUserById = function(userId) {
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let user = yield UserModel.findById(userId).exec()
+      return new User(user)
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
+
 User.getUsers = function(condition, projection, skip, limit, pure) {
   // db.users.find({}).skip(skip).limit(count)
   return new Promise((resolve, reject) => {

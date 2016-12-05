@@ -68,6 +68,26 @@ router.get('/ajax/list', function(req, res, next) {
     });
 });
 
+
+router.get('/ajax/show/:id', function(req, res, next) {
+    var id = req.params.id;
+    User.getUserById(id).then(function(data) {
+        console.log(data);
+        res.render('admin/_user_show', {
+           user: data,
+           me: req.session.manager,
+        }, function(err, html){
+            res.send({
+                title:"读者",
+                html: html,
+                done: true
+            });
+        });
+    }, function(err) {
+    
+    
+    });
+});
 //修改用户
 router.get('/ajax/edit', function(req, res, next) {
     res.render('admin/_user_edit', {
@@ -89,17 +109,6 @@ router.get('/ajax/edit/:id', function(req, res, next) {
     });
 });
 
-router.get('/ajax/show/:id', function(req, res, next) {
-    var id = req.params.id;
-    User.searchOne({"_id": id}, function(err, data) {
-        res.render('admin/_user_show', {
-            title: 'User_show',
-            index: 'user_show',
-            user: data,
-            me: req.session.user
-        });
-    });
-});
 
 
 router.post('/ajax/del/:id', function(req, res, next) {

@@ -129,10 +129,14 @@ function show(id, myRole) {
         url: url,
         type: "get",
         data: {},
-        dataType:"text",
+        dataType:"json",
         success: function(data) {
-            $("#right_sidebar .content").html(data);
-            rightLayer.show();
+            if(data.done){
+                $("#right_sidebar .content").html(data.html);
+                rightLayer.show();
+            }else{
+                alert(data.msg);
+            }
         }
     });
 };
@@ -151,16 +155,19 @@ function edit(id, myRole) {
         url: url,
         type: "get",
         data: {},
-        dataType:"text",
+        dataType:"json",
         success: function(data) {
-            $("#right_sidebar .content").html(data);
-            $("#rightSidebarForm").validate();   
-            <!-- Page Script -->
-            //Add text editor
-            $(".textarea").each(function() {
-                $(this).wysihtml5();
-            });
-            rightLayer.show();
+            if(data.done){
+                $("#right_sidebar .content").html(data.html);
+                $("#rightSidebarForm").validate();
+                //Add text editor
+                $(".textarea").each(function() {
+                    $(this).wysihtml5();
+                });
+                rightLayer.show();
+            }else{
+                alert(data.msg);
+            }
         }
     });
 };

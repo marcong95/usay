@@ -1,5 +1,5 @@
 <div class="row">
-    <% if(user.name == me.name ){ %>
+    <% if(user.username == me.username ){ %>
     <div class="col-md-4">
     <% }else{ %>
     <div class="col-md-12">
@@ -8,16 +8,16 @@
         <div class="box box-widget widget-user">
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="widget-user-header bg-aqua-active">
-              <h3 class="widget-user-username"><%= user.name %></h3>
+              <h3 class="widget-user-username"><%= user.username %></h3>
               <h5 class="widget-user-desc">Founder &amp; CEO</h5>
             </div>
             <div class="widget-user-image">
-              <img class="img-circle" src="<%= user.image %>" alt="User Avatar">
+              <img class="img-circle" src="<%= user.avator %>" alt="User Avatar">
             </div>
 
-            <% if(user.name == me.name || user.role <= 2){ %>
+            <% if(user.username == me.username || user.authority == "user"){ %>
             <div class="box-footer">
-            <% if(user.role <= 2 ){ %>
+            <% if( user.authority == "user" ){ %>
               <div class="row">
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
@@ -47,7 +47,7 @@
               <% } %>
                   <!-- /.row -->
 
-              <% if(user.name == me.name){ %>
+              <% if(user.username == me.username){ %>
               <div class="row">
                 <div class="col-sm-6">
                   <a href="javascript:edit()" class="btn btn-primary btn-block description-block"><b>编辑信息</b></a>
@@ -99,7 +99,7 @@
           <!-- /.box -->
       </div>
         <!-- /.col -->
-       <% if(user.name == me.name ){ %>
+       <% if(user.username == me.username ){ %>
       <div class="col-md-8">
       <% }else{ %>
       <div class="col-md-12">
