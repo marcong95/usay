@@ -37,7 +37,7 @@ router.post('/update', function(req, res, next) {
             msg: "账号不能为空"
         });
         return;
-    }else if(req.body.name.legnth > 15){
+    }else if(req.body.name.legnth > 15){ 
         res.send({
             done: false,
             msg: "账号长度不能大于15"

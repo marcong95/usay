@@ -13,9 +13,13 @@ app.set('view engine', 'ejs')
 
 /* GET User page. */
 router.get('/ajax', function(req, res, next) {
-    //搜读者
-    User.search({}, function(err, data) {
-        app.render('admin/_user', {
+    var projection = {"_id":true,  "username":true};
+    var skip = 0;
+    var limit = 12;
+    //搜用户
+    User.getUsers({}, projection, skip, limit, true).then(function(data) {
+        console.log(data);
+        res.render('admin/_user', {
             table:{
                 id: "table",
                 titles: [
@@ -42,7 +46,11 @@ router.get('/ajax', function(req, res, next) {
                 done: true
             });
         });
+    }, function(err) {
+    
+    
     });
+
 });
 
 /* GET User list page. */
