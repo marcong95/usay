@@ -14,8 +14,9 @@ co(function*() {
   let reinhardt = yield User.login('reinhardt', 'HammerDown')
   // let post = yield Post.addPost(reinhardt, 'Hey, get behind me!')
   // console.log(post)
-  let posts = yield User.getUsers({}, 1, 2)
-  return posts.map((v) => v.username)
+  let users = yield User.getUsers({}, {}, 1, 2)
+  debug(typeof users[0]._model)
+  return users.map((v) => v.username)
   // return posts
 }).then((res) => {
     debug('resolved: ' + res)

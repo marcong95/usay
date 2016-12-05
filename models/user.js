@@ -99,15 +99,19 @@ User.login = function(username, password) {
   })
 }
 
-User.getUsers = function(condition, skip, limit) {
+User.getUsers = function(condition, projection, skip, limit, pure) {
   // db.users.find({}).skip(skip).limit(count)
   return new Promise((resolve, reject) => {
     co(function*() {
-      let query = UserModel.find(condition)
+      let query = UserModel.find(condition, projection)
       skip && query.skip(skip)
       limit && query.limit(limit)
       let users = yield query.exec()
-      return users.map((user) => new User(user))
+      if (pure) {
+        return users.map((user) => user.toObject())
+      } else {
+        return users.map((user) => new User(user))
+      }
     }).then(resolve, reject)
       .catch(reject)
   })
@@ -128,6 +132,10 @@ User.prototype.modify = function(key, value) {
     }).then(resolve, reject)
       .catch(reject)
   })
+}
+
+User.prototype.toObject = function() {
+  return this._model.toObject()
 }
 
 module.exports = User
