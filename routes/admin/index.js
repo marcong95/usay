@@ -4,11 +4,11 @@ var crypto = require('crypto');
 var path = require('path');
 var ejs = require('ejs');
 var router = express.Router(); 
-var app = express();
-// view engine setup
-app.engine('.html', ejs.__express);
-app.set('view engine', 'html');
+let app = express();
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
 
 try{
     var config = require("../../configs/admin/config");   
@@ -16,56 +16,22 @@ try{
     
 }
 
+router.all("/", function(req, res, next) {
+    if(!req.session.user) res.redirect("/manager/login");
+    next();
+});
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    if(!req.session.user) res.redirect("/admin/login");
-     //搜读者
-    User.search({}, function(err, data) { 
-        //req.session.user = data[0];
-        res.render('admin/index', {
-            title: '首页',
-            user: req.session.user,
-            config: config
-        });
-    });
-});
-
-/* GET test page. */
-router.get('/test/:n/:role', function(req, res, next) {
-    var user = {
-        _id: "123",
-        name: "wjz",
-        role: 1,
-        password: "123456",
-        nickName: "jungle",
-        image:"/admin/img/user3-128x128.jpg",
-        gender:"male"
-    }
-    var role = req.params.role;
-    //User.search({}, function(err, data) {
-        req.session.user = user;
-        res.render('admin/index', {
-            title: '首页',
-            user: req.session.user,
-            config: config
-        });
-    //});
-});
-/* GET test page. */
-router.get('/role/:role', function(req, res, next) {
-    req.session.user = {
-        name: "wjz",
-        image: "/admin/img/user3-128x128.jpg",
-        role: req.params.role
-    }
     res.render('admin/index', {
         title: '首页',
-        user: req.session.user
+        user: req.session.user,
+        config: config
     });
 });
 
 /* GET home page. */
 router.get('/ajax', function(req, res, next) {console.log("1");
+console.log(app);
     app.render('admin/_index', {}, function(err, html){console.log("2");
         if(err){
             res.send( {

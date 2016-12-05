@@ -4,12 +4,12 @@ var User = require("../../models/user");
 var router = express.Router();
 var path = require('path');
 var ejs = require('ejs');
-var router = express.Router();
+let app = express();
 
-var app = express();
 // view engine setup
-app.engine('.html', ejs.__express);
-app.set('view engine', 'html');
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
+
 
 /* GET User page. */
 router.get('/ajax', function(req, res, next) {

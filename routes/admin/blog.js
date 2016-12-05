@@ -6,9 +6,6 @@ var ejs = require('ejs');
 var router = express.Router();
 
 var app = express();
-// view engine setup
-app.engine('.html', ejs.__express);
-app.set('view engine', 'html');
 
 /* GET blog page. */
 router.get('/ajax', function(req, res, next) {

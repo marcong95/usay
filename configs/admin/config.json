@@ -26,6 +26,16 @@
 			]
 		},
 		{
+			"header": "系统设置",
+			"list": [
+				{
+					"title": "分享",
+					"icon" : "fa-file-image-o",
+					"data_role": "post_setting"
+				}
+			]
+		},
+		{
 			"header": "统计分析",
 			"list": [
 				{

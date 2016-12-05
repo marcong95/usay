@@ -55,7 +55,7 @@ $(function () {
         }
     }, function(){
            $.ajax({
-                url: "/admin/ajax/lock",
+                url: "/manager/ajax/lock",
                 type: "get",
                 data: {},
                 dataType:"text",
@@ -254,7 +254,7 @@ function DPost(myRole, myOper){
 };
 function unlock(){debugger;
     $.ajax({
-        url: "/admin/login",
+        url: "/manager/login",
         type: "post",
         data: $("#lockForm").serialize(),
         dataType:"json",

@@ -52,8 +52,10 @@ app.use(logger('dev', {stream: accessLogFile}))
 
 // register routes
 let defaultRoutes = '/user'
+let adminRoutes = '/admin'
 let routes = './routes'
 app.use('/', require(routes + defaultRoutes + '/index'))
+app.use('/manager', require(routes + adminRoutes + '/index'))
 
 let fileList = router.init(routes).getList()
 for (let file of fileList) {
