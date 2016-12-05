@@ -27,6 +27,8 @@ body{
         width: 180px;
     }
 }
+
+
 /* 页面底部 */
 .footer {
     padding: 20px 0;
@@ -266,7 +268,9 @@ body{
 #tip {
     color: #fa0606;
 }
-
+.mb20{
+    margin-bottom: 20px;
+}
 .module-1 {
     margin: auto;
     max-width: 400px;
