@@ -30,14 +30,7 @@
                 </td>
         <%    for(var j=1; j<colNum; j++){ %>
         <%       if(table.titles[j].label){ %>
-                    <td> 
-                        <% if( typeof(table.list[i][table.titles[j].label]) == "Array"){ %>
-                            <%= table.list[i][table.titles[j].label].length %>
-                        <% }else{ %>
-                            <%= table.list[i][table.titles[j].label] %>
-                        <% } %>
-                
-                    </td>
+                    <td><%= table.list[i][table.titles[j].label] %></td>
         <%       } else { %>
         <%          var opers = table.titles[j].opers;  %>
                     <td>

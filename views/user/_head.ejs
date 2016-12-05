@@ -57,7 +57,7 @@
               <li <% if(index==right.login.label){ %> class="active" <% } %>><a href="<%= right.login.link %>"><%= right.login.name %></a></li>
               <li <% if(index==right.reg.label){ %> class="active" <% } %>><a href="<%= right.reg.link %>"><%= right.reg.name %></a></li>
             <% }else{ %>
-              <li <% if(index==right.profile.label){ %> class="active" <% } %>><a href="<%= right.profile.link %>"><% if(user.nickname){ %><%= user.nickname %><% }else{ %><%= user.username %><% } %></a><input type="hidden" id="username" value="<%= user.username %>" ></li>
+              <li <% if(index==right.profile.label){ %> class="active" <% } %>><a href="<%= right.profile.link %>"><%= user.nickname?user.nickname:user.username %></a><input type="hidden" id="username" value="<%= user.username %>" ></li>
               <li <% if(index==right.logout.label){ %> class="active" <% } %>><a href="<%= right.logout.link %>"><i class="glyphicon glyphicon-log-out"></i></a></li>
             <% } %>
         </ul> 
