@@ -22,8 +22,8 @@ router.get('/ajax', function(req, res, next) {
         console.log(data);
         for (let elmt of data) {
             for (let prop in elmt) {
-                if (typeof elmt[prop] === 'array') {
-                    elmt[prop] = elmt[prop].length
+                if (elmt[prop] instanceof Array) {
+                    elmt[prop] = elmt[prop].length || 0
                 }
             }
             elmt.created = moment(elmt.created).format('YYYY-MM-DD HH:mm:ss')
