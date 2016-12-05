@@ -27,8 +27,12 @@ const userSchema = mongoose.Schema({
     to: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     created: Date
   }],
-  follow: [{
+  followeds: [{
     to: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    created: Date
+  }],
+  followers: [{
+    from: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     created: Date
   }]
 })
