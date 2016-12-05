@@ -41,8 +41,8 @@ function ajaxCancelFollow(userId, callback){
 
 
 function checkSession(){
-    var userId = $("#userId").val();
-    if(!userId){
+    var username = $("#username").val();
+    if(!username){
         location.href = "/user/login?url=" + encodeURI(location.pathname);
     }
 }

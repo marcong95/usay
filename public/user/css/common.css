@@ -267,4 +267,7 @@ body{
     color: #fa0606;
 }
 
-
+.module-1 {
+    margin: auto;
+    max-width: 400px;
+}
