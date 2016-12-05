@@ -68,7 +68,12 @@ router.post('/', function(req, res, next) {
 				break
 			default:
 				respBody.msg = '未知错误'
-				debug(err + ' returned when login with ' + req.body)
+                // for mysterious reason req.body has no any methods here
+                // the one sentence above throws 
+                // TypeError: Function.prototype.toString is not generic
+                debug(Object.toString.call(req.body))
+				debug(err.toString().slice(7, -1) + ' returned when register ' 
+                    + req.body.username)
 				break
 		}
         res.send(respBody)

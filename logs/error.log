@@ -33610,3 +33610,147 @@ Error: Not Found
     at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
     at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
     at logger (C:\Users\marco\Documents\Programs\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 00:23:20 GMT+0800 (China Standard Time)]/browser-sync/browser-sync-client.js
+Error: Not Found
+    at C:\Users\marco\Documents\Programs\Usay\app.js:65:13
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (C:\Users\marco\Documents\Programs\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 00:23:20 GMT+0800 (China Standard Time)]/browser-sync/browser-sync-client.js
+Error: Not Found
+    at C:\Users\marco\Documents\Programs\Usay\app.js:65:13
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (C:\Users\marco\Documents\Programs\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 00:23:24 GMT+0800 (China Standard Time)]/browser-sync/browser-sync-client.js
+Error: Not Found
+    at C:\Users\marco\Documents\Programs\Usay\app.js:65:13
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (C:\Users\marco\Documents\Programs\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 00:23:25 GMT+0800 (China Standard Time)]/browser-sync/browser-sync-client.js
+Error: Not Found
+    at C:\Users\marco\Documents\Programs\Usay\app.js:65:13
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (C:\Users\marco\Documents\Programs\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 00:23:49 GMT+0800 (China Standard Time)]/browser-sync/browser-sync-client.js
+Error: Not Found
+    at C:\Users\marco\Documents\Programs\Usay\app.js:65:13
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (C:\Users\marco\Documents\Programs\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 00:23:50 GMT+0800 (China Standard Time)]/browser-sync/browser-sync-client.js
+Error: Not Found
+    at C:\Users\marco\Documents\Programs\Usay\app.js:65:13
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (C:\Users\marco\Documents\Programs\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 01:06:14 GMT+0800 (China Standard Time)]/browser-sync/browser-sync-client.js
+Error: Not Found
+    at C:\Users\marco\Documents\Programs\Usay\app.js:65:13
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (C:\Users\marco\Documents\Programs\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 01:06:15 GMT+0800 (China Standard Time)]/browser-sync/browser-sync-client.js
+Error: Not Found
+    at C:\Users\marco\Documents\Programs\Usay\app.js:65:13
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\marco\Documents\Programs\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (C:\Users\marco\Documents\Programs\Usay\node_modules\morgan\index.js:144:5)
