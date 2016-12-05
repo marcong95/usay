@@ -30,15 +30,15 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/ajax', function(req, res, next) {console.log("1");
-console.log(app);
-    app.render('admin/_index', {}, function(err, html){console.log("2");
+router.get('/ajax', function(req, res, next) {
+    res.render('admin/_index', {}, function(err, html){
         if(err){
             res.send( {
-                done: false
+                done: false,
+                msg: "系统错误"
             });
             return;
-        }console.log("3");
+        }
         res.send( {
             done: true,
             html: html
@@ -56,14 +56,26 @@ router.get('/login', function(req, res, next) {
 /* GET login page. */
 router.post('/login', function(req, res, next) {
     req.session.user = { 
-        name: "jungleW",
-        image: "/admin/img/user2-160x160.jpg"
+        username: "Wen",
+        nickname: "jungleW",
+        avator: "/admin/img/user2-160x160.jpg"
     };
     if(req.session.user){
         res.redirect("/admin/index");
     }else{
         res.redirect("/admin/login");
     }
+});
+/* GET login page. */
+router.post('/ajax/login', function(req, res, next) {
+    req.session.user = { 
+        username: "Wen",
+        nickname: "jungleW",
+        avator: "/admin/img/user2-160x160.jpg"
+    };
+    res.send({
+        done: true
+    });
 });
 /* GET home page. */
 router.get('/ajax/tableOptions', function(req, res, next) {
@@ -74,14 +86,19 @@ router.get('/ajax/tableOptions', function(req, res, next) {
 });
 //锁屏
 router.get('/ajax/lock', function(req, res, next) {
-    //var id = req.session.user._id;
-    var data = req.session.user;
-    //User.searchOne({"_id": id}, function(err, data) {
-        res.render('admin/_lock', {
-            title: 'User_edit',
-            index: 'user_edit',
-            user: data
-        });
-    //});
+    res.render('admin/_lock', { user: req.session.user }, function(err, html){
+            console.log(req.session.user);
+            if(err){
+                res.send( {
+                    done: false,
+                    msg: err
+                });
+                return;
+            }
+            res.send( {
+                done: true,
+                html: html
+            });
+    });
 });
 module.exports = router;

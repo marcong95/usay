@@ -37540,3 +37540,2489 @@ TypeError: User.search is not a function
     at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
     at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
     at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+[Mon Dec 05 2016 16:49:17 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 16:49:33 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 16:49:35 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 16:49:39 GMT+0800 (中国标准时间)]/admin/post/ajax
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 16:58:43 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 16:58:45 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 16:58:46 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 16:58:55 GMT+0800 (中国标准时间)]/admin/post/ajax
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 16:59:54 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 16:59:57 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 16:59:58 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:00:00 GMT+0800 (中国标准时间)]/admin/post/ajax
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:05:17 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:05:36 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:05:58 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:05:59 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:07:24 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:07:34 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:07:35 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:08:47 GMT+0800 (中国标准时间)]/admin/user/ajax
+TypeError: User.search is not a function
+    at F:\github\Usay\routes\admin\user.js:17:10
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+[Mon Dec 05 2016 17:10:39 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:10:42 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:10:44 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:12:34 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:12:37 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:12:38 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:12:41 GMT+0800 (中国标准时间)]/admin/post/ajax
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:14:00 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:14:03 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:14:04 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:14:04 GMT+0800 (中国标准时间)]/manager/ajax/lock
+ReferenceError: user is not defined
+    at F:\github\Usay\routes\admin\index.js:81:25
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:581:14)
+    at F:\github\Usay\routes\admin\index.js:78:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+[Mon Dec 05 2016 17:15:58 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:16:00 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:16:01 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:16:44 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:16:44 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:19:04 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:19:06 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:19:07 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:19:55 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:19:58 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:19:59 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:24:37 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:24:39 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:24:39 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:31:32 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:31:34 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:31:35 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:33:05 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:33:07 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:33:08 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:33:57 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:34:00 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:34:00 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:34:10 GMT+0800 (中国标准时间)]/admin/post/ajax
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:35:01 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:35:04 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:35:04 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:35:18 GMT+0800 (中国标准时间)]/admin/post/ajax
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:35:43 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:35:44 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:35:50 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:35:53 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:35:54 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:36:25 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:36:28 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:36:29 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:36:35 GMT+0800 (中国标准时间)]/admin/post/ajax
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:37:00 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:37:02 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:37:02 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:37:26 GMT+0800 (中国标准时间)]/admin/post/ajax
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:39:24 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:39:26 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:39:27 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:39:30 GMT+0800 (中国标准时间)]/admin/post/ajax
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:40:14 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:40:14 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:40:18 GMT+0800 (中国标准时间)]/admin/post/ajax
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:40:41 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.image %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'image' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:40:44 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:40:44 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:40:47 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:40:48 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:40:52 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:40:52 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:41:19 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:41:19 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:41:22 GMT+0800 (中国标准时间)]/admin/post/ajax
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:41:26 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:41:27 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:43:53 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.avator %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'avator' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:43:56 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:43:56 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:44:04 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:44:04 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:44:10 GMT+0800 (中国标准时间)]/admin/post/ajax
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:49:28 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.avator %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'avator' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:49:28 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.avator %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'avator' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:49:33 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:49:34 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:49:38 GMT+0800 (中国标准时间)]/admin/user/ajax
+TypeError: User.search is not a function
+    at F:\github\Usay\routes\admin\user.js:17:10
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+[Mon Dec 05 2016 17:49:59 GMT+0800 (中国标准时间)]/admin/user/ajax
+TypeError: User.search is not a function
+    at F:\github\Usay\routes\admin\user.js:17:10
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+[Mon Dec 05 2016 17:50:53 GMT+0800 (中国标准时间)]/admin/index
+TypeError: F:\github\Usay\views\admin\index.ejs:3
+    1| <% include _header %>
+    2|   <!-- Main Header -->
+ >> 3|   <% include _main_header %>
+    4|   <!-- Left side column. contains the logo and sidebar -->
+    5|   <% include _main_sidebar1 %>
+    6| 
+
+F:\github\Usay\views\admin\_main_header.ejs:75
+    73|           <li class="dropdown user user-menu">
+    74|             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+ >> 75|               <img src="<%= user.avator %>" class="user-image" alt="User Image">
+    76|               <span class="hidden-xs"><%= user.name %></span>
+    77|             </a>
+    78|             <ul class="dropdown-menu">
+
+Cannot read property 'avator' of undefined
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:29:27)
+    at eval (eval at compile (F:\github\Usay\node_modules\ejs\lib\ejs.js:491:12), <anonymous>:41:10)
+    at returnedFn (F:\github\Usay\node_modules\ejs\lib\ejs.js:520:17)
+    at View.exports.renderFile [as engine] (F:\github\Usay\node_modules\ejs\lib\ejs.js:374:31)
+    at View.render (F:\github\Usay\node_modules\express\lib\view.js:126:8)
+    at tryRender (F:\github\Usay\node_modules\express\lib\application.js:639:10)
+    at Function.render (F:\github\Usay\node_modules\express\lib\application.js:591:3)
+    at ServerResponse.render (F:\github\Usay\node_modules\express\lib\response.js:960:7)
+    at F:\github\Usay\routes\admin\index.js:25:9
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+[Mon Dec 05 2016 17:51:02 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:51:03 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:51:05 GMT+0800 (中国标准时间)]/admin/user/ajax
+TypeError: User.search is not a function
+    at F:\github\Usay\routes\admin\user.js:17:10
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+[Mon Dec 05 2016 17:51:24 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:51:24 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:51:29 GMT+0800 (中国标准时间)]/admin/user/ajax
+TypeError: User.search is not a function
+    at F:\github\Usay\routes\admin\user.js:17:10
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+[Mon Dec 05 2016 17:51:31 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:51:32 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:51:37 GMT+0800 (中国标准时间)]/admin/user/ajax
+TypeError: User.search is not a function
+    at F:\github\Usay\routes\admin\user.js:17:10
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\Usay\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (F:\github\Usay\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+[Mon Dec 05 2016 17:51:44 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)
+[Mon Dec 05 2016 17:51:45 GMT+0800 (中国标准时间)]/lib/jquery-validation-1.14.0/jquery.validate.min.js
+Error: Not Found
+    at F:\github\Usay\app.js:67:13
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:618:15
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:256:14)
+    at Function.handle (F:\github\Usay\node_modules\express\lib\router\index.js:176:3)
+    at router (F:\github\Usay\node_modules\express\lib\router\index.js:46:12)
+    at Layer.handle [as handle_request] (F:\github\Usay\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\github\Usay\node_modules\express\lib\router\index.js:312:13)
+    at F:\github\Usay\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (F:\github\Usay\node_modules\express\lib\router\index.js:330:12)
+    at next (F:\github\Usay\node_modules\express\lib\router\index.js:271:10)
+    at logger (F:\github\Usay\node_modules\morgan\index.js:144:5)

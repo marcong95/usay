@@ -58,9 +58,13 @@ $(function () {
                 url: "/manager/ajax/lock",
                 type: "get",
                 data: {},
-                dataType:"text",
+                dataType:"json",
                 success: function(data) {
-                    $("#lock_sidebar .content").html(data);
+                    if(data.done){
+                        $("#lock_sidebar .content").html(data.html);
+                    }else{
+                        alert(data.msg);
+                    }
                 }
             });
     });
@@ -252,20 +256,19 @@ function DPost(myRole, myOper){
         }
     });
 };
-function unlock(){debugger;
+function unlock(){
     $.ajax({
-        url: "/manager/login",
+        url: "/manager/ajax/login",
         type: "post",
         data: $("#lockForm").serialize(),
         dataType:"json",
-        success: function(data) {debugger;
+        success: function(data) {
             if(data.done){
                 lockLayer.callback();
             }else{
-                var obj = $("#lockForm").find("#password");
-                obj.val("");
                 $("#lockForm").find("#password").attr("placeholder", data.msg);
             }
+            $("#lockForm").find("#password").val("");
         }
     });
 }
