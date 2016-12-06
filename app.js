@@ -77,7 +77,19 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500)
-  res.render('error')
+  if (req.header('X-Requested-With') === 'XMLHttpRequest') {
+    // an ajax request, response with JSON
+    console.log('error when ajaxing')
+    res.render('error', function(err, html) {
+      res.send({
+        msg: res.locals.message,
+        html: html
+      })
+    })
+  } else {
+    // a synchorized request, render the error page
+    res.render('error')
+  }
   
   // log stacktrace when production
   if (req.app.get('env') === 'development') {
