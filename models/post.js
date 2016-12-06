@@ -60,13 +60,13 @@ Post.getPostById = function(postId) {
   })
 }
 
-Post.getPosts = function(condition, skip, count) {
+Post.getPosts = function(condition, skip, limit) {
   return new Promise((resolve, reject) => {
     co(function*() {
       let query = PostModel.find(condition)
       skip && query.skip(skip)
       limit && query.limit(limit)
-      yield query.exec()
+      let posts = yield query.exec()
       // posts.forEach(debug)
       return posts.map((post) => new Post(post))
     }).then(resolve, reject)

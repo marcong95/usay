@@ -91,7 +91,8 @@ body{
     float: left;
     width: 40px;
     height: 40px;
-    margin-right: 5px;
+    margin-right: 5px;    
+    border-radius: 20px;
 }
 .post-item .author small{    
 	display: block;
@@ -242,7 +243,31 @@ body{
 	background-color: #e2e2e2;;
 }
 
-
+/* 底部导航栏 */
+.b_nav {
+    margin: 0;
+    padding:0;
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    display: block;
+}
+.b_nav > li {
+    display: block;
+    width:40px;
+}
+.b_nav > li > a{
+    display: block;
+    padding: 10px;
+    text-align: center;    
+    font-size: 20px;
+    background-color: #337ab7;
+    color: #fff;
+    text-decoration: none;
+}
+.b_nav > li:hover > a{
+    background-color: #03A9F4;
+}
 /* 通用样式 */
 
 .link-no-decaration,

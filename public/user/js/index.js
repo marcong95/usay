@@ -10,7 +10,6 @@ var page = {
 
 $(document).ready(function(){
     renderPosts();
-    nextPage();
 })
 
 //获取下一页的数据

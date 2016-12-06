@@ -8,7 +8,7 @@ $(document).ready(function() {
                 dataType: "json",
                 success: function(data){
                     if(data.done){
-                        location.href = "user/user_view";
+                        location.href = "/user/index";
                     }else{
                         $("#tip").html(data.msg);
                         $(".return-tip").removeClass("hidden");
