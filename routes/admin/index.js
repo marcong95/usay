@@ -16,10 +16,17 @@ try{
     
 }
 
-router.all("/", function(req, res, next) {
-    if(!req.session.manager) res.redirect("/manager/login");
+router.get("/*", function(req, res, next) {
+    if(req.url == "/login") next();
+    else if(!req.session.manager) res.redirect("/manager/login");
     next();
 });
+router.get("/*", function(req, res, next) {
+    if(req.url == "/login" || req.url =="/ajax/login" ) next();
+    else if(!req.session.manager) res.send({"done": false, "dealMsg": {"state": "notLogin", "msg": "Not login"}});
+    next();
+});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('admin/index', {

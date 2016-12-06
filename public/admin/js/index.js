@@ -17,11 +17,11 @@ $(function () {
                         updateTable(data.table);
                     }
                 }else{
-
+                    howToDo(data.dealMsg);
                 }
             },
             error: function(err, data){
-                lockLayer.show();
+                showBlock(data.html);
             }
         });
     });
@@ -63,8 +63,11 @@ $(function () {
                     if(data.done){
                         $("#lock_sidebar .content").html(data.html);
                     }else{
-                        alert(data.msg);
+                        howToDo(data.dealMsg);
                     }
+                },
+                error: function(err, data){
+                    $("#lock_sidebar .content").html(data.html);
                 }
             });
     });
@@ -135,8 +138,11 @@ function show(id, myRole) {
                 $("#right_sidebar .content").html(data.html);
                 rightLayer.show();
             }else{
-                alert(data.msg);
-            }
+                    howToDo(data.dealMsg);
+                }
+            },
+        error: function(err, data){
+             $("#right_sidebar .content").html(data.html);
         }
     });
 };
@@ -166,8 +172,11 @@ function edit(id, myRole) {
                 });
                 rightLayer.show();
             }else{
-                alert(data.msg);
-            }
+                    howToDo(data.dealMsg);
+                }
+        },
+        error: function(err, data){
+            $("#right_sidebar .content").html(data.html);
         }
     });
 };
@@ -192,8 +201,11 @@ function update(id, myRole){
                 $("li.active a").click();
                 rightLayer.hide();
             }else{
-                alert(data.msg);
+                howToDo(data.dealMsg);
             }
+        },
+        error: function(err, data){
+            alert(data.msg);
         }
     });
 };
@@ -217,8 +229,11 @@ function del(id, myRole){
             if(data.done){
                 $("li.active a").click();
             }else{
-                alert(data.msg);
+                howToDo(data.dealMsg);
             }
+        },
+        error: function(err, data){
+            alert(data.msg);
         }
     });
 };
@@ -234,14 +249,21 @@ function DGet(myRole, myOper, dataType){
         data: {},
         dataType: dataType,
         success: function(data) {
-            $("#right_sidebar .content").html(data);
-            $("#rightSidebarForm").validate();   
-            <!-- Page Script -->
-            //Add text editor
-            $(".textarea").each(function() {
-                $(this).wysihtml5();
-            });
-            rightLayer.show();
+            if(data.done){           
+                $("#right_sidebar .content").html(data.html);
+                $("#rightSidebarForm").validate();   
+                <!-- Page Script -->
+                //Add text editor
+                $(".textarea").each(function() {
+                    $(this).wysihtml5();
+                });
+                rightLayer.show();
+            }else{
+                howToDo(data.dealMsg);
+            }
+        },
+        error: function(err, data){
+             $("#right_sidebar .content").html(data.html);
         }
     });
 }
@@ -258,8 +280,11 @@ function DPost(myRole, myOper){
                 $("li.active a").click();
                 rightLayer.hide();
             }else{
-                alert(data.msg);
+                howToDo(data.dealMsg);
             }
+        },
+        error: function(err, data){
+             alert(data.msg);
         }
     });
 };
@@ -276,6 +301,13 @@ function unlock(){
                 $("#lockForm").find("#password").attr("placeholder", data.msg);
             }
             $("#lockForm").find("#password").val("");
+        },
+        error: function(err, data){
+             alert(data.msg);
         }
     });
 }
+
+function howToDo(dealMsg){
+    debugger;
+};

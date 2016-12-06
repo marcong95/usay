@@ -11,6 +11,14 @@ let app = express();
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
+router.get("/*", function(req, res, next) {
+    if(!req.session.manager) res.redirect("/manager/login");
+    next();
+});
+router.get("/*", function(req, res, next) {
+    if(!req.session.manager) res.send({"done": false, "dealMsg": {"state": "notLogin", "msg": "Not login"}});
+    next();
+});
 
 /* GET User page. */
 router.get('/ajax', function(req, res, next) {
@@ -54,7 +62,7 @@ router.get('/ajax', function(req, res, next) {
                 html: html,
                 table:{
                     id: "table",
-                    noSortArr: [2]
+                    noSortArr: [7]
                 },
                 done: true
             });
