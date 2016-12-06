@@ -1,11 +1,11 @@
 const co = require('co')
 const debug = require('debug')('usay:database')
 const mongoose = require('mongoose')
-
 const config = require('../configs/global')
 const CONST = require('./constants')
 const db = require('./db')
 const pwd = require('./password')
+const Post = require('./post')
 
 const userSchema = mongoose.Schema({
   username: String,
@@ -24,7 +24,7 @@ const userSchema = mongoose.Schema({
     created: Date
   }],
   upvoteds: [{
-    to: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    to: { type: mongoose.Schema.Types.ObjectId, ref: 'Post' },
     created: Date
   }],
   followeds: [{
@@ -130,6 +130,65 @@ User.getUsers = function(condition, projection, skip, limit, pure) {
       .catch(reject)
   })
 }
+
+// favourites, upvoted, followeds, followers
+
+User.prototype.favourite = function(post) {
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let postId
+      if (post instanceof Post) {
+        postId = post._id
+      } else if (post instanceof String) {
+        postId = mongoose.Types.ObjectId(post)
+      } else if (post instanceof Object && post._id) {
+        postId = mongoose.Types.Objectid(post._id)
+      } else {
+        throw new Error("Cannot cast from " + Object.getPrototypeOf(post) + " to ObjectId")
+      }
+      this._model.favourites.push(postId)
+      yield this._model.save()
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
+
+User.prototype.getFavouritePosts = function() {
+  return new Promise((resolve, reject) => {
+    co(function*() {
+
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
+
+User.prototype.getUpvotedPosts = function() {
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
+
+User.prototype.getFollowedUsers = function() {
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
+
+User.prototype.getFollowers = function() {
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
+
 
 User.prototype.modify = function(key, value) {
   if (key == 'password') {

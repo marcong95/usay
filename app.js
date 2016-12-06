@@ -79,7 +79,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500)
   if (req.header('X-Requested-With') === 'XMLHttpRequest') {
     // an ajax request, response with JSON
-    console.log('error when ajaxing')
     res.render('error', function(err, html) {
       res.send({
         msg: res.locals.message,
