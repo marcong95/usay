@@ -21,7 +21,8 @@ router.post('/', multiparty(), function(req, res) {
     })
     rs.on('end', function(chunk) {
         let digested = hash.digest('hex')
-        let fileExt = f.name.replace('.*\.(?=\w+)', '')
+        let fileExt = f.name.replace(/.*(?=\.\w+)/, '')
+        debug(f.name + ': ' + fileExt)
         let newName = imgPath + digested + fileExt
         ws.close()
         fs.rename(imgPath + f.name, newName)
