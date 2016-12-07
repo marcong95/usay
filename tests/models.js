@@ -11,22 +11,53 @@ let scripts = {
     yield User.register('marco', 'LongLiveChina')
     return yield User.login('mraco', 'LongLiveChina')
   },
+
   modify: function*() {
     let user = yield User.login('marco', 'LongLiveChina')
     return yield user.modify('bio', 'modify tested at ' + new Date().toString())
   },
-  getUsers: function* () {
+
+  favourite: function*() {
+    let user = yield User.login('lucio', 'DropTheBeat')
+    let post = yield Post.getPostById('58451e3cfee2c81fd099ae68')
+    yield user.favourite(post)
+    debug('after favouriting:')
+    debug(user)
+    yield user.unfavourite(post)
+    return user
+  },
+
+  upvote: function*() {
+    let user = yield User.login('lucio', 'DropTheBeat')
+    let post = yield Post.getPostById('58451e3cfee2c81fd099ae68')
+    yield user.upvote(post)
+    debug('after upvoting:')
+    debug(user)
+    yield user.unupvote(post)
+    return user
+  },
+
+  getUserInfo: function*() {
+    let user = (yield User.getUsers({username: 'reinhardt' }))[0]
+    user.posts = yield user.getPosts()
+    return user
+  },
+
+  getUsers: function*() {
     return yield User.getUsers({}, {}, 1, 2)
   },
+  
   post: function*() {
     let user = yield User.login('reinhardt', 'HammerDown')
     return yield Post.addPost(user, 'Hey, get behind me!')
   },
+
   getPostById: function*() {
     let post = yield Post.getPostById('58451e3cfee2c81fd099ae68')
     debug(Object.getPrototypeOf(post._id))
     return post
   },
+
   getPosts: function*() {
     let user = yield User.login('reinhardt', 'HammerDown')
     return yield Post.getPosts({ poster: user._id })

@@ -19,7 +19,7 @@ rl.question('Running this program will DROP database `usay` in the MongoDB ' +
     co(function*() {
       yield db.dropDatabase()
       let lucio = yield User.register('lucio', 'DropTheBeat')
-      yield lucio.modify('bio', 'Oh, let\'s break it down! !')
+      yield lucio.modify('bio', 'Oh, let\'s break it down!')
       let reinhardt = yield User.register('reinhardt', 'HammerDown')
       yield reinhardt.modify('bio', 'Ah, get behind me!')
       let junkrat = yield User.register('junkrat', 'FireInTheHole')

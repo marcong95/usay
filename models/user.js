@@ -133,60 +133,94 @@ User.getUsers = function(condition, projection, skip, limit, pure) {
 
 // favourites, upvoted, followeds, followers
 
+User.prototype.getPosts = function() {
+  return Post.getPosts( { poster: this._id } )
+}
+
 User.prototype.favourite = function(post) {
+  let that = this
   return new Promise((resolve, reject) => {
     co(function*() {
-      let postId
-      if (post instanceof Post) {
-        postId = post._id
-      } else if (post instanceof String) {
-        postId = mongoose.Types.ObjectId(post)
-      } else if (post instanceof Object && post._id) {
-        postId = mongoose.Types.Objectid(post._id)
-      } else {
-        throw new Error("Cannot cast from " + Object.getPrototypeOf(post) + " to ObjectId")
+      let postId = Post._unifyId(post)
+      that.favourites.push(postId)
+      that._model.favourites.push(postId)
+      yield that._model.save()
+      return that
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
+
+User.prototype.unfavourite = function(post) {
+  let that = this
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let postId = Post._unifyId(post)
+      let indexToDelete = that.favourites.findIndex(elmt => elmt == postId)
+      if (indexToDelete >= 0) {
+        that.favourites.splice(indexToDelete, 1)
+        that._model.favourites.splice(indexToDelete, 1)
       }
-      this._model.favourites.push(postId)
-      yield this._model.save()
+      yield that._model.save()
+      return that
     }).then(resolve, reject)
       .catch(reject)
   })
 }
 
 User.prototype.getFavouritePosts = function() {
+  return Post.getPosts({ _id: { $in: this.favourites }})
+}
+
+User.prototype.upvote = function(post) {
+  let that = this
   return new Promise((resolve, reject) => {
     co(function*() {
+      let postId = Post._unifyId(post)
+      that.upvoteds.push(postId)
+      that._model.upvoteds.push(postId)
+      yield that._model.save()
+      return that
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
 
+User.prototype.unupvote = function(post) {
+  let that = this
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let postId = Post._unifyId(post)
+      let indexToDelete = that.upvoteds.findIndex(elmt => elmt == postId)
+      if (indexToDelete >= 0) {
+        that.upvoteds.splice(indexToDelete, 1)
+        that._model.upvoteds.splice(indexToDelete, 1)
+      }
+      yield that._model.save()
+      return that
     }).then(resolve, reject)
       .catch(reject)
   })
 }
 
 User.prototype.getUpvotedPosts = function() {
-  return new Promise((resolve, reject) => {
-    co(function*() {
-      
-    }).then(resolve, reject)
-      .catch(reject)
-  })
+  return Post.getPosts({ _id: { $in: this.upvoteds }})
+}
+
+User.prototype.follow = function(user) {
+  
+}
+
+User.prototype.unfollow = function(user) {
+
 }
 
 User.prototype.getFollowedUsers = function() {
-  return new Promise((resolve, reject) => {
-    co(function*() {
-      
-    }).then(resolve, reject)
-      .catch(reject)
-  })
+  return Post.getPosts({ _id: { $in: this.followeds }})
 }
 
 User.prototype.getFollowers = function() {
-  return new Promise((resolve, reject) => {
-    co(function*() {
-      
-    }).then(resolve, reject)
-      .catch(reject)
-  })
+  return Post.getPosts({ _id: { $in: this.followers }})
 }
 
 
