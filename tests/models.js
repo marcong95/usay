@@ -37,6 +37,16 @@ let scripts = {
     return user
   },
 
+  follow: function*() {
+    let lucio = yield User.login('lucio', 'DropTheBeat')
+    let reinhardt = (yield User.getUsers({username: 'reinhardt'}))[0]
+    yield lucio.follow(reinhardt)
+    debug(lucio)
+    reinhardt = yield User.getUsers({username: 'reinhardt'})  // fetch again
+    debug(reinhardt)
+    return {}
+  },
+
   getUserInfo: function*() {
     let user = (yield User.getUsers({username: 'reinhardt' }))[0]
     user.posts = yield user.getPosts()

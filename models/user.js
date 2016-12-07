@@ -131,6 +131,20 @@ User.getUsers = function(condition, projection, skip, limit, pure) {
   })
 }
 
+User._unifyId = function(user) {
+  if (user instanceof User) {
+    return user._id
+  } else if (user instanceof String) {
+    return mongoose.Types.ObjectId(user)
+  } else if (user instanceof Object && user._id) {
+    return mongoose.Types.Objectid(user._id)
+  } else {
+    debug(user instanceof User)
+    throw new Error("Cannot cast from " + user.constructor.name + 
+      " to ObjectId")
+  }
+}
+
 // favourites, upvoted, followeds, followers
 
 User.prototype.getPosts = function() {
@@ -208,7 +222,21 @@ User.prototype.getUpvotedPosts = function() {
 }
 
 User.prototype.follow = function(user) {
-  
+  let that = this
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let userId = User._unifyId(user)
+      that.followeds.push(userId)
+      that._model.followeds.push(userId)
+      yield that._model.save()
+      let followedUser = yield User.getUserById(userId)
+      followedUser.followers.push(that._id)
+      followedUser._model.followers.push(that._id)
+      yield followedUser._model.save()
+      return that
+    }).then(resolve, reject)
+      .catch(reject)
+  })
 }
 
 User.prototype.unfollow = function(user) {
