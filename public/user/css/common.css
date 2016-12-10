@@ -300,3 +300,6 @@ body{
     margin: auto;
     max-width: 400px;
 }
+.post-form .kv-file-upload {
+    display: none;
+}

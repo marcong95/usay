@@ -1,8 +1,10 @@
    
-<div class="form-group">
+<div class="form-group post-form">
     <input id="file" type="file" multiple accept="image/*" class="file">
+    <input type="hidden" name="img_arr" id="img_arr">
 </div>
 <script>
+var img = [];
 $("#file").fileinput({
     language: 'zh', //设置语言
     uploadUrl: '/ajax/uploadimg', // you must set a valid URL here else you will get an error
@@ -11,7 +13,7 @@ $("#file").fileinput({
     maxFileCount: 6,
     maxFileSize: 1000,
     maxFilesNum: 10,     
-    showRemove: true,
+    showRemove: false,
     showCancel: false,
     showUpload: false, //是否显示上传按钮
     showCaption: false,//是否显示标题
@@ -19,8 +21,21 @@ $("#file").fileinput({
     dropZoneTitle: "图片预览区",
     slugCallback: function(filename) {
         return filename.replace('(', '_').replace(']', '_');
+    },
+}).on("fileuploaded", function(event, outData) {                   
+    //文件上传成功后返回的数据， 此处我只保存返回文件的id 
+    if(outData.response.done){
+        img.push(outData.response.url);
+    }else{
+        
     }
-});
+    if(img.length == outData.files.length){
+        $("#img_arr").val(img.join());
+        setTimeout(function(){
+            uploadAfterImg();
+        }, 0);
+    }
+}); 
 
 //初始化fileinput控件（第一次初始化）
 /*$('#file').fileinput({

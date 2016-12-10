@@ -25,8 +25,10 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
     debug(req.body)
     var content = req.body.content;
-    var img = [];
-    console.log(content);
+    var img = req.body.img_arr.split(",").map(function(elem){
+        return {url: elem}
+    });
+    console.log(content, img);
     //检验用户输入
     if(content == undefined || content == ''){
         res.send({

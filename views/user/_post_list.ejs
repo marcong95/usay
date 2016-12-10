@@ -9,8 +9,8 @@
         </h1> 
         <div class="content"> 
             <a class="detail" href="/user/post_view"><%= post.content %></a> 
-            <div class="picture"> 
-                <img src="../../../common/images/picture/test2.jpg" width="32%"><img src="../../../common/images/picture/test2.jpg" width="32%"><img src="../../../common/images/picture/test2.jpg" width="32%"><img src="../../../common/images/picture/test2.jpg" width="32%"><img src="../../../common/images/picture/test2.jpg" width="32%"><img src="../../../common/images/picture/test2.jpg" width="32%"> 
+            <div class="picture">
+                <% for(let i=0, len=post.images.length; i<len; i++){ var image = post.images[i]; %><!-- for1-1 --><img src="<%= image.url %>" width="32%"><% } %><!-- end for1-1 -->
             </div> 
         </div> 
         <div class="bottom" data-postId="123"> 
@@ -22,7 +22,7 @@
                     <a href="/user/user_view?userId=" class="from">姓名</a><span>:</span><a href="javascript:void(0)" onclick="toDelete(this)">示例文本本这是一个示例文本本这是一个示例文本本这是一个示例文本。</a> 
                 </li> 
                 <li class="comment-list-item"> 
-                    <a href="/user/user_view?userId=" class="from">姓名</a><span>回复</span><a href="/user/user_view?userId=" class="to">姓名</a><span>:</span><a href="javascript:void(0)" onclick="toReply(this, \'ta\')">这是一个示例文本这是一个示例文本本这是一个示例文本本这是一个示例文本本这是一个示例文本。</a> 
+                    <a href="/user/user_view?userId=" class="from">姓名</a><span>回复</span><a href="/user/user_view?userId=" class="to">姓名</a><span>:</span><a href="javascript:void(0)" onclick="toReply(this, 'ta')">这是一个示例文本这是一个示例文本本这是一个示例文本本这是一个示例文本本这是一个示例文本。</a> 
                 </li> 
             </ul> 
             <div class="operation"> 

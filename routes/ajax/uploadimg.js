@@ -5,10 +5,11 @@ const fs = require('fs')
 const multiparty = require('connect-multiparty')
 
 const router = express.Router()
+const savePath = "/common/images/picture/"
 const imgPath = __dirname + '/../../public/common/images/picture/'
 
 router.post('/', multiparty(), function(req, res) {
-    console.log(req.body, req.files)
+    //console.log(req.body, req.files)
     // ignore any file except the first one
     let f = req.files.file_data
     let rs = fs.createReadStream(f.path)
@@ -28,7 +29,7 @@ router.post('/', multiparty(), function(req, res) {
         fs.rename(imgPath + f.name, newName)
         res.send({
             done: true,
-            url: newName
+            url: savePath + digested + fileExt 
         })
     })
     debug('ReadStream event registered.')
