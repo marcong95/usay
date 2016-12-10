@@ -3,6 +3,7 @@ const debug = require('debug')('usay:database')
 const mongoose = require('mongoose')
 
 const config = require('../configs/global.js')
+const User = require('./user')
 
 const postSchema = mongoose.Schema({
   poster: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
@@ -85,6 +86,27 @@ Post._unifyId = function(post) {
     throw new Error("Cannot cast from " + Object.getPrototypeOf(post) + 
       " to ObjectId")
   }
+}
+
+Post.prototype.addComment = function(content, from, to) {
+  let that = this
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      debug(User)
+      debug(User._unifyId)
+      let comment = {
+        from: User._unifyId(from),
+        to: User._unifyId(to),
+        content,
+        created: new Date()
+      }
+      that.comments.push(comment)
+      that._model.comments.push(comment)
+      yield that._model.save()
+      return that
+    }).then(resolve, reject)
+      .catch(reject)
+  })
 }
 
 module.exports = Post

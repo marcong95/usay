@@ -71,6 +71,14 @@ let scripts = {
   getPosts: function*() {
     let user = yield User.login('reinhardt', 'HammerDown')
     return yield Post.getPosts({ poster: user._id })
+  },
+  
+  addComment: function*() {
+    let lucio = yield User.login('lucio', 'DropTheBeat')
+    // The code below uses destructing assignments
+    let [reinhardt] = yield User.getUsers({ username: 'reinhardt' })
+    let [post] = yield Post.getPosts({ poster: reinhardt._id }, 0, 1)
+    return yield post.addComment('Roger that.', lucio, reinhardt)
   }
 }
 
