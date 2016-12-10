@@ -21,7 +21,7 @@
                 <% if(post.upvotes){ %> 
                     <span class="like-start glyphicon glyphicon-heart-empty"></span>
                     <% for(let i=0, len=post.upvotes.length; i<len; i++){ var upvote = post.upvotes[i]; %><!-- for1-1 -->
-                    <a href="#">姓名,</a><a href="#">姓名</a><% } %><!-- end for1-1 -->
+                        <a href="">姓名,</a><a href="#">姓名</a><% } %><!-- end for1-1 -->
                 <% } %>
                  
             </div> 
@@ -29,7 +29,7 @@
                 <% if(post.comments){ %>   
                     <% for(let i=0, len=post.comments.length; i<len; i++){ var comment = post.comments[i]; %><!-- for1-1 -->
                     <li class="comment-list-item"> 
-                        <a href="/user/user_view?userId=<% comment.from %>" class="from">姓名</a><span>回复</span><a href="/user/user_view?userId=<% comment.to %>" class="to">姓名</a><span>:</span><a href="javascript:void(0)" onclick="toReply(this, 'ta')"><% comment.content %></a> 
+                        <a href="/user/user_view?userId=<% comment.from %>" class="from">姓名</a><% if(comment.to){ %><span>回复</span><a href="/user/user_view?userId=<% comment.to %>" class="to">姓名</a><% } %><span>:</span><a href="javascript:void(0)" onclick="toReply(this, 'ta')"><%= comment.content %></a> 
                     </li>     
                 
                     <% } %><!-- end for1-1 -->

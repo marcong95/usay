@@ -28,12 +28,13 @@ function renderPosts(){
         var bottom = $(this).closest(".bottom");
         var input = $(bottom).find(".say-input");
         $(this).bind("click", function(){
-            checkSession();
-            $(".operation .to-show").removeClass("to-show");
-            input.addClass("to-show");
-            $(bottom).find(".say").attr("data-to", "");
-            $(bottom).find(".toSay").attr("placeholder", "输入评论内容...");
-            input.find(".toSay").focus();
+            checkSession(function(){
+                $(".operation .to-show").removeClass("to-show");
+                input.addClass("to-show");
+                $(bottom).find(".say").attr("data-to", "");
+                $(bottom).find(".toSay").attr("placeholder", "输入评论内容...");
+                input.find(".toSay").focus();
+            });
         });
         input.find(".say").bind("click", function(){
             var toSay = $(bottom).find(".toSay");
@@ -49,41 +50,41 @@ function renderPosts(){
                             <a href="javascript:void(0)" onclick="toDelete(this)">'
                         + content +
                       '</a></li>';
-            ajaxSay(
-                content,
-                postId,
-                userId,
-                function(){
-                    $(bottom).find(".comment-list").append(say);
-                }
-            );
-            toSay.val("");
-            $(bottom).find(".to-show").removeClass("to-show");
+             checkSession(function(){
+                 ajaxSay(
+                    content,
+                    postId,
+                    userId,
+                    function(){
+                        $(bottom).find(".comment-list").append(say);
+                    }
+                );
+                toSay.val("");
+                $(bottom).find(".to-show").removeClass("to-show");
+            });
         });
     });
     $(".operation .toFavorite").on("click", function(){
-        checkSession();
         var bottom = $(this).closest(".bottom");
         var like = '<a href="#">我,</a>';
-        checkSession();
-        ajaxFavorite(
-            postId,
-            function(){}
+        checkSession(ajaxFavorite(
+                postId,
+                function(){}
+            )
         );
     });
     
     $(".operation .toUpvote").on("click", function(){        
         checkSession();
         var bottom = $(this).closest(".bottom");
-        
-       var postId = $(bottom).attr("data-postid");
+        var postId = $(bottom).attr("data-postid");
         var like = '<a href="#">我,</a>';
-        ajaxUpvote(
+        checkSession(ajaxUpvote(
             postId,
             function(){
                 $(bottom).find(".like-start").after(like);
             }
-        );
+        ));
     });
 }
 

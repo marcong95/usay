@@ -70,11 +70,24 @@ function ajaxCancelFollow(userId, callback){
 }
 
 
-function checkSession(){
-    var username = $("#username").val();
-    if(!username){
-        location.href = "/user/login?url=" + encodeURI(location.pathname);
-    }
+function checkSession(callback){
+    $.ajax({
+        url: "/user/login/check",
+        type: "get",
+        data: {},
+        dataType: "json",
+        success: function(data){
+            if(data.done){
+                callback();
+            }else{
+                location.href = "/user/login?url="+encodeURI(location.href);
+            }
+        },
+        error:function(err, data){
+            // alert("访问异常");
+            console.error('访问异常');
+        }
+    }); 
 }
 function queryUrl(key){
     var seg = location.search.replace(/^\?/,'').split('&');  

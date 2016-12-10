@@ -17,11 +17,11 @@ router.get('/', function(req, res, next) {
     });
 });
 
-router.get('/check_session', function(req, res, next) {
+router.get('/check', function(req, res, next) {
     if(req.session.user){
-        res.send(true);
+        res.send({ done:true} );
     }else{
-        res.send(false);
+        res.send({ done: false} );
     }
 });
 
