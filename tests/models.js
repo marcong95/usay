@@ -79,9 +79,14 @@ let scripts = {
     let [reinhardt] = yield User.getUsers({ username: 'reinhardt' })
     let [post] = yield Post.getPosts({ poster: reinhardt._id }, 0, 1)
     return yield post.addComment('Roger that.', lucio, reinhardt)
+  },
+
+  require: function*() {
+    let [reinhardt] = yield User.getUsers({ username: 'reinhardt' })
+    let [post] = yield Post.getPosts({ poster: reinhardt._id }, 0, 1)
+    post.requireTest()
   }
 }
-
 
 co(function*() {
   if (process.argv.length > 2) {
