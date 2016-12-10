@@ -105,22 +105,100 @@ router.post('/update', function(req, res, next) {
     }
 });
 
-router.post('/upvote', function(req, res, next) {
-    let user = req.session.user;
-    let postId = User._unifyId(req.body.postId);
-    let oper = req.body.oper;
-    if(oper == "add"){
-        console.log(user)
-        user.upvote(postId).then(function(){
-            console.log("ok")
-        }, function(){
-
+router.get('/postsStatus', function(req, res, next) {
+    let postIds = req.query.postIds.split(",");
+    let userId = req.session.user._id;
+    User.getUserById(userId).then(function(user) {
+        let favorites = user.favourites.map(function(elem, i){ return String(elem._id)})
+        let upvotes = user.upvoteds.map(function(elem, i){ return String(elem._id)})
+        let status = postIds.map(function(elem, i){
+            return {
+                postId: elem,
+                favorite: (favorites.indexOf(elem) > -1)?true:false,
+                upvote: (upvotes.indexOf(elem) > -1)?true:false
+            }
         });
+        res.send({
+            done: true,
+            status: status
+        })
+    }, console.log)
+
+});
+
+router.post('/upvote', function(req, res, next) {
+    let postId = Post._unifyId(req.body.postId);
+    let oper = req.body.oper;
+    let userId = req.session.user._id;
+    if(oper == "add"){
+        User.getUserById(userId).then(function(user) {
+            user.upvote(postId).then(function(data){
+                res.send({
+                    done: true,
+                    todo: "del"
+                })
+            }, function(err){
+                res.send({
+                    done: false,
+                    msg: err.toString()
+                })
+                console.log(arguments)
+            })
+        }, console.log)
     }else if(oper == "del"){
-        
+        User.getUserById(userId).then(function(user) {
+            user.unupvote(postId).then(function(data){
+                res.send({
+                    done: true,
+                    todo: "add"
+                })
+            }, function(err){
+                res.send({
+                    done: false,
+                    msg: err.toString()
+                })
+                console.log(arguments)
+            })
+        }, console.log)
     }
 });
 
+router.post('/favorite', function(req, res, next) {
+    let postId = Post._unifyId(req.body.postId);
+    let oper = req.body.oper;
+    let userId = req.session.user._id;
+    if(oper == "add"){
+        User.getUserById(userId).then(function(user) {
+            user.favorite(postId).then(function(data){
+                res.send({
+                    done: true,
+                    todo: "del"
+                })
+            }, function(err){
+                res.send({
+                    done: false,
+                    msg: err.toString()
+                })
+                console.log(arguments)
+            })
+        }, console.log)
+    }else if(oper == "del"){
+        User.getUserById(userId).then(function(user) {
+            user.unfavorite(postId).then(function(data){
+                res.send({
+                    done: true,
+                    todo: "add"
+                })
+            }, function(err){
+                res.send({
+                    done: false,
+                    msg: err.toString()
+                })
+                console.log(arguments)
+            })
+        }, console.log)
+    }
+});
 router.post('/comment', function(req, res, next) {
     let content = req.body.content;
     let postId = req.body.postId;
@@ -140,15 +218,13 @@ router.post('/comment', function(req, res, next) {
             console.log(arguments)
         })
     }, console.log)
-
 });
 router.post('/uncomment', function(req, res, next) {
-    let content = req.body.content;
     let postId = req.body.postId;
-    let userId = User._unifyId(req.body.userId);
-    console.log(postId)
+    let commentId = req.body.commentId;
+    console.log(postId, commentId)
     Post.getPostById(postId).then(function(post) {
-        post.addComment(content, req.session.user, userId).then(function(data){
+        post.removeComment(commentId).then(function(data){
             res.send({
                 done: true,
                 data: data
@@ -163,5 +239,6 @@ router.post('/uncomment', function(req, res, next) {
     }, console.log)
 
 });
+
 
 module.exports = router;

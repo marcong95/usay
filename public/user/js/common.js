@@ -38,11 +38,11 @@ function ajaxSay(content, postId, userId, callback) {
         }
     });
 }
-function ajaxDelSay(commentId, callback) {
+function ajaxDelSay(commentId, postId, callback) {
     $.ajax({
         url: "/ajax/user/uncomment",
         type: "post",
-        data: {commentId: commentId},
+        data: {commentId: commentId, postId:postId},
         dataType: "json",
         success: function(data){
             if(data.done){
@@ -65,7 +65,7 @@ function ajaxFavorite(postId, oper, callback) {
         dataType: "json",
         success: function(data){
             if(data.done){
-                callback();
+                callback(data.todo);
             }else{
             }
         },
@@ -83,7 +83,7 @@ function ajaxUpvote(postId, oper, callback){
         dataType: "json",
         success: function(data){
             if(data.done){
-                callback();
+                callback(data.todo);
             }else{
             }
         },
@@ -117,8 +117,28 @@ function ajaxCancelFollow(userId, callback){
     callback();
 }
 
+function ajaxGetStatus(postIds, callback) {
+    var postIdStr = postIds.toArray().join();
+    $.ajax({
+        url: "/ajax/user/postsStatus",
+        type: "get",
+        data: {postIds: postIdStr},
+        dataType: "json",
+        success: function(data){
+            if(data.done){
+                callback(data.status);
+            }else{
+            }
+        },
+        error:function(err, data){
+            // alert("访问异常");
+            
+            console.error('访问异常');
+        }
+    });
+}
 
-function checkSession(cb){
+function checkSession(cb, cb2){
     $.ajax({
         url: "/user/login/check",
         type: "get",
@@ -128,7 +148,11 @@ function checkSession(cb){
             if(data.done){
                 cb();
             }else{
-                location.href = "/user/login?url="+encodeURI(location.href);
+                if(cb2){
+                    cb2();
+                }else{
+                    location.href = "/user/login?url="+encodeURI(location.href);
+                }
             }
         },
         error:function(err, data){

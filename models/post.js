@@ -76,7 +76,7 @@ Post.getPosts = function(condition, skip, limit) {
   })
 }
 
-Post._unifyId = function(post) {
+/*Post._unifyId = function(post) {
   if (post instanceof Post) {
     return post._id
   } else if (typeof post === 'undefined') {
@@ -89,6 +89,23 @@ Post._unifyId = function(post) {
     return mongoose.Types.Objectid(post._id)
   } else {
     throw new Error("Cannot cast from " + Object.getPrototypeOf(post) + 
+      " to ObjectId")
+  }
+}*/
+Post._unifyId = function(post) {
+  if (post instanceof Post) {
+    return post._id
+  } else if (post === '') {
+    return null
+  } else if (typeof post === 'string' || post instanceof String) {
+    return mongoose.Types.ObjectId(post)
+  } else if (post instanceof Object && post._id) {
+    return mongoose.Types.ObjectId(post._id)
+  } else if (typeof post === 'undefined') {
+    return undefined
+  } else {
+    debug(post instanceof Oost)
+    throw new Error("Cannot cast from " + user.constructor.name + 
       " to ObjectId")
   }
 }

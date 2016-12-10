@@ -10,6 +10,7 @@ var page = {
 $(document).ready(function(){
     renderPosts();
     showPagination("#m_pag", page);
+    checkSession(function(){renderList()}, function(){})
 })
 
 //获取某页的数据
@@ -24,6 +25,7 @@ function toPage(currentPage){
     $("#post_list").html(html);
     renderPosts();
     showPagination("#m_pag", page);
+    checkSession(function(){renderList()}, function(){})
 }
 
 //渲染新增的分享
@@ -72,13 +74,21 @@ function renderPosts(){
     });
     $(".operation .toFavorite").on("click", function(){
         var bottom = $(this).closest(".bottom");
+        var postId = $(bottom).attr("data-postid");
         var oper = $(this).attr("data-oper");
-        var like = '<a href="#">我,</a>';
+        var that = this;
         checkSession(function(){
                 ajaxFavorite(
                     postId,
                     oper,
-                    function(){}
+                    function(todo){
+                        $(that).attr("data-oper", todo)
+                        if(todo == "del"){
+                            $(that).addClass("active")
+                        }else{
+                            $(that).removeClass("active")
+                        }
+                    }
                 )
             }
         );
@@ -86,20 +96,51 @@ function renderPosts(){
     
     $(".operation .toUpvote").on("click", function(){
         var bottom = $(this).closest(".bottom");
+        var postId = $(bottom).attr("data-postid");
         var like = '<a href="#">我,</a>';
         var oper = $(this).attr("data-oper");
+        var that = this;
         checkSession(function(){
                 ajaxUpvote(
                     postId,
                     oper,
-                    function(){
-                        $(bottom).find(".like-start").after(like);
+                    function(todo){
+                        $(that).attr("data-oper", todo)
+                        if(todo == "del"){
+                            $(that).addClass("active")
+                            $(bottom).find(".like-start").after(like);
+                        }else{
+                            $(that).removeClass("active")
+                        }
                     }
                 )
             }
         );
     });
 }
+
+/*当用户登录时，渲染列表*/
+function renderList(){
+    var postIds = $(".bottom").map(function(i, elem){ return $(elem).attr("data-postid")});
+    if(postIds.length > 0){
+        ajaxGetStatus(postIds, function(status){
+            status.forEach(function(e, i){
+                if(e.favorite || e.upvote){
+                    var t = $(".bottom[data-postid=" + e.postId +  "]");
+                    if(e.favorite){
+                        t.find(".toFavorite").addClass("active")
+                        t.find(".toFavorite").attr("data-oper", "del")
+                    }
+                    if(e.upvote)
+                        t.find(".toUpvote").addClass("active")
+                        t.find(".toUpvote").attr("data-oper", "del")
+                }
+                
+            })
+        })
+    }
+}
+
 
 function toSearch(){
     console.log("heh");
@@ -114,9 +155,12 @@ function toReply(elem, toId, toName) {
 function toDelete(elem, commentId) {
     var sure = confirm("删除", "删除评论？");
     if(sure){
+        var bottom = $(elem).closest(".bottom");
+        var postId = $(bottom).attr("data-postid");
         checkSession(function(){
             ajaxDelSay(
                 commentId,
+                postId,
                 function(){
                     $(elem).closest(".comment-list-item").remove();
                 }

@@ -156,11 +156,10 @@ User.prototype.getPosts = function() {
   return Post.getPosts( { poster: this._id } )
 }
 
-User.prototype.favourite = function(post) {
+User.prototype.favorite = function(postId) {
   let that = this
   return new Promise((resolve, reject) => {
     co(function*() {
-      let postId = Post._unifyId(post)
       that.favourites.push(postId)
       that._model.favourites.push(postId)
       yield that._model.save()
@@ -170,11 +169,10 @@ User.prototype.favourite = function(post) {
   })
 }
 
-User.prototype.unfavourite = function(post) {
+User.prototype.unfavorite = function(postId) {
   let that = this
   return new Promise((resolve, reject) => {
     co(function*() {
-      let postId = Post._unifyId(post)
       let indexToDelete = that.favourites.findIndex(elmt => elmt == postId)
       if (indexToDelete >= 0) {
         that.favourites.splice(indexToDelete, 1)
@@ -192,11 +190,10 @@ User.prototype.getFavouritePosts = function() {
 }
 
 
-User.prototype.upvote = function(post) {
+User.prototype.upvote = function(postId) {
   let that = this
   return new Promise((resolve, reject) => {
     co(function*() {
-      let postId = Post._unifyId(post)
       that.upvoteds.push(postId)
       that._model.upvoteds.push(postId)
       yield that._model.save()
@@ -206,11 +203,10 @@ User.prototype.upvote = function(post) {
   })
 }
 
-User.prototype.unupvote = function(post) {
+User.prototype.unupvote = function(postId) {
   let that = this
   return new Promise((resolve, reject) => {
     co(function*() {
-      let postId = Post._unifyId(post)
       let indexToDelete = that.upvoteds.findIndex(elmt => elmt == postId)
       if (indexToDelete >= 0) {
         that.upvoteds.splice(indexToDelete, 1)
