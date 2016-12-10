@@ -115,4 +115,20 @@ Post.prototype.addComment = function(content, from, to) {
   })
 }
 
+Post.prototype.removeComment = function(commentId) {
+  let that = this
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let indexToDelete = that.comments.findIndex(elmt => elmt._id == commentId)
+      if (indexToDelete >= 0) {
+        that.comments.splice(indexToDelete, 1)
+        that._model.comments.splice(indexToDelete, 1)
+        yield that._model.save()
+      }
+      return that
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
+
 module.exports = Post

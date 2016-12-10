@@ -89,6 +89,12 @@ let scripts = {
     let [reinhardt] = yield User.getUsers({ username: 'reinhardt' })
     let [post] = yield Post.getPosts({ poster: reinhardt._id }, 0, 1)
     return yield post.addComment('Roger that.', lucio, reinhardt)
+  },
+  
+  removeComment: function*() {
+    let post = yield Post.getPostById('584c46fd3f47d7045490e696')
+    debug(post)
+    return yield post.removeComment('584c472e3f47d7045490e698')
   }
 }
 
