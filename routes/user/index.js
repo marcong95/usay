@@ -11,7 +11,7 @@ const router = express.Router()
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    var condition = {},skip=0, limit=100;
+    var condition = {}, skip=0, limit=100;
     Post.getPosts(condition, skip, limit).then(
         function(data) {
             for(var elmt of data){
@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
                 }
                 elmt.created = moment(elmt.created).format('YYYY/MM/DD HH:mm')
             }
-            console.log(data);
+            // console.log(data);
             res.render('user/index', {
                 title: 'Home',
                 index: 'index',

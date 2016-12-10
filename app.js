@@ -87,6 +87,7 @@ app.use(function(err, req, res, next) {
     })
   } else {
     // a synchorized request, render the error page
+    console.log(err)
     res.render('error')
   }
   

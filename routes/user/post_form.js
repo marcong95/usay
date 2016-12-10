@@ -23,6 +23,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
+    debug(req.body)
     var content = req.body.content;
     var img = [];
     console.log(content);
@@ -47,7 +48,7 @@ router.post('/', function(req, res, next) {
 			done: true
 		})
 	}, function(err) {
-    console.log(err);
+        console.log(err);
 		let respBody = { done: false }
 		switch(err) {
 			case CONST.ERR_USER_NOT_FOUND:
