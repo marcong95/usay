@@ -46,12 +46,15 @@ router.get('/', function(req, res, next) {
 let usernames = new Map()
 function getUsername(id) {
     return new Promise((resolve, reject) => {
-        if(usernames.has(id)) {
+        if (!id) {
+            resolve(null)
+        } else if (usernames.has(id)) {
             resolve(usernames.get(id))
         } else {
             co(function*() {
                 let user = yield User.getUserById(id)
                 usernames.set(id, user.username)
+                debug(id, user.username)
                 return user.username
             }).then(resolve, reject).catch(reject)
         }
