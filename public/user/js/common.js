@@ -19,6 +19,7 @@ $(document).ready(function(){
 });
 
 function ajaxSay(content, postId, userId, callback) {
+    if(userId == '') userId = null;
     $.ajax({
         url: "/ajax/user/comment",
         type: "post",
@@ -28,7 +29,7 @@ function ajaxSay(content, postId, userId, callback) {
             if(data.done){
                 callback(data);
             }else{
-                callback(data);
+                alert(data.msg)
             }
         },
         error:function(err, data){

@@ -27,6 +27,7 @@ router.get('/', function(req, res, next) {
             for (let cmt of post.comments) {
                 cmt.from = { _id: cmt.from, name: yield getUsername(cmt.from) }
                 cmt.to = { _id: cmt.to, name: yield getUsername(cmt.to) }
+                console.log(cmt.to)
             }
         }
         return posts
