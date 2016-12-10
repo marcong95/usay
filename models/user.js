@@ -227,6 +227,7 @@ User.prototype.getUpvotedPosts = function() {
   return Post.getPosts({ _id: { $in: this.upvoteds }})
 }
 
+
 User.prototype.follow = function(user) {
   let that = this
   return new Promise((resolve, reject) => {
@@ -246,7 +247,32 @@ User.prototype.follow = function(user) {
 }
 
 User.prototype.unfollow = function(user) {
-
+  let that = this
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let userId = User._unifyId(user)
+      // elmt: Object       elmt._id: String
+      // userId: ObjectId   userId.toString(): String
+      let followedToDelete = that.followeds.findIndex(
+        elmt => elmt._id == userId.toString())
+      if (followedToDelete >= 0) {
+        that.followeds.splice(followedToDelete, 1)
+        that._model.followeds.splice(followedToDelete, 1)
+        yield that._model.save()
+      }
+      let followedUser = yield User.getUserById(userId)
+      let followerToDelete = followedUser.followers.findIndex(
+        elmt => elmt._id == that._id.toString())
+      if (followerToDelete >= 0) {
+        followedUser.followers.splice(followerToDelete, 1)
+        followedUser._model.followers.splice(followerToDelete, 1)
+        yield followedUser._model.save()
+      }
+      debug(followedToDelete, followerToDelete)
+      return that
+    }).then(resolve, reject)
+      .catch(reject)
+  })
 }
 
 User.prototype.getFollowedUsers = function() {

@@ -3,7 +3,7 @@ const debug = require('debug')('usay:database')
 const mongoose = require('mongoose')
 
 const config = require('../configs/global')
-// const User = require('./user')
+// const User = 'DO NOT REQUIRE USER.JS HERE'
 
 const postSchema = mongoose.Schema({
   poster: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
@@ -61,10 +61,11 @@ Post.getPostById = function(postId) {
   })
 }
 
+// db.posts.aggregate({$unwind: '$comments'}, {$sort: {created: -1, 'comments.created': -1}}).pretty()
 Post.getPosts = function(condition, skip, limit) {
   return new Promise((resolve, reject) => {
     co(function*() {
-      let query = PostModel.find(condition)
+      let query = PostModel.find(condition).sort({ created: -1 })
       skip && query.skip(skip)
       limit && query.limit(limit)
       let posts = yield query.exec()

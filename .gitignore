@@ -28,3 +28,4 @@ node_modules/
 logs/
 logs/*.log
 public/common/images/*
+routes/user/index.js
