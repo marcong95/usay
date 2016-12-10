@@ -1,4 +1,3 @@
-var co = require('co');
 var express = require('express');
 var crypto = require('crypto');
 var User = require("../../models/user");
@@ -107,20 +106,18 @@ router.post('/update', function(req, res, next) {
 });
 
 router.post('/upvote', function(req, res, next) {
-    co(function*() {
-        let user = yield User.getUserById(req.session.user._id);
-        let postId = req.body.postId;
-        let oper = req.body.oper;
-        if(oper == "add"){
-            yield user.upvote(postId)
-        }else if(oper == "del"){
-            yield user.unupvote(postId)
-        }
-    }).then(function() {
-        res.send({
-            done: true
-        })
-    }, console.log)
+    let user = req.session.user;
+    let postId = req.body.postId;
+    let oper = req.body.oper;
+    if(oper == "add"){
+        user.upvote(postId).then(function(){
+            console.log("ok")
+        }, function(){
+
+        });
+    }else if(oper == "del"){
+        
+    }
 });
 
 router.post('/comment', function(req, res, next) {
@@ -130,8 +127,7 @@ router.post('/comment', function(req, res, next) {
     let oper = req.body.oper;
     if(oper == "add"){
         Post.getPostById(postId).then(function(post) {
-            post.addComment(content, User._unifyId(req.session.user), 
-                User._unifyId(userId)).then(function(data){
+            post.addComment(content, req.session.user, userId).then(function(data){
                 console.log("add")
                 res.send({
                     done: true,

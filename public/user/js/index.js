@@ -2,24 +2,29 @@ var postId = "";
 var userId = "";
 var page = {
     records: null,
-    currentPage: 1,
+    currentPage: 10,
     pageSize: 8,
-    totalPages: null,
+    totalPages: 100,
     isEnd: false
 };
 
 $(document).ready(function(){
     renderPosts();
+    showPagination("#m_pag", page);
 })
 
-//获取下一页的数据
-function nextPage(){
+//获取某页的数据
+function toPage(currentPage){
+    page.currentPage = currentPage;
     var posts = [1, 2, 3, 4, 5];
+    var html = "";
     for(var i=0, len=posts.length; i<len; i++) {
-        var postStr = getPostStr(posts[i]);
-        $("#post_list").append(postStr);
+        var userStr = getPostStr(posts[i]);
+        html += userStr;
     }
+    $("#post_list").html(html);
     renderPosts();
+    showPagination("#m_pag", page);
 }
 
 //渲染新增的分享
@@ -66,25 +71,33 @@ function renderPosts(){
     });
     $(".operation .toFavorite").on("click", function(){
         var bottom = $(this).closest(".bottom");
+        var oper = $(this).attr("data-oper");
         var like = '<a href="#">我,</a>';
-        checkSession(ajaxFavorite(
-                postId,
-                function(){}
-            )
+        checkSession(function(){
+                ajaxFavorite(
+                    postId,
+                    oper,
+                    function(){}
+                )
+            }
         );
     });
     
-    $(".operation .toUpvote").on("click", function(){        
-        checkSession();
+    $(".operation .toUpvote").on("click", function(){
         var bottom = $(this).closest(".bottom");
         var postId = $(bottom).attr("data-postid");
         var like = '<a href="#">我,</a>';
-        checkSession(ajaxUpvote(
-            postId,
-            function(){
-                $(bottom).find(".like-start").after(like);
+        var oper = $(this).attr("data-oper");
+        checkSession(function(){
+                ajaxUpvote(
+                    postId,
+                    oper,
+                    function(){
+                        $(bottom).find(".like-start").after(like);
+                    }
+                )
             }
-        ));
+        );
     });
 }
 

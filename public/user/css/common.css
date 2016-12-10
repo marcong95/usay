@@ -192,7 +192,8 @@ body{
 .comment-list-item a {
     padding: 0;
     margin: 0;
-    text-decoration: none;
+    text-decoration: none;    
+    word-wrap: break-word;
 }
 .comment-list-item span {
     margin: 0 3px;
@@ -302,4 +303,9 @@ body{
 }
 .post-form .kv-file-upload {
     display: none;
+}
+
+.page {
+    width: 100%;
+    text-align: center;
 }

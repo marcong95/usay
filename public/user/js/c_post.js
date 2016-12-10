@@ -4,23 +4,28 @@ var page = {
     records: null,
     currentPage: 1,
     pageSize: 8,
-    totalPages: null,
+    totalPages: 22,
     isEnd: false
 };
 
 $(document).ready(function(){
     renderPosts();
-    nextPage();
+    toPage(1);
+    showPagination("#m_pag", page);
 })
 
-//获取下一页的数据
-function nextPage(){
+//获取某页的数据
+function toPage(currentPage){
+    page.currentPage = currentPage;
     var posts = [1, 2, 3, 4, 5];
+    var html = "";
     for(var i=0, len=posts.length; i<len; i++) {
-        var postStr = getPostStr(posts[i]);
-        $("#post_list").append(postStr);
+        var userStr = getPostStr(posts[i]);
+        html += userStr;
     }
+    $("#post_list").html(html);
     renderPosts();
+    showPagination("#m_pag", page);
 }
 
 //渲染新增的分享

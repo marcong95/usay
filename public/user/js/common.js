@@ -38,15 +38,29 @@ function ajaxSay(content, postId, userId, callback) {
     });
 }
 
-function ajaxFavorite(postId, callback) {
-   // $.ajax();
-    callback();
+function ajaxFavorite(postId, oper, callback) {
+    $.ajax({
+        url: "/ajax/user/favorite",
+        type: "post",
+        data: {postId: postId, oper: oper},
+        dataType: "json",
+        success: function(data){
+            if(data.done){
+                callback();
+            }else{
+            }
+        },
+        error:function(err, data){
+            // alert("访问异常");
+            console.error('访问异常');
+        }
+    });
 }
-function ajaxUpvote(postId, callback){
+function ajaxUpvote(postId, oper, callback){
     $.ajax({
         url: "/ajax/user/upvote",
         type: "post",
-        data: {postId: postId, oper: "add"},
+        data: {postId: postId, oper: oper},
         dataType: "json",
         success: function(data){
             if(data.done){
@@ -62,15 +76,29 @@ function ajaxUpvote(postId, callback){
 }
 
 function ajaxFollow(postId, userId, callback) {
-   // $.ajax();
-    callback();
+    $.ajax({
+        url: "/ajax/user/upvote",
+        type: "post",
+        data: {postId: postId, oper: oper},
+        dataType: "json",
+        success: function(data){
+            if(data.done){
+                callback();
+            }else{
+            }
+        },
+        error:function(err, data){
+            // alert("访问异常");
+            console.error('访问异常');
+        }
+    });
 }
 function ajaxCancelFollow(userId, callback){
     callback();
 }
 
 
-function checkSession(callback){
+function checkSession(cb){
     $.ajax({
         url: "/user/login/check",
         type: "get",
@@ -78,7 +106,7 @@ function checkSession(callback){
         dataType: "json",
         success: function(data){
             if(data.done){
-                callback();
+                cb();
             }else{
                 location.href = "/user/login?url="+encodeURI(location.href);
             }
@@ -97,4 +125,32 @@ function queryUrl(key){
          if(s[0] == key) return s[1];  
      }  
      return null;  
+}
+function showPagination(target, page){
+    if(page.totalPages < 2) return;
+    var lis = "";
+    var len = 9;
+    if($("body").width() < 768){
+        len = 5;
+    }
+    var temp = (len-1)/2;
+    if(page.currentPage-temp<1){
+        temp = page.currentPage-1;
+    }else if(page.currentPage+4 > page.totalPages){
+        temp = len-1-page.totalPages+page.currentPage;
+    }
+    for(var i=0; i<len; i++){
+        if(i==0 && page.currentPage-temp > 1){
+            lis += '<li><a href="javascript:toPage('+Math.floor((page.currentPage-temp)/2)+')">&laquo;</a></li>';
+        }
+        if(i-temp == 0){
+            lis += '<li class="active"><a href="javascript:toPage('+(page.currentPage+i-temp)+')">'+(page.currentPage+i-temp)+'</a></li>';
+        }else{
+            lis += '<li><a href="javascript:toPage('+(page.currentPage+i-temp)+')">'+(page.currentPage+i-temp)+'</a></li>';
+        }
+        if(i==len-1 && (page.currentPage+i-temp < page.totalPages)){
+            lis += '<li><a href="javascript:toPage('+Math.ceil((page.totalPages+page.currentPage+i-temp)/2) +')">&raquo;</a></li>';
+        }
+    }
+    $(target).html(lis);
 }
