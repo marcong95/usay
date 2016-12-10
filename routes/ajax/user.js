@@ -130,7 +130,8 @@ router.post('/comment', function(req, res, next) {
     let oper = req.body.oper;
     if(oper == "add"){
         Post.getPostById(postId).then(function(post) {
-            post.addComment(content, req.session.user, userId).then(function(data){
+            post.addComment(content, User._unifyId(req.session.user), 
+                User._unifyId(userId)).then(function(data){
                 console.log("add")
                 res.send({
                     done: true,
