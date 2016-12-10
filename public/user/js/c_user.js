@@ -2,25 +2,30 @@ var postId = "";
 var userId = "";
 var page = {
     records: null,
-    currentPage: 1,
+    currentPage: 88,
     pageSize: 8,
-    totalPages: null,
+    totalPages: 100,
     isEnd: false
 };
 
 $(document).ready(function(){
     renderUsers();
-    nextPage();
+    toPage(1);
+    showPagination("#m_pag", page);
 })
 
-//获取下一页的数据
-function nextPage(){
+//获取某页的数据
+function toPage(currentPage){
+    page.currentPage = currentPage;
     var users = [1, 2, 3, 4, 5];
+    var html = "";
     for(var i=0, len=users.length; i<len; i++) {
         var userStr = getUserStr(users[i]);
-        $("#user_list").append(userStr);
+        html += userStr;
     }
+    $("#user_list").html(html);
     renderUsers();
+    showPagination("#m_pag", page);
 }
 
 //渲染新增的用户

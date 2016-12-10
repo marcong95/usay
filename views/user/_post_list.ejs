@@ -29,7 +29,7 @@
                 <% if(post.comments){ %>   
                     <% for(let i=0, len=post.comments.length; i<len; i++){ var comment = post.comments[i]; %><!-- for1-1 -->
                     <li class="comment-list-item"> 
-                        <a href="/user/user_view?userId=<% comment.from %>" class="from">姓名</a><% if(comment.to){ %><span>回复</span><a href="/user/user_view?userId=<% comment.to %>" class="to">姓名</a><% } %><span>:</span><a href="javascript:void(0)" onclick="toReply(this, 'ta')"><%= comment.content %></a> 
+                        <a href="/user/user_view?userId=<%= comment.from %>" class="from"><%= comment.from %></a><% if(comment.to){ %><span>回复</span><a href="/user/user_view?userId=<%= comment.to %>" class="to"><%= comment.to %></a><% } %><span>:</span><a href="javascript:void(0)" onclick="toReply(this, '<%= comment.to %>')"><%= comment.content %></a> 
                     </li>     
                 
                     <% } %><!-- end for1-1 -->
@@ -44,8 +44,8 @@
             <div class="operation"> 
                 <div class="operation-list f-cb"> 
 <a href="javascript:void(0)" class="toComment operation-list-item link-no-decaration glyphicon glyphicon-comment" role="button"></a> 
-<a href="javascript:void(0)" class="toFavorite operation-list-item link-no-decaration op-right glyphicon glyphicon-heart" role="button"></a> 
-<a href="javascript:void(0)" class="toUpvote operation-list-item link-no-decaration op-right glyphicon glyphicon-thumbs-up" role="button"></a> 
+<a href="javascript:void(0)" class="toFavorite operation-list-item link-no-decaration op-right glyphicon glyphicon-heart" role="button" data-oper="add"></a> 
+<a href="javascript:void(0)" class="toUpvote operation-list-item link-no-decaration op-right glyphicon glyphicon-thumbs-up" role="button"  data-oper="add"></a> 
                 </div> 
                 <div class="say-input temp-hide"> 
                   <div class="input-group"> 
@@ -59,3 +59,8 @@
     <% } %><!-- end for1 -->
  
 </ul>
+<div class="page">
+    <ul class="pagination" id="m_pag">
+
+    </ul>
+</div>

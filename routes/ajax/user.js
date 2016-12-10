@@ -107,7 +107,6 @@ router.post('/update', function(req, res, next) {
 
 router.post('/upvote', function(req, res, next) {
     let user = req.session.user;
-    console.log(user);
     let postId = req.body.postId;
     let oper = req.body.oper;
     if(oper == "add"){
