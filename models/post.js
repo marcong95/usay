@@ -2,7 +2,7 @@ const co = require('co')
 const debug = require('debug')('usay:database')
 const mongoose = require('mongoose')
 
-const config = require('../configs/global.js')
+const config = require('../configs/global')
 const User = require('./user')
 
 const postSchema = mongoose.Schema({
@@ -90,10 +90,9 @@ Post._unifyId = function(post) {
 
 Post.prototype.addComment = function(content, from, to) {
   let that = this
+  const User = require('./user')    // temporary fix for mysterious bug
   return new Promise((resolve, reject) => {
     co(function*() {
-      debug(User)
-      debug(User._unifyId)
       let comment = {
         from: User._unifyId(from),
         to: User._unifyId(to),

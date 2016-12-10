@@ -193,8 +193,9 @@ User.prototype.findUpvote = function(post, userId){
       return that
     }).then(resolve, reject)
       .catch(reject)
-  }) 
+  })
 }
+
 User.prototype.upvote = function(post) {
   let that = this
   return new Promise((resolve, reject) => {
@@ -282,4 +283,5 @@ User.prototype.toObject = function() {
   return this._model.toObject()
 }
 
+console.log('user.js required.')
 module.exports = User
