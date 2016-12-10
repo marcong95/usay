@@ -1,4 +1,5 @@
 const co = require('co')
+const debug = require('debug')('usay:server')
 const express = require('express');
 const CONST = require('../../models/constants')
 const cfg = require('../../configs/global')
@@ -58,7 +59,9 @@ router.post('/', function(req, res, next) {
 		return yield User.login(req.body.username, req.body.password)
 	}).then(function(user) {
 		req.session.user = user
-        console.log(user.prototype)
+        debug(req.session.user.constructor.name)
+        // debug(user)
+        // debug('User.prototype.upvote is', user.upvote.constructor.name)
 		res.send({
 			done: true,
 			url: "/",
@@ -75,7 +78,7 @@ router.post('/', function(req, res, next) {
 				break
 			default:
 				respBody.msg = '未知错误'
-				debug(err.toString() + ' returned when login with ' + req.body)
+				debug(err, 'returned when login with', req.body)
 				break
 		}
         res.send(respBody)
