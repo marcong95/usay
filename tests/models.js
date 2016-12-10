@@ -47,6 +47,16 @@ let scripts = {
     return {}
   },
 
+  unfollow: function*() {
+    let lucio = yield User.login('lucio', 'DropTheBeat')
+    let reinhardt = (yield User.getUsers({username: 'reinhardt'}))[0]
+    yield lucio.unfollow(reinhardt)
+    debug(lucio)
+    reinhardt = yield User.getUsers({username: 'reinhardt'})  // fetch again
+    debug(reinhardt)
+    return {}
+  },
+
   getUserInfo: function*() {
     let user = (yield User.getUsers({username: 'reinhardt' }))[0]
     user.posts = yield user.getPosts()
@@ -79,12 +89,6 @@ let scripts = {
     let [reinhardt] = yield User.getUsers({ username: 'reinhardt' })
     let [post] = yield Post.getPosts({ poster: reinhardt._id }, 0, 1)
     return yield post.addComment('Roger that.', lucio, reinhardt)
-  },
-
-  require: function*() {
-    let [reinhardt] = yield User.getUsers({ username: 'reinhardt' })
-    let [post] = yield Post.getPosts({ poster: reinhardt._id }, 0, 1)
-    post.requireTest()
   }
 }
 
