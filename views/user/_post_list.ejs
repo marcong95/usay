@@ -29,7 +29,7 @@
                 <% if(post.comments){ %>   
                     <% for(let i=0, len=post.comments.length; i<len; i++){ var comment = post.comments[i]; %><!-- for1-1 -->
                     <li class="comment-list-item"> 
-                        <a href="/user/user_view?userId=<%= comment.from._id %>" class="from"><%= comment.from.name %></a><% if(comment.to._id){ %><span>回复</span><a href="/user/user_view?userId=<%= comment.to._id %>" class="to"><%= comment.to.name %></a><% } %><span>:</span><a href="javascript:void(0)" onclick="<%if(user && comment.from._id == user._id){%>toDelete(this)<% }else{%>toReply(this, '<%= comment.from._id %>', '<%= comment.from.name %>')<%}%>"><%= comment.content %></a> 
+                        <a href="/user/user_view?userId=<%= comment.from._id %>" class="from"><%= comment.from.name %></a><% if(comment.to._id){ %><span>回复</span><a href="/user/user_view?userId=<%= comment.to._id %>" class="to"><%= comment.to.name %></a><% } %><span>:</span><a href="javascript:void(0)" onclick="<%if(user && comment.from._id == user._id){%>toDelete(this, "<%=comment._id%>")<% }else{%>toReply(this, '<%= comment.from._id %>', '<%= comment.from.name %>')<%}%>"><%= comment.content %></a> 
                     </li>     
                 
                     <% } %><!-- end for1-1 -->

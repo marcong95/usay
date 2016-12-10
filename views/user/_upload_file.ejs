@@ -23,13 +23,14 @@ $("#file").fileinput({
         return filename.replace('(', '_').replace(']', '_');
     },
 }).on("fileuploaded", function(event, outData) {                   
-    //文件上传成功后返回的数据， 此处我只保存返回文件的id 
+    //文件上传成功后返回的数据 
     if(outData.response.done){
         img.push(outData.response.url);
     }else{
         
     }
-    if(img.length == outData.files.length){
+    var files = outData.files.filter(function(elem){ return elem;});
+    if(img.length == files.length){
         $("#img_arr").val(img.join());
         setTimeout(function(){
             uploadAfterImg();

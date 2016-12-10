@@ -111,10 +111,17 @@ function toReply(elem, toId, toName) {
     $(bottom).find(".toSay")[0].placeholder = "回复:"+ toName;
 }
 
-function toDelete(elem) {
+function toDelete(elem, commentId) {
     var sure = confirm("删除", "删除评论？");
     if(sure){
-        $(elem).closest(".comment-list-item").remove();
+        checkSession(function(){
+            ajaxDelSay(
+                commentId,
+                function(){
+                    $(elem).closest(".comment-list-item").remove();
+                }
+            )
+        });
     }
 }
 //每个分享的模板

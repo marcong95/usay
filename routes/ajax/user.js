@@ -125,26 +125,43 @@ router.post('/comment', function(req, res, next) {
     let content = req.body.content;
     let postId = req.body.postId;
     let userId = User._unifyId(req.body.userId);
-    let oper = req.body.oper;
     console.log(postId)
-    if(oper == "add"){
-        Post.getPostById(postId).then(function(post) {
-            post.addComment(content, req.session.user, userId).then(function(data){
-                res.send({
-                    done: true,
-                    data: data
-                })
-            }, function(err){
-                res.send({
-                    done: false,
-                    msg: err.toString()
-                })
-                console.log(arguments)
+    Post.getPostById(postId).then(function(post) {
+        post.addComment(content, req.session.user, userId).then(function(data){
+            res.send({
+                done: true,
+                data: data
             })
-        }, console.log)
-    }else if(oper == "del"){
-        
-    }
+        }, function(err){
+            res.send({
+                done: false,
+                msg: err.toString()
+            })
+            console.log(arguments)
+        })
+    }, console.log)
+
+});
+router.post('/uncomment', function(req, res, next) {
+    let content = req.body.content;
+    let postId = req.body.postId;
+    let userId = User._unifyId(req.body.userId);
+    console.log(postId)
+    Post.getPostById(postId).then(function(post) {
+        post.addComment(content, req.session.user, userId).then(function(data){
+            res.send({
+                done: true,
+                data: data
+            })
+        }, function(err){
+            res.send({
+                done: false,
+                msg: err.toString()
+            })
+            console.log(arguments)
+        })
+    }, console.log)
+
 });
 
 module.exports = router;

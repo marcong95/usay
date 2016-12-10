@@ -23,7 +23,7 @@ function ajaxSay(content, postId, userId, callback) {
     $.ajax({
         url: "/ajax/user/comment",
         type: "post",
-        data: {content: content, postId: postId, userId: userId, oper: "add"},
+        data: {content: content, postId: postId, userId: userId},
         dataType: "json",
         success: function(data){
             if(data.done){
@@ -38,7 +38,25 @@ function ajaxSay(content, postId, userId, callback) {
         }
     });
 }
-
+function ajaxDelSay(commentId, callback) {
+    $.ajax({
+        url: "/ajax/user/uncomment",
+        type: "post",
+        data: {commentId: commentId},
+        dataType: "json",
+        success: function(data){
+            if(data.done){
+                callback(data);
+            }else{
+                alert(data.msg)
+            }
+        },
+        error:function(err, data){
+            // alert("访问异常");
+            console.error('访问异常');
+        }
+    });
+}
 function ajaxFavorite(postId, oper, callback) {
     $.ajax({
         url: "/ajax/user/favorite",
