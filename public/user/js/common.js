@@ -18,9 +18,24 @@ $(document).ready(function(){
     });
 });
 
-function ajaxSay(postId, userId, callback) {
-   // $.ajax();
-    callback();
+function ajaxSay(content, postId, userId, callback) {
+    $.ajax({
+        url: "/ajax/user/comment",
+        type: "post",
+        data: {content: content, postId: postId, userId: userId, oper: "add"},
+        dataType: "json",
+        success: function(data){
+            if(data.done){
+                callback(data);
+            }else{
+                callback(data);
+            }
+        },
+        error:function(err, data){
+            // alert("访问异常");
+            console.error('访问异常');
+        }
+    });
 }
 
 function ajaxFavorite(postId, callback) {
@@ -31,10 +46,9 @@ function ajaxUpvote(postId, callback){
     $.ajax({
         url: "/ajax/user/upvote",
         type: "post",
-        data: {postId: postId},
+        data: {postId: postId, oper: "add"},
         dataType: "json",
         success: function(data){
-            debugger;
             if(data.done){
                 callback();
             }else{

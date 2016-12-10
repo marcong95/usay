@@ -186,15 +186,7 @@ User.prototype.getFavouritePosts = function() {
   return Post.getPosts({ _id: { $in: this.favourites }})
 }
 
-User.prototype.findUpvote = function(post, userId){
-  let that = this
-  return new Promise((resolve, reject) => {
-    co(function*() {
-      return that
-    }).then(resolve, reject)
-      .catch(reject)
-  }) 
-}
+
 User.prototype.upvote = function(post) {
   let that = this
   return new Promise((resolve, reject) => {

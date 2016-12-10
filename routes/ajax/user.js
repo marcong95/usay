@@ -1,6 +1,7 @@
 var express = require('express');
 var crypto = require('crypto');
 var User = require("../../models/user");
+var Post = require("../../models/post");
 var router = express.Router();
 var path = require('path');
 var ejs = require('ejs');
@@ -105,15 +106,42 @@ router.post('/update', function(req, res, next) {
 });
 
 router.post('/upvote', function(req, res, next) {
+    let user = req.session.user;
+    console.log(user);
     let postId = req.body.postId;
-    let userId = req.session.user._id;
-    console.log(postId, "==" , userId);
-    User.findUpvote(postId, userId).then(function(){
-        console.log("ok")
-    }, function(){
+    let oper = req.body.oper;
+    if(oper == "add"){
+        user.upvote(postId).then(function(){
+            console.log("ok")
+        }, function(){
+
+        });
+    }else if(oper == "del"){
         
-    });
+    }
 });
 
+router.post('/comment', function(req, res, next) {
+    let content = req.body.content;
+    let postId = req.body.postId;
+    let userId = req.body.userId;
+    let oper = req.body.oper;
+    if(oper == "add"){
+        Post.addComment(content, postId, userId).then(function(data){
+            console.log("add")
+            res.send({
+                done: true,
+                data: data
+            })
+        }, function(err){
+            res.send({
+                done: false,
+                msg: err
+            })
+        })
+    }else if(oper == "del"){
+        
+    }
+});
 
 module.exports = router;

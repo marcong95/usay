@@ -58,6 +58,7 @@ router.post('/', function(req, res, next) {
 		return yield User.login(req.body.username, req.body.password)
 	}).then(function(user) {
 		req.session.user = user
+        console.log(user.prototype)
 		res.send({
 			done: true,
 			url: "/",

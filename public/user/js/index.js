@@ -37,14 +37,20 @@ function renderPosts(){
         });
         input.find(".say").bind("click", function(){
             var toSay = $(bottom).find(".toSay");
-            var text = toSay.val();
-            var to = $(bottom).find(".say").attr("data-to")?('<span>回复</span><a href="/user/user_view?userId=" class="to">'+$(bottom).find(".say").attr("data-to")+'</a>'):'';
+            var content = toSay.val();
+            var postId = $(bottom).attr("data-postid");
+            var toId = $(bottom).find(".say").attr("data-toId");
+            var to = "";
+            if(toId){
+               to = '<span>回复</span><a href="/user/user_view?userId=" class="to">'+$(bottom).find(".say").attr("data-to")+'</a>'
+            }
             var say = '<li class="comment-list-item"> \
-                        <a href="#" class="from">姓名</a>'+to+'<span>:</span> \
+                        <a href="/user/user_view" class="from">'+ $("#username").val() +'</a>'+to+'<span>:</span> \
                             <a href="javascript:void(0)" onclick="toDelete(this)">'
-                        + text +
+                        + content +
                       '</a></li>';
             ajaxSay(
+                content,
                 postId,
                 userId,
                 function(){
