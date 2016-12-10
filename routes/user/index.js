@@ -25,8 +25,8 @@ router.get('/', function(req, res, next) {
                 post.poster.avatar = cfg.user.defaultAvatar
             }
             for (let cmt of post.comments) {
-                cmt.from = { _id: cmt.from, name: getUsername(cmt.from) }
-                cmt.to = { _id: cmt.to, name: getUsername(cmt.to) }
+                cmt.from = { _id: cmt.from, name: yield getUsername(cmt.from) }
+                cmt.to = { _id: cmt.to, name: yield getUsername(cmt.to) }
             }
         }
         return posts
@@ -43,9 +43,19 @@ router.get('/', function(req, res, next) {
         .catch(console.log);
 });
 
-let usernames = {}
+let usernames = new Map()
 function getUsername(id) {
-    return 'USER'
+    return new Promise((resolve, reject) => {
+        if(usernames.has(id)) {
+            resolve(usernames.get(id))
+        } else {
+            co(function*() {
+                let user = yield User.getUserById(id)
+                usernames.set(id, user.username)
+                return user.username
+            }).then(resolve, reject).catch(reject)
+        }
+    })
 }
 
 module.exports = router;
