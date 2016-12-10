@@ -83,8 +83,8 @@ Post._unifyId = function(post) {
   } else if (post instanceof Object && post._id) {
     return mongoose.Types.Objectid(post._id)
   } else {
-    throw new Error("Cannot cast from " + Object.getPrototypeOf(post) + 
-      " to ObjectId")
+    //throw new Error("Cannot cast from " + Object.getPrototypeOf(post) + 
+      //" to ObjectId")
   }
 }
 

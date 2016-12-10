@@ -1,7 +1,11 @@
 $(document).ready(function() {
     $.validator.setDefaults({
         submitHandler: function() {
-            $(".glyphicon-upload").click()
+            if($(".glyphicon-upload").length){
+                $(".glyphicon-upload").click()
+            }else{
+                uploadAfterImg();
+            }
         }
     });
     // validate signup form on keyup and submit
@@ -26,7 +30,7 @@ function uploadAfterImg(){
         dataType: "json",
         success: function(data){
             if(data.done){
-                //location.href = "/user/index";
+                location.href = "/user/index";
             }else{
                 $("#tip").html(data.msg);
                 $(".return-tip").removeClass("hidden");
