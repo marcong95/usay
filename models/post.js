@@ -78,13 +78,17 @@ Post.getPosts = function(condition, skip, limit) {
 Post._unifyId = function(post) {
   if (post instanceof Post) {
     return post._id
-  } else if (post instanceof String) {
+  } else if (typeof post === 'undefined') {
+    return undefined
+  } else if (post === '') {
+    return null
+  } else if (typeof Post == 'string' || post instanceof String) {
     return mongoose.Types.ObjectId(post)
   } else if (post instanceof Object && post._id) {
     return mongoose.Types.Objectid(post._id)
   } else {
-    //throw new Error("Cannot cast from " + Object.getPrototypeOf(post) + 
-      //" to ObjectId")
+    throw new Error("Cannot cast from " + Object.getPrototypeOf(post) + 
+      " to ObjectId")
   }
 }
 

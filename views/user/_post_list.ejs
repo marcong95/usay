@@ -2,7 +2,7 @@
     <% for(let i=0, len=postList.length; i<len; i++){ var post = postList[i]; %><!-- for1 -->
     <li class="list-group-item post-item"> 
         <h1 class="author"> 
-            <a href="/user/user_view?id=<%= post.poster._id %>"><img src="<%= post.poster.avator %>"> 
+            <a href="/user/user_view?id=<%= post.poster._id %>"><img src="<%= post.poster.avatar %>"> 
             <%= post.poster.username %> 
             </a> 
             <small><%= post.created %></small> 

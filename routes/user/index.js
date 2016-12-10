@@ -11,30 +11,32 @@ const router = express.Router()
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    var condition = {}, skip=0, limit=100;
-    Post.getPosts(condition, skip, limit).then(
-        function(data) {
-            for(var elmt of data){
-                elmt.poster = {
-                    _id: elmt.poster,
-                    username: "name",
-                    avator: "/common/images/avator/user2-160x160.jpg"
-                }
-                elmt.created = moment(elmt.created).format('YYYY/MM/DD HH:mm')
+    var condition = {}, skip = 0, limit = 100;
+    co(function*() {
+        // here needs optimization someday
+        let posts = yield Post.getPosts(condition, skip, limit)
+        for (let post of posts) {
+            post.poster = yield User.getUserById(post.poster)
+            post.created = moment(post.created).format('YYYY/MM/DD HH:mm')
+            if (!post.poster.nickname) {
+                post.poster.nickname = post.poster.username
             }
-            console.log(data);
-            res.render('user/index', {
-                title: 'Home',
-                index: 'index',
-                toSearch: true,
-                postList: data,
-                user: req.session.user
-            });
-        },
-        function(err){
-            console.log(err);
+            if (!post.poster.avatar) {
+                post.poster.avatar = cfg.user.defaultAvatar
+            }
         }
-    );
+        return posts
+    }).then(function(data) {
+        debug(data)
+        res.render('user/index', {
+            title: 'Home',
+            index: 'index',
+            toSearch: true,
+            postList: data,
+            user: req.session.user
+        })
+    }, console.log)
+        .catch(console.log);
 });
 
 module.exports = router;

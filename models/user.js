@@ -132,11 +132,10 @@ User.getUsers = function(condition, projection, skip, limit, pure) {
 }
 
 User._unifyId = function(user) {
-  if(user == ''){
-      return null;
-  }
   if (user instanceof User) {
     return user._id
+  } else if (user === '') {
+    return null
   } else if (typeof user === 'string' || user instanceof String) {
     return mongoose.Types.ObjectId(user)
   } else if (user instanceof Object && user._id) {
