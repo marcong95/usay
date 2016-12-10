@@ -141,7 +141,11 @@ function showPagination(target, page){
     }
     for(var i=0; i<len; i++){
         if(i==0 && page.currentPage-temp > 1){
-            lis += '<li><a href="javascript:toPage('+Math.floor((page.currentPage-temp)/2)+')">&laquo;</a></li>';
+            var t = page.currentPage-10;
+            if(t < 1){
+                t = 1;
+            }
+            lis += '<li><a href="javascript:toPage('+t+')">&laquo;</a></li>';
         }
         if(i-temp == 0){
             lis += '<li class="active"><a href="javascript:toPage('+(page.currentPage+i-temp)+')">'+(page.currentPage+i-temp)+'</a></li>';
@@ -149,7 +153,10 @@ function showPagination(target, page){
             lis += '<li><a href="javascript:toPage('+(page.currentPage+i-temp)+')">'+(page.currentPage+i-temp)+'</a></li>';
         }
         if(i==len-1 && (page.currentPage+i-temp < page.totalPages)){
-            lis += '<li><a href="javascript:toPage('+Math.ceil((page.totalPages+page.currentPage+i-temp)/2) +')">&raquo;</a></li>';
+            var t = page.currentPage+10;
+            if(t > page.totalPages)
+                t = page.totalPages;
+            lis += '<li><a href="javascript:toPage('+ t +')">&raquo;</a></li>';
         }
     }
     $(target).html(lis);
