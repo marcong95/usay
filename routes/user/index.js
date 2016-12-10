@@ -24,10 +24,14 @@ router.get('/', function(req, res, next) {
             if (!post.poster.avatar) {
                 post.poster.avatar = cfg.user.defaultAvatar
             }
+            for (let cmt of post.comments) {
+                cmt.from = { _id: cmt.from, name: getUsername(cmt.from) }
+                cmt.to = { _id: cmt.to, name: getUsername(cmt.to) }
+            }
         }
         return posts
     }).then(function(data) {
-        debug(data)
+        // debug(data)
         res.render('user/index', {
             title: 'Home',
             index: 'index',
@@ -38,5 +42,10 @@ router.get('/', function(req, res, next) {
     }, console.log)
         .catch(console.log);
 });
+
+let usernames = {}
+function getUsername(id) {
+    return 'USER'
+}
 
 module.exports = router;

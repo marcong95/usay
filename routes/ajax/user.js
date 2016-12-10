@@ -1,3 +1,4 @@
+var co = require('co');
 var express = require('express');
 var crypto = require('crypto');
 var User = require("../../models/user");
@@ -106,19 +107,20 @@ router.post('/update', function(req, res, next) {
 });
 
 router.post('/upvote', function(req, res, next) {
-    let user = req.session.user;
-    console.log(user);
-    let postId = req.body.postId;
-    let oper = req.body.oper;
-    if(oper == "add"){
-        user.upvote(postId).then(function(){
-            console.log("ok")
-        }, function(){
-
-        });
-    }else if(oper == "del"){
-        
-    }
+    co(function*() {
+        let user = yield User.getUserById(req.session.user._id);
+        let postId = req.body.postId;
+        let oper = req.body.oper;
+        if(oper == "add"){
+            yield user.upvote(postId)
+        }else if(oper == "del"){
+            yield user.unupvote(postId)
+        }
+    }).then(function() {
+        res.send({
+            done: true
+        })
+    }, console.log)
 });
 
 router.post('/comment', function(req, res, next) {

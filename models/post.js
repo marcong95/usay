@@ -3,7 +3,7 @@ const debug = require('debug')('usay:database')
 const mongoose = require('mongoose')
 
 const config = require('../configs/global')
-const User = require('./user')
+// const User = require('./user')
 
 const postSchema = mongoose.Schema({
   poster: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
@@ -92,14 +92,16 @@ Post._unifyId = function(post) {
   }
 }
 
+// due to solving issues caused by circular dependency,
+// the type of `from` and `to` must be mongoose.Types.ObjectId,
+// which can converted by User._unifyId
 Post.prototype.addComment = function(content, from, to) {
   let that = this
-  const User = require('./user')    // temporary fix for mysterious bug
   return new Promise((resolve, reject) => {
     co(function*() {
       let comment = {
-        from: User._unifyId(from),
-        to: User._unifyId(to),
+        from,
+        to,
         content,
         created: new Date()
       }

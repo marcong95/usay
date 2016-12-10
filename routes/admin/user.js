@@ -377,7 +377,6 @@ router.post('/login', function(req, res, next) {
             return;
         
         }
-        req.session.user = {name: user.name};
         res.send({
             done: true,
             url: '/',

@@ -97,7 +97,8 @@ User.login = function(username, password) {
         user.lastOnline = new Date()
         yield user.save()
       }
-      return new User(user)
+      let ret = new User(user)
+      return ret
     }).then(resolve, reject)
       .catch(reject)
   })
