@@ -60,7 +60,7 @@ router.post('/', function(req, res, next) {
 		req.session.user = user
 		res.send({
 			done: true,
-			url: '/',
+			url: "/",
 			user: req.session.user
 		})
 	}, function(err) {

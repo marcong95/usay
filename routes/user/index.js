@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
                 }
                 elmt.created = moment(elmt.created).format('YYYY/MM/DD HH:mm')
             }
-            // console.log(data);
+            console.log(data);
             res.render('user/index', {
                 title: 'Home',
                 index: 'index',

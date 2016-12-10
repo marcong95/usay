@@ -10,20 +10,36 @@
         <div class="content"> 
             <a class="detail" href="/user/post_view"><%= post.content %></a> 
             <div class="picture">
-                <% for(let i=0, len=post.images.length; i<len; i++){ var image = post.images[i]; %><!-- for1-1 --><img src="<%= image.url %>" width="32%"><% } %><!-- end for1-1 -->
+                <% if(post.images){ %> 
+                    <% for(let i=0, len=post.images.length; i<len; i++){ var image = post.images[i]; %><!-- for1-1 --><img src="<%= image.url %>" width="32%"><% } %><!-- end for1-1 -->
+                 <% } %>
+                 
             </div> 
         </div> 
-        <div class="bottom" data-postId="123"> 
-            <div class="like-list"> 
-                <span class="like-start glyphicon glyphicon-heart-empty"></span><a href="#">姓名,</a><a href="#">姓名</a> 
+        <div class="bottom" data-postId="<%= post._id %>"> 
+            <div class="like-list">
+                <% if(post.upvotes){ %> 
+                    <span class="like-start glyphicon glyphicon-heart-empty"></span>
+                    <% for(let i=0, len=post.upvotes.length; i<len; i++){ var upvote = post.upvotes[i]; %><!-- for1-1 -->
+                    <a href="#">姓名,</a><a href="#">姓名</a><% } %><!-- end for1-1 -->
+                <% } %>
+                 
             </div> 
-            <ul class="comment-list"> 
-                <li class="comment-list-item"> 
+            <ul class="comment-list">
+                <% if(post.comments){ %>   
+                    <% for(let i=0, len=post.comments.length; i<len; i++){ var comment = post.comments[i]; %><!-- for1-1 -->
+                    <li class="comment-list-item"> 
+                        <a href="/user/user_view?userId=<% comment.from %>" class="from">姓名</a><span>回复</span><a href="/user/user_view?userId=<% comment.to %>" class="to">姓名</a><span>:</span><a href="javascript:void(0)" onclick="toReply(this, 'ta')"><% comment.content %></a> 
+                    </li>     
+                
+                    <% } %><!-- end for1-1 -->
+                <% } %>
+<!--                <li class="comment-list-item"> 
                     <a href="/user/user_view?userId=" class="from">姓名</a><span>:</span><a href="javascript:void(0)" onclick="toDelete(this)">示例文本本这是一个示例文本本这是一个示例文本本这是一个示例文本。</a> 
                 </li> 
                 <li class="comment-list-item"> 
                     <a href="/user/user_view?userId=" class="from">姓名</a><span>回复</span><a href="/user/user_view?userId=" class="to">姓名</a><span>:</span><a href="javascript:void(0)" onclick="toReply(this, 'ta')">这是一个示例文本这是一个示例文本本这是一个示例文本本这是一个示例文本本这是一个示例文本。</a> 
-                </li> 
+                </li> -->
             </ul> 
             <div class="operation"> 
                 <div class="operation-list f-cb"> 

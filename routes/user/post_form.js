@@ -8,9 +8,13 @@ const Post = require('../../models/post')
 const router = express.Router()
 
 router.get("/*", function(req, res, next) {
-    if(!req.session.user) res.redirect("/user/login");
+    if(!req.session.user){
+        res.redirect("/user/login?url=" + encodeURI(req.baseUrl));
+        return;
+    }
     next();
 });
+
 /* GET  page. */
 router.get('/', function(req, res, next) {
     res.render('user/post_form', {
@@ -25,10 +29,16 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
     debug(req.body)
     var content = req.body.content;
-    var img = req.body.img_arr.split(",").map(function(elem){
-        return {url: elem}
-    });
-    console.log(content, img);
+    var img, imgStr = req.body.img_arr;
+    if(imgStr && imgStr!==''){
+         img = imgStr.split(",").map(function(elem){
+            return {url: elem}
+        });   
+    }else{
+        img = [];
+    }
+
+    console.log(content, img,req.body.img_arr);
     //检验用户输入
     if(content == undefined || content == ''){
         res.send({
