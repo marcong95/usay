@@ -25,9 +25,9 @@ router.get('/', function(req, res, next) {
                 post.poster.avatar = cfg.user.defaultAvatar
             }
             for (let cmt of post.comments) {
-                cmt.from = { _id: cmt.from, name: yield getUsername(cmt.from) }
-                cmt.to = { _id: cmt.to, name: yield getUsername(cmt.to) }
-                console.log(cmt.to)
+                cmt.from = cmt.from && { _id: cmt.from, name: yield getUsername(cmt.from) }
+                cmt.to = cmt.to && { _id: cmt.to, name: yield getUsername(cmt.to) }
+                console.log(cmt.from, cmt.to)
             }
         }
         return posts
@@ -55,7 +55,7 @@ function getUsername(id) {
             co(function*() {
                 let user = yield User.getUserById(id)
                 usernames.set(id, user.username)
-                debug(id, user.username)
+                // debug(id, user.username)
                 return user.username
             }).then(resolve, reject).catch(reject)
         }
