@@ -104,16 +104,5 @@ router.post('/update', function(req, res, next) {
     }
 });
 
-router.post('/upvote', function(req, res, next) {
-    let postId = req.body.postId;
-    let userId = req.session.user._id;
-    console.log(postId, "==" , userId);
-    User.findUpvote(postId, userId).then(function(){
-        console.log("ok")
-    }, function(){
-        
-    });
-});
-
 
 module.exports = router;

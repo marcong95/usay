@@ -28,7 +28,23 @@ function ajaxFavorite(postId, callback) {
     callback();
 }
 function ajaxUpvote(postId, callback){
-    callback();
+    $.ajax({
+        url: "/ajax/user/upvote",
+        type: "post",
+        data: {postId: postId},
+        dataType: "json",
+        success: function(data){
+            debugger;
+            if(data.done){
+                callback();
+            }else{
+            }
+        },
+        error:function(err, data){
+            // alert("访问异常");
+            console.error('访问异常');
+        }
+    });
 }
 
 function ajaxFollow(postId, userId, callback) {

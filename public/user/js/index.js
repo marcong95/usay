@@ -59,19 +59,24 @@ function renderPosts(){
         checkSession();
         var bottom = $(this).closest(".bottom");
         var like = '<a href="#">我,</a>';
+        checkSession();
         ajaxFavorite(
+            postId,
+            function(){}
+        );
+    });
+    
+    $(".operation .toUpvote").on("click", function(){        
+        checkSession();
+        var bottom = $(this).closest(".bottom");
+        
+       var postId = $(bottom).attr("data-postid");
+        var like = '<a href="#">我,</a>';
+        ajaxUpvote(
             postId,
             function(){
                 $(bottom).find(".like-start").after(like);
             }
-        );
-    });
-    
-    $(".operation .toUpvote").on("click", function(){
-        checkSession();
-        ajaxUpvote(
-            postId,
-            function(){}
         );
     });
 }
