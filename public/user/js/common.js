@@ -90,6 +90,7 @@ function ajaxFollow(postId, userId, callback) {
         },
         error:function(err, data){
             // alert("访问异常");
+            
             console.error('访问异常');
         }
     });

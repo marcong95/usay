@@ -1,5 +1,4 @@
-var postId = "";
-var userId = "";
+
 var page = {
     records: null,
     currentPage: 10,
@@ -32,23 +31,25 @@ function renderPosts(){
     $(".operation .toComment").each(function(){
         var bottom = $(this).closest(".bottom");
         var input = $(bottom).find(".say-input");
+        var postId = $(bottom).attr("data-postid");
         $(this).bind("click", function(){
+            $(bottom).find(".say").attr("data-to", "");
+            $(bottom).find(".toSay").attr("placeholder", "输入评论内容...");
             checkSession(function(){
                 $(".operation .to-show").removeClass("to-show");
                 input.addClass("to-show");
-                $(bottom).find(".say").attr("data-to", "");
-                $(bottom).find(".toSay").attr("placeholder", "输入评论内容...");
                 input.find(".toSay").focus();
             });
         });
         input.find(".say").bind("click", function(){
             var toSay = $(bottom).find(".toSay");
             var content = toSay.val();
-            var postId = $(bottom).attr("data-postid");
-            var toId = $(bottom).find(".say").attr("data-toId");
+            var toArr = $(bottom).find(".say").attr("data-to").split(":");
+            var toId = toArr[0];
+            var toName = toArr[1];
             var to = "";
             if(toId){
-               to = '<span>回复</span><a href="/user/user_view?userId=" class="to">'+$(bottom).find(".say").attr("data-to")+'</a>'
+               to = '<span>回复</span><a href="/user/user_view?userId='+toId+'" class="to">'+toName+'</a>'
             }
             var say = '<li class="comment-list-item"> \
                         <a href="/user/user_view" class="from">'+ $("#username").val() +'</a>'+to+'<span>:</span> \
@@ -59,7 +60,7 @@ function renderPosts(){
                  ajaxSay(
                     content,
                     postId,
-                    userId,
+                    toId,
                     function(){
                         $(bottom).find(".comment-list").append(say);
                     }
@@ -85,7 +86,6 @@ function renderPosts(){
     
     $(".operation .toUpvote").on("click", function(){
         var bottom = $(this).closest(".bottom");
-        var postId = $(bottom).attr("data-postid");
         var like = '<a href="#">我,</a>';
         var oper = $(this).attr("data-oper");
         checkSession(function(){
@@ -104,11 +104,11 @@ function renderPosts(){
 function toSearch(){
     console.log("heh");
 }
-function toReply(elem, to) {
+function toReply(elem, toId, toName) {
     var bottom = $(elem).closest(".bottom");
     $(bottom).find(".toComment").click();
-    $(bottom).find(".say").attr("data-to", to);
-    $(bottom).find(".toSay").attr("placeholder", "回复:"+ to);
+    $(bottom).find(".say").attr("data-to", toId+':'+toName);
+    $(bottom).find(".toSay")[0].placeholder = "回复:"+ toName;
 }
 
 function toDelete(elem) {

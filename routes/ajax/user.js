@@ -107,9 +107,10 @@ router.post('/update', function(req, res, next) {
 
 router.post('/upvote', function(req, res, next) {
     let user = req.session.user;
-    let postId = req.body.postId;
+    let postId = User._unifyId(req.body.postId);
     let oper = req.body.oper;
     if(oper == "add"){
+        console.log(user)
         user.upvote(postId).then(function(){
             console.log("ok")
         }, function(){
@@ -123,12 +124,12 @@ router.post('/upvote', function(req, res, next) {
 router.post('/comment', function(req, res, next) {
     let content = req.body.content;
     let postId = req.body.postId;
-    let userId = req.body.userId;
+    let userId = User._unifyId(req.body.userId);
     let oper = req.body.oper;
+    console.log(postId)
     if(oper == "add"){
         Post.getPostById(postId).then(function(post) {
             post.addComment(content, req.session.user, userId).then(function(data){
-                console.log("add")
                 res.send({
                     done: true,
                     data: data
