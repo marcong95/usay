@@ -127,18 +127,21 @@ router.post('/comment', function(req, res, next) {
     let userId = req.body.userId;
     let oper = req.body.oper;
     if(oper == "add"){
-        Post.addComment(content, postId, userId).then(function(data){
-            console.log("add")
-            res.send({
-                done: true,
-                data: data
+        Post.getPostById(postId).then(function(post) {
+            post.addComment(content, req.session.user, userId).then(function(data){
+                console.log("add")
+                res.send({
+                    done: true,
+                    data: data
+                })
+            }, function(err){
+                res.send({
+                    done: false,
+                    msg: err.toString()
+                })
+                console.log(arguments)
             })
-        }, function(err){
-            res.send({
-                done: false,
-                msg: err
-            })
-        })
+        }, console.log)
     }else if(oper == "del"){
         
     }
