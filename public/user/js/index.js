@@ -1,11 +1,14 @@
 
 var pageInfo = {
-    currentPage: 10,
+    currentPage: 1,
     pageSize: 20,
-    totalPages: 100
+    totalPages: 10
 };
-
+var user = "";
 $(document).ready(function(){
+    if(totalPage){
+        pageInfo.totalPages = totalPage;
+    }
     renderPosts();
     showPagination("#m_pag", pageInfo);
     checkSession(function(){renderList()}, function(){})
@@ -23,6 +26,7 @@ function toPage(currentPage){
             if(data.done){
                 pageInfo = data.pageInfo;
                 var posts = data.list;
+                var user = data.user;
                 var html = "";
                 for(var i=0, len=posts.length; i<len; i++) {
                     var userStr = getPostStr(posts[i]);
@@ -186,11 +190,11 @@ function toDelete(elem, commentId) {
 }
 //每个分享的模板
 function getPostStr(post) {
-    var imsStr = '';
+    var imgStr = '';
     if(post.images){
         for(let i=0, len=post.images.length; i<len; i++){ 
             var image = post.images[i];
-            imsStr += '<img src="'+ image.url+'" width="32%">';
+            imgStr += '<img src="'+ image.url+'" width="32%">';
         }
     }
     var upvoteStr = "";
@@ -199,6 +203,22 @@ function getPostStr(post) {
         for(let i=0, len=post.upvotes.length; i<len; i++){ 
             var upvote = post.upvotes[i];
             upvoteStr +=  '<a href="">姓名,</a><a href="#">姓名</a>'
+        }
+    }
+    
+    var commentStr = "";
+    if(post.comments){
+         for(let i=0, len=post.comments.length; i<len; i++){ 
+             var comment = post.comments[i];
+             commentStr += 
+                    '<li class="comment-list-item">'+
+                        '<a href="/user/user_view?userId='+ comment.from._id+'" class="from">'+ comment.from.name+'</a>'
+                        + (comment.to._id?'<span>回复</span><a href="/user/user_view?userId='+ comment.to._id+'" class="to">'+ comment.to.name+'</a>':'') + 
+                        '<span>:</span><a href="javascript:void(0)" onclick="'
+                        + ((user && comment.from._id == user._id)?('toDelete(this, \''+ comment._id + '\')'):('toReply(this, \''+ comment.from._id+'\', \''+ comment.from.name+'\')'))+'">'
+                        + comment.content+
+                        '</a> \
+                    </li>'
         }
     }
     var postStr = 

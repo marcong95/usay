@@ -39,6 +39,7 @@ router.get('/getList', function(req, res, next) {
             list: posts,
             pageInfo: {
                 currentPage:currentPage,
+                user: req.session.user,
                 pageSize: pageSize,
                 totalPages: totalPages
             }
