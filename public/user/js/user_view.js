@@ -83,15 +83,17 @@ function getPostStr(post) {
         +post._id+
         '"></a></h1>\
         <div class="content">\
-            <a class="detail" href="/user/post_view?id='
+            <a href="/user/post_view?id='
         +post._id+
-        '">'
+        '">\
+        <span class="detail">'
         +post.content+
-        '</a> \
-            <div class="picture">'
+        '</span>\
+        <div class="picture">'
             + imgStr +
            '</div> \
         </div> \
+        </a> \
         <div class="bottom">\
             <div class="show">\
                 <div class="show-list f-cb">\

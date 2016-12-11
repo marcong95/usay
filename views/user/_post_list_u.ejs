@@ -10,13 +10,15 @@
             <small><%= post.created %></small> 
         </h1> 
         <div class="content">
-            <a class="detail" href="/user/post_view?id=<%= post.poster._id %>"><%= post.content %></a> 
-            <div class="picture">
-                <% if(post.images){ %> 
-                    <% for(let i=0, len=post.images.length; i<len; i++){ var image = post.images[i]; %><!-- for1-1 --><img src="<%= image.url %>" width="32%"><% } %><!-- end for1-1 -->
-                 <% } %>
+            <a href="/user/post_view?postId=<%= post._id %>">
+                <span class="detail"><%= post.content %> </span>
+                <div class="picture">
+                    <% if(post.images){ %> 
+                        <% for(let i=0, len=post.images.length; i<len; i++){ var image = post.images[i]; %><!-- for1-1 --><img src="<%= image.url %>" width="32%"><% } %><!-- end for1-1 -->
+                     <% } %>
 
-            </div> 
+                </div>
+            </a>
         </div> 
         <div class="bottom">
             <div class="show">

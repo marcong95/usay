@@ -2,6 +2,7 @@ var userId = "";
 var postId = "";
 $(document).ready(function(){
     renderPosts();
+    checkSession(function(){renderList()}, function(){})
 })
 
 //渲染新增的分享
