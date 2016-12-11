@@ -29,6 +29,7 @@ router.get('/edit', function(req, res, next) {
 router.post('/del', function(req, res, next) {
 
 });
+
 router.post('/update', function(req, res, next) {
     var _id = req.body._id;
     //检验用户输入
@@ -199,6 +200,7 @@ router.post('/favorite', function(req, res, next) {
         }, console.log)
     }
 });
+
 router.post('/comment', function(req, res, next) {
     let content = req.body.content;
     let postId = req.body.postId;
@@ -219,6 +221,7 @@ router.post('/comment', function(req, res, next) {
         })
     }, console.log)
 });
+
 router.post('/uncomment', function(req, res, next) {
     let postId = req.body.postId;
     let commentId = req.body.commentId;
@@ -240,5 +243,26 @@ router.post('/uncomment', function(req, res, next) {
 
 });
 
+router.get('/listFolloweds', function(req, res, next) {
+    let currPage = req.query.currPage
+    let pageSize = req.query.pageSize
+    let totalPages
+    co(function*() {
+        let user = yield User.getUserById(req.session.user._id)
+        let followed = yield user.getFollowedUsers()
+        count = Math.ceil(followed.length / pageSize)
+        return followed.slice((currPage - 1) * pageSize, currPage * pageSize)
+    }).then(function(followed) {
+        res.send({
+            done: true,
+            list: followed,
+            pageInfo: {
+                currentPage: currentPage,
+                pageSize: pageSize,
+                totalPages: totalPages
+            }
+        })
+    }, console.log).catch(console.log)
+})
 
 module.exports = router;

@@ -72,6 +72,7 @@ Post.getCount = function(condition) {
       .catch(reject)
   })
 }
+
 // db.posts.aggregate({$unwind: '$comments'}, {$sort: {created: -1, 'comments.created': -1}}).pretty()
 Post.getPosts = function(condition, skip, limit) {
   return new Promise((resolve, reject) => {
