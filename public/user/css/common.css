@@ -275,6 +275,9 @@ body{
 }
 /* 通用样式 */
 
+.flr {
+    float: right
+}
 .link-no-decaration,
 .link-no-decaration:hover,
 .link-no-decaration:visited {

@@ -1,24 +1,30 @@
-		<ul class="list-group" id="post_list">
-		    
-		    <!--<li class="list-group-item post-item">
-				<h1 class="author">11月11日</h1>
-				<div class="content">
-					<a class="detail" href="#">这是一个示例文本。这是一个示例文本。这是一个示例文本。这是一个示例文本。这是一个示例文本。</a>
-					<div class="picture">
-						<img src="../../../common/images/picture/test2.jpg" width="32%">
-					</div>
-				</div>
-				<div class="bottom">
-                    <div class="show">
-                        <div class="show-list f-cb">
-                            <span class="show-list-item"><i class="glyphicon glyphicon-comment"></i>3</span>                       
-                            <span class="show-list-item"><i class="glyphicon glyphicon-heart"></i>4</span>
-                            <span class="show-list-item"><i class="glyphicon glyphicon-thumbs-up"></i>5</span>
-                        </div>
-                    </div>
-				</div>
-			</li>-->
-		</ul>
+<ul class="list-group" id="post_list">
+     <% for(let i=0, len=postList.length; i<len; i++){ var post = postList[i]; %><!-- for1 -->
+    <li class="list-group-item post-item">
+        <h1 class="author"><%= post.created %><a href="#" class="delFavorite flr link-no-decaration glyphicon glyphicon-heart" data-postid="<%= post._id %>"></a></h1>
+        <div class="content">
+            <a class="detail" href="/user/post_view?id=<%= post.poster._id %>"><%= post.content %></a> 
+            <div class="picture">
+                <% if(post.images){ %> 
+                    <% for(let i=0, len=post.images.length; i<len; i++){ var image = post.images[i]; %><!-- for1-1 --><img src="<%= image.url %>" width="32%"><% } %><!-- end for1-1 -->
+                 <% } %>
+
+            </div> 
+        </div> 
+        <div class="bottom">
+            <div class="show">
+                <div class="show-list f-cb">
+                    <span class="show-list-item"><i class="glyphicon glyphicon-comment"></i>
+                    <% if(post.comments){ %><%=post.comments.length%><% }else{ %>0<%}%></span>                       
+                    <span class="show-list-item"><i class="glyphicon glyphicon-heart"></i><% if(post.upvotes){ %><%=post.upvotes.length%><% }else{ %>0<%}%></span> </span>
+                    <span class="show-list-item"><i class="glyphicon glyphicon-thumbs-up"></i>
+                        <% if(post.favourites){ %><%=post.favourites.length%><% }else{ %>0<%}%></span> </span>
+                </div>
+            </div>
+        </div>
+    </li>
+    <% } %>
+</ul>
 
 <div class="page">
     <ul class="pagination" id="m_pag">

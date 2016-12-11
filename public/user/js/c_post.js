@@ -1,17 +1,12 @@
-var postId = "";
-var userId = "";
-var page = {
-    records: null,
+var pageInfo = {
     currentPage: 1,
-    pageSize: 8,
-    totalPages: 22,
-    isEnd: false
+    pageSize: 20,
+    totalPages: 1
 };
 
 $(document).ready(function(){
     renderPosts();
-    toPage(1);
-    showPagination("#m_pag", page);
+    showPagination("#m_pag", pageInfo);
 })
 
 //获取某页的数据
@@ -25,59 +20,25 @@ function toPage(currentPage){
     }
     $("#post_list").html(html);
     renderPosts();
-    showPagination("#m_pag", page);
+    showPagination("#m_pag", pageInfo);
 }
 
 //渲染新增的分享
 function renderPosts(){
-    $(".operation .toComment").each(function(){
-        var bottom = $(this).closest(".bottom");
-        var input = $(bottom).find(".say-input");
-        $(this).bind("click", function(){
-            checkSession();
-            $(".operation .to-show").removeClass("to-show");
-            input.addClass("to-show");
-            $(bottom).find(".say").attr("data-to", "");
-            $(bottom).find(".toSay").attr("placeholder", "输入评论内容...");
-            input.find(".toSay").focus();
-        });
-        input.find(".say").bind("click", function(){
-            var toSay = $(bottom).find(".toSay");
-            var text = toSay.val();
-            var to = $(bottom).find(".say").attr("data-to")?('<span>回复</span><a href="/user/user_view?userId=" class="to">'+$(bottom).find(".say").attr("data-to")+'</a>'):'';
-            var say = '<li class="comment-list-item"> \
-                        <a href="#" class="from">姓名</a>'+to+'<span>:</span> \
-                            <a href="javascript:void(0)" onclick="toDelete(this)">'
-                        + text +
-                      '</a></li>';
-            ajaxSay(
-                postId,
-                userId,
-                function(){
-                    $(bottom).find(".comment-list").append(say);
-                }
-            );
-            toSay.val("");
-            $(bottom).find(".to-show").removeClass("to-show");
-        });
-    });
-    $(".operation .toFavorite").on("click", function(){
-        checkSession();
-        var bottom = $(this).closest(".bottom");
-        var like = '<a href="#">我,</a>';
-        ajaxFavorite(
-            postId,
-            function(){
-                $(bottom).find(".like-start").after(like);
+    $(".post-item .delFavorite").bind("click", function(){
+        var postId = $(this).attr("data-postid");
+        var post = $(this).closest(".post-item");
+        var oper = "del";
+        var that = this;
+        checkSession(function(){
+                ajaxFavorite(
+                    postId,
+                    oper,
+                    function(){
+                       post.remove();
+                    }
+                )
             }
-        );
-    });
-    
-    $(".operation .toUpvote").on("click", function(){
-        checkSession();
-        ajaxUpvote(
-            postId,
-            function(){}
         );
     });
 }

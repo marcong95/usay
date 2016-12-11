@@ -2,7 +2,7 @@
 var pageInfo = {
     currentPage: 1,
     pageSize: 20,
-    totalPages: 10
+    totalPages: 1
 };
 var user = "";
 $(document).ready(function(){
