@@ -251,7 +251,14 @@ router.get('/listFolloweds', function(req, res, next) {
         let user = yield User.getUserById(req.session.user._id)
         let followed = yield user.getFollowedUsers()
         count = Math.ceil(followed.length / pageSize)
-        return followed.slice((currPage - 1) * pageSize, currPage * pageSize)
+        let sliced = followed.slice((currPage - 1) * pageSize, currPage * pageSize)
+        for (let userIndex in sliced) {
+            sliced[userIndex] = {
+                _id: sliced[userIndex],
+                name: yield getUsername(sliced[userIndex]),
+                bio: yield getBio(sliced[userIndex])
+            }
+        }
     }).then(function(followed) {
         res.send({
             done: true,
@@ -308,6 +315,8 @@ router.get('/getFollowedList', function(req, res, next) {
 
 
 let usernames = new Map()
+let bios = new Map()
+
 function getUsername(id) {
     return new Promise((resolve, reject) => {
         if (!id) {
@@ -325,5 +334,21 @@ function getUsername(id) {
     })
 }
 
+function getBio(id) {
+    return new Promise((resolve, reject) => {
+        if (!id) {
+            resolve(null)
+        } else if (bios.has(id)) {
+            resolve(bios.get(id))
+        } else {
+            co(function*() {
+                let user = yield User.getUserById(id)
+                bios.set(id, user.bio)
+                // debug(id, user.username)
+                return user.bio
+            }).then(resolve, reject).catch(reject)
+        }
+    })
+}
 
 module.exports = router;
