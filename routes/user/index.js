@@ -11,9 +11,14 @@ const router = express.Router()
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    var condition = {}, skip = 0, limit = 100;
+    var currentPage = req.query.currentPage*1 || 1
+    var pageSize = req.query.pageSize*1 || 20;
+    var condition = {}, skip = (currentPage-1)*pageSize, limit = pageSize;
+    var totalPage;
     co(function*() {
         // here needs optimization someday
+        let count = yield Post.getCount(condition);
+        totalPage = Math.ceil(count/pageSize)
         let posts = yield Post.getPosts(condition, skip, limit)
         for (let post of posts) {
             post.poster = yield User.getUserById(post.poster)
@@ -37,6 +42,7 @@ router.get('/', function(req, res, next) {
             title: 'Home',
             index: 'index',
             toSearch: true,
+            totalPage: totalPage,
             postList: data,
             user: req.session.user
         })
