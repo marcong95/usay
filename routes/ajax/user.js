@@ -1,11 +1,13 @@
-var express = require('express');
-var crypto = require('crypto');
-var User = require("../../models/user");
-var Post = require("../../models/post");
-var router = express.Router();
-var path = require('path');
-var ejs = require('ejs');
-
+const co = require('co')
+const debug = require('debug')('usay:server')
+const express = require('express');
+const CONST = require('../../models/constants')
+const cfg = require('../../configs/global')
+const db = require('../../models/db')
+const Post = require('../../models/post')
+const User = require('../../models/user')
+var moment = require('moment');
+const router = express.Router()
 
 /* GET item by id */
 router.get('/view', function(req, res, next) {
@@ -278,9 +280,10 @@ router.get('/getFollowedList', function(req, res, next) {
     var condition = {}, skip = (currentPage-1)*pageSize, limit = pageSize;
     co(function*() {
         // here needs optimization someday
+        let user = yield User.getUserById(req.session.user._id)
         let count = yield Post.getCount(condition);
         let totalPages = Math.ceil(count/pageSize)
-        let followers = yield User.getFollowers()
+        let followers = yield user.getFollowers()
         for (let follower of followers) {
             post.poster = yield User.getUserById(post.poster)
             post.created = moment(post.created).format('YYYY/MM/DD HH:mm')
@@ -298,7 +301,7 @@ router.get('/getFollowedList', function(req, res, next) {
         }
         return {
             done: true,
-            list: users,
+            list: followers,
             pageInfo: {
                 currentPage:currentPage,
                 user: req.session.user,
@@ -313,6 +316,61 @@ router.get('/getFollowedList', function(req, res, next) {
         .catch(console.log);
 });
 
+router.get('/getListByUserId', function(req, res, next) {
+    let userId = req.query.userId
+    if(!userId){
+        if(req.session.user){
+            userId = req.session.user._id
+        }else{
+            res.send({
+                done: false,
+                msg: "用户未登录 && userId为空"
+            })
+            return;
+        }
+    }
+    let currentPage = req.query.currentPage*1
+    let pageSize = req.query.pageSize*1;
+    var condition = {}, skip = (currentPage-1)*pageSize, limit = pageSize;
+    var totalPages = 1;
+    co(function*() {
+        // here needs optimization someday
+        let user = yield User.getUserById(userId)
+        let allPosts = yield user.getPosts()
+        let count = allPosts.length
+        totalPages = Math.ceil(count/pageSize)
+        let posts = yield user.getPosts()
+        for (let post of posts) {
+            post.poster = yield User.getUserById(post.poster)
+            post.created = moment(post.created).format('YYYY/MM/DD HH:mm')
+            if (!post.poster.nickname) {
+                post.poster.nickname = post.poster.username
+            }
+            if (!post.poster.avatar) {
+                post.poster.avatar = cfg.user.defaultAvatar
+            }
+            for (let cmt of post.comments) {
+                cmt.from = { _id: cmt.from, name: yield getUsername(cmt.from) }
+                cmt.to = { _id: cmt.to, name: yield getUsername(cmt.to) }
+
+            }
+        }
+        return posts
+    }).then(function(data) {
+        // debug(data)
+        res.send({
+            done: true,
+            list: data,
+            pageInfo: {
+                currentPage:currentPage,
+                user: req.session.user,
+                pageSize: pageSize,
+                totalPages: totalPages
+            }
+        })
+    }, console.log)
+        .catch(console.log);
+});
 
 let usernames = new Map()
 let bios = new Map()

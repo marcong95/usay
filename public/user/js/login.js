@@ -4,6 +4,8 @@ $(function(){
     targetUrl = queryUrl("url");
     if(!targetUrl){
         targetUrl = "/user/index";
+    }else{
+        targetUrl = decodeURIComponent(targetUrl)
     }
 });
 $().ready(function() {

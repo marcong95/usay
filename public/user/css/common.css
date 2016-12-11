@@ -155,8 +155,12 @@ body{
     font-size: 18px;
     margin: 0 8px;
 }
-.operation-list > .active {
+.operation-list > a.active, 
+.post-item > h1 > a.active {
     color: #b32020;
+}
+.post-item > h1 > a.a-active {     
+    color: #b5b0b0;
 }
 .op-right {
     float: right;

@@ -1,6 +1,6 @@
 var pageInfo = {
     currentPage: 1,
-    pageSize: 20,
+    pageSize: 10,
     totalPages: 1
 };
 

@@ -151,7 +151,7 @@ function checkSession(cb, cb2){
                 if(cb2){
                     cb2();
                 }else{
-                    location.href = "/user/login?url="+encodeURI(location.href);
+                    location.href = "/user/login?url="+encodeURIComponent(location.href);
                 }
             }
         },
@@ -181,6 +181,7 @@ function showPagination(target, page){console.log(page)
     if($("body").width() < 768){
         len = 5;
     }
+    if(page.totalPages < len) len = page.totalPages;
     var temp = (len-1)/2;
     if(page.currentPage-temp<1){
         temp = page.currentPage-1;

@@ -12,7 +12,7 @@ const router = express.Router()
 /* GET home page. */
 router.get('/', function(req, res, next) {
     var currentPage = req.query.currentPage*1 || 1
-    var pageSize = req.query.pageSize*1 || 20;
+    var pageSize = req.query.pageSize*1 || 10;
     var condition = {}, skip = (currentPage-1)*pageSize, limit = pageSize;
     var totalPage;
     co(function*() {
