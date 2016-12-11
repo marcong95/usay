@@ -27,6 +27,11 @@ let scripts = {
     return user
   },
 
+  getFavouritePosts: function*() {
+    let user = yield User.login('lucio', 'DropTheBeat')
+    return yield user.getFavouritePosts()
+  },
+
   upvote: function*() {
     let user = yield User.login('lucio', 'DropTheBeat')
     let post = yield Post.getPostById('58451e3cfee2c81fd099ae68')

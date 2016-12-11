@@ -132,6 +132,18 @@ User.getUsers = function(condition, projection, skip, limit, pure) {
   })
 }
 
+User.getPostRanking = function(count = 10) {
+  
+}
+
+User.getFollowedRanking = function(count = 10) {
+
+}
+
+User.getFavouriteRanking = function(count = 10) {
+
+}
+
 User._unifyId = function(user) {
   if (user instanceof User) {
     return user._id
@@ -160,8 +172,9 @@ User.prototype.favorite = function(postId) {
   let that = this
   return new Promise((resolve, reject) => {
     co(function*() {
-      that.favourites.push(postId)
-      that._model.favourites.push(postId)
+      let subdoc = { to: postId, created: new Date }
+      that.favourites.push(subdoc)
+      that._model.favourites.push(subdoc)
       yield that._model.save()
       return that
     }).then(resolve, reject)
@@ -174,7 +187,7 @@ User.prototype.unfavorite = function(postId) {
   return new Promise((resolve, reject) => {
     co(function*() {
       let indexToDelete = that.favourites.findIndex(
-        elmt => elmt._id == postId.toString())
+        elmt => elmt.to._id == postId.toString())
       if (indexToDelete >= 0) {
         that.favourites.splice(indexToDelete, 1)
         that._model.favourites.splice(indexToDelete, 1)
@@ -187,9 +200,24 @@ User.prototype.unfavorite = function(postId) {
 }
 
 User.prototype.getFavouritePosts = function() {
-  return Post.getPosts({ _id: { $in: this.favourites }})
+  let that = this
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let favourites = that.favourites.map((elmt) => elmt.to)
+      let posts = yield Post.getPosts({ _id: { $in: favourites }})
+      let postMap = new Map()   // post._id: post
+      for (let p of posts) {
+        postMap.set(p._id.toString(), p)
+      }
+      let ret = Array.from(that.favourites)
+      for (let p of ret) {
+        p.to = postMap.get(p.to.toString())
+      }
+      return ret
+    }).then(resolve, reject)
+      .catch(reject)
+  })
 }
-
 
 User.prototype.upvote = function(postId) {
   let that = this
@@ -298,6 +326,18 @@ User.prototype.modify = function(key, value) {
     }).then(resolve, reject)
       .catch(reject)
   })
+}
+
+User.getPostRank = function() {
+  
+}
+
+User.getFollowedRank = function() {
+
+}
+
+User.getFavouriteRank = function() {
+
 }
 
 User.prototype.toObject = function() {
