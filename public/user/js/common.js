@@ -170,9 +170,13 @@ function queryUrl(key){
      }  
      return null;  
 }
-function showPagination(target, page){
-    if(page.totalPages < 2) return;
+function showPagination(target, page){console.log(page)
+
     var lis = "";
+    if(page.totalPages < 2 && page.currentPage == 1){
+        $(target).html(lis);
+         return;
+    }
     var len = 9;
     if($("body").width() < 768){
         len = 5;

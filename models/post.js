@@ -61,6 +61,17 @@ Post.getPostById = function(postId) {
   })
 }
 
+Post.getCount = function(condition) {
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let query = PostModel.find(condition).sort({ created: -1 })
+      let posts = yield query.exec()
+      // posts.forEach(debug)
+      return posts.length
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
 // db.posts.aggregate({$unwind: '$comments'}, {$sort: {created: -1, 'comments.created': -1}}).pretty()
 Post.getPosts = function(condition, skip, limit) {
   return new Promise((resolve, reject) => {

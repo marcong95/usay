@@ -1,31 +1,47 @@
 
-var page = {
-    records: null,
+var pageInfo = {
     currentPage: 10,
-    pageSize: 8,
-    totalPages: 100,
-    isEnd: false
+    pageSize: 20,
+    totalPages: 100
 };
 
 $(document).ready(function(){
     renderPosts();
-    showPagination("#m_pag", page);
+    showPagination("#m_pag", pageInfo);
     checkSession(function(){renderList()}, function(){})
 })
 
 //获取某页的数据
 function toPage(currentPage){
-    page.currentPage = currentPage;
-    var posts = [1, 2, 3, 4, 5];
-    var html = "";
-    for(var i=0, len=posts.length; i<len; i++) {
-        var userStr = getPostStr(posts[i]);
-        html += userStr;
-    }
-    $("#post_list").html(html);
-    renderPosts();
-    showPagination("#m_pag", page);
-    checkSession(function(){renderList()}, function(){})
+    pageInfo.currentPage = currentPage;
+    $.ajax({
+        url: "/ajax/post/getList",
+        type: "get",
+        data: {currentPage: pageInfo.currentPage, pageSize: pageInfo.pageSize},
+        dataType: "json",
+        success: function(data){
+            if(data.done){
+                pageInfo = data.pageInfo;
+                var posts = data.list;
+                var html = "";
+                for(var i=0, len=posts.length; i<len; i++) {
+                    var userStr = getPostStr(posts[i]);
+                    html += userStr;
+                }
+                $("#post_list").html(html);
+                renderPosts();
+                showPagination("#m_pag", pageInfo);
+                checkSession(function(){renderList()}, function(){})
+            }else{
+            }
+        },
+        error:function(err, data){
+            // alert("访问异常");
+            
+            console.error('访问异常');
+        }
+    });
+
 }
 
 //渲染新增的分享
@@ -170,45 +186,66 @@ function toDelete(elem, commentId) {
 }
 //每个分享的模板
 function getPostStr(post) {
-    var postStr = '<li class="list-group-item post-item"> \
-				<h1 class="author"> \
-					<a href="/user/user_view"><img src="../../../common/images/picture/test2.jpg"> \
-					分享者姓名 \
-                    </a> \
-                    <small>2016年11月11日 15:30:00</small> \
-				</h1> \
-				<div class="content"> \
-					<a class="detail" href="/user/post_view">文本。这是一个示例文本。</a> \
-					<div class="picture"> \
-						<img src="../../../common/images/picture/test2.jpg" width="32%"><img src="../../../common/images/picture/test2.jpg" width="32%"><img src="../../../common/images/picture/test2.jpg" width="32%"><img src="../../../common/images/picture/test2.jpg" width="32%"><img src="../../../common/images/picture/test2.jpg" width="32%"><img src="../../../common/images/picture/test2.jpg" width="32%"> \
-					</div> \
-				</div> \
-				<div class="bottom" data-postId="123"> \
-					<div class="like-list"> \
-						<span class="like-start glyphicon glyphicon-heart-empty"></span><a href="#">姓名,</a><a href="#">姓名</a> \
-					</div> \
-					<ul class="comment-list"> \
-						<li class="comment-list-item"> \
-							<a href="/user/user_view?userId=" class="from">姓名</a><span>:</span><a href="javascript:void(0)" onclick="toDelete(this)">示例文本本这是一个示例文本本这是一个示例文本本这是一个示例文本。</a> \
-						</li> \
-						<li class="comment-list-item"> \
-							<a href="/user/user_view?userId=" class="from">姓名</a><span>回复</span><a href="/user/user_view?userId=" class="to">姓名</a><span>:</span><a href="javascript:void(0)" onclick="toReply(this, \"ta\")">这是一个示例文本这是一个示例文本本这是一个示例文本本这是一个示例文本本这是一个示例文本。</a> \
-						</li> \
-					</ul> \
-                    <div class="operation"> \
-                        <div class="operation-list f-cb"> \
-    <a href="javascript:void(0)" class="toComment operation-list-item link-no-decaration glyphicon glyphicon-comment" role="button"></a> \
-        <a href="javascript:void(0)" class="toUpvote operation-list-item link-no-decaration op-right glyphicon glyphicon-heart" role="button"></a> \
-    <a href="javascript:void(0)" class="toFavorite operation-list-item link-no-decaration op-right glyphicon glyphicon-thumbs-up" role="button"></a> \
-                        </div> \
-                        <div class="say-input temp-hide"> \
-                          <div class="input-group"> \
-                            <input type="text" class="toSay form-control" placeholder="输入评论内容..."> \
-                            <a class="input-group-addon say" data-to=""><i class="glyphicon glyphicon-share-alt"></i></a> \
-                          </div> \
-                        </div> \
-                    </div> \
-				</div> \
-			</li>';
+    var imsStr = '';
+    if(post.images){
+        for(let i=0, len=post.images.length; i<len; i++){ 
+            var image = post.images[i];
+            imsStr += '<img src="'+ image.url+'" width="32%">';
+        }
+    }
+    var upvoteStr = "";
+    if(post.upvotes){
+        upvoteStr +=  '<span class="like-start glyphicon glyphicon-heart-empty"></span>';
+        for(let i=0, len=post.upvotes.length; i<len; i++){ 
+            var upvote = post.upvotes[i];
+            upvoteStr +=  '<a href="">姓名,</a><a href="#">姓名</a>'
+        }
+    }
+    var postStr = 
+        '<li class="list-group-item post-item"> \
+        <h1 class="author"> \
+            <a href="/user/user_view?id='
+            + post.poster._id+
+            '"><img src="'
+            + post.poster.avatar+
+            '">'
+            + post.poster.username+
+            '</a> \
+            <small>'
+            + post.created+
+            '</small> \
+        </h1> \
+        <div class="content"> \
+            <a class="detail" href="/user/post_view">'
+            + post.content+
+            '</a> \
+            <div class="picture">'
+                +imgStr+
+            '</div> \
+        </div> \
+        <div class="bottom" data-postId="'
+        + post._id+
+        '"> \
+            <div class="like-list">'
+                +upvoteStr+
+            '</div> \
+            <ul class="comment-list">'
+                +commentStr+
+            '</ul> \
+            <div class="operation"> \
+                <div class="operation-list f-cb"> \
+<a href="javascript:void(0)" class="toComment operation-list-item link-no-decaration glyphicon glyphicon-comment" role="button"></a> \
+<a href="javascript:void(0)" class="toFavorite operation-list-item link-no-decaration op-right glyphicon glyphicon-heart" role="button" data-oper="add"></a> \
+<a href="javascript:void(0)" class="toUpvote operation-list-item link-no-decaration op-right glyphicon glyphicon-thumbs-up" role="button"  data-oper="add"></a> \
+                </div> \
+                <div class="say-input temp-hide"> \
+                  <div class="input-group"> \
+                    <input type="text" class="toSay form-control" placeholder="输入评论内容...">\
+                    <a class="input-group-addon say" data-to=""><i class="glyphicon glyphicon-share-alt"></i></a> \
+                  </div> \
+                </div> \
+            </div> \
+        </div> \
+    </li>';
     return postStr;
 }
