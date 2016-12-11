@@ -173,7 +173,8 @@ User.prototype.unfavorite = function(postId) {
   let that = this
   return new Promise((resolve, reject) => {
     co(function*() {
-      let indexToDelete = that.favourites.findIndex(elmt => elmt == postId)
+      let indexToDelete = that.favourites.findIndex(
+        elmt => elmt._id == postId.toString())
       if (indexToDelete >= 0) {
         that.favourites.splice(indexToDelete, 1)
         that._model.favourites.splice(indexToDelete, 1)
@@ -207,7 +208,9 @@ User.prototype.unupvote = function(postId) {
   let that = this
   return new Promise((resolve, reject) => {
     co(function*() {
-      let indexToDelete = that.upvoteds.findIndex(elmt => elmt == postId)
+      let indexToDelete = that.upvoteds.findIndex(
+        elmt => elmt._id == postId.toString())
+      debug(postId.toString(), indexToDelete)
       if (indexToDelete >= 0) {
         that.upvoteds.splice(indexToDelete, 1)
         that._model.upvoteds.splice(indexToDelete, 1)
