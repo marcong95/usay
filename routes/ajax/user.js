@@ -401,7 +401,7 @@ router.get('/getListByUserId', function(req, res, next) {
         let posts = yield user.getPosts()
         for (let post of posts) {
             post.poster = yield User.getUserById(post.poster)
-            post.created = moment(post.created).format('YYYY/MM/DD HH:mm')
+            post.created = moment(post.created).format('YYYY年MM月DD日')
             if (!post.poster.nickname) {
                 post.poster.nickname = post.poster.username
             }

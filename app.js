@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(session({
   secret: 'USAYSession',
   name: 'name',
-  cookie: {maxAge: 60000},
+  cookie: {maxAge: 30*60000},
   resave: false,
   saveUninitialized: true
 }))

@@ -120,13 +120,13 @@ function getPostStr(post, isMe) {
     if(isMe){
         delStr = '<a href="javascript:void(0)" class="delPost flr a-active link-no-decoration glyphicon glyphicon-trash" data-postid="'
         +post._id+
-        '"></a'
+        '"></a>'
     }
     var postStr = 
         '<li class="list-group-item post-item"> \
         <h1 class="author">'
         +post.created+delStr+
-        '></h1>\
+        '</h1>\
         <div class="content">\
             <a href="/user/post_view?id='
         +post._id+

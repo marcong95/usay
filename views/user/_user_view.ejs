@@ -2,11 +2,15 @@
         <div class="user-view">
             <img class="banner" src="../../../common/images/picture/test2.jpg" width="100%">
             <div class="profile">
-                <img class="evator" src="<%= user.avatar %>">
-                <h1 class="name hidden-xs"><% if(user.nickname){%><%= user.nickname %><% }else{ %> <%= user.username %> <% } %></h1>
-                <h1 class="name visible-xs"><a href="/user/profile" ><%= user.nickname %><i class="toEdit link-no-decoration glyphicon glyphicon-edit"></i></a></h1>
-                <p class="sign"><%= user.bio %></p>
-                <% if(!isMe){ %>
+                <% if(isMe){ %>
+                    <img class="evator" src="<%= user.avatar %>">
+                    <h1 class="name hidden-xs"><% if(user.nickname){%><%= user.nickname %><% }else{ %> <%= user.username %> <% } %></h1>
+                    <h1 class="name visible-xs"><a href="/user/profile" ><% if(user.nickname){%><%= user.nickname %><% }else{ %> <%= user.username %> <% } %><i class="toEdit link-no-decoration glyphicon glyphicon-edit"></i></a></h1>
+                    <p class="sign"><%= user.bio %></p>
+                <% }else{ %>
+                    <img class="evator" src="<%= user.avatar %>">
+                    <h1 class="name"><% if(user.nickname){%><%= user.nickname %><% }else{ %> <%= user.username %> <% } %></h1>
+                    <p class="sign"><%= user.bio %></p>
                     <a href="javascript:void(0)" data-userid="<%=user._id %>" data-oper="add" class="toFollow link-no-decoration glyphicon glyphicon-star"></a>
                 <% } %>
             </div>
