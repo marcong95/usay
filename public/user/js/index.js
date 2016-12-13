@@ -6,8 +6,8 @@ var pageInfo = {
 };
 var user = "";
 $(document).ready(function(){
-    if(totalPages){
-        pageInfo.totalPages = totalPages;
+    if(totalPage){
+        pageInfo.totalPages = totalPage;
     }
     renderPosts();
     showPagination("#m_pag", pageInfo);
@@ -151,10 +151,9 @@ function renderList(){
                         t.find(".toFavorite").addClass("active")
                         t.find(".toFavorite").attr("data-oper", "del")
                     }
-                    if(e.upvote){
+                    if(e.upvote)
                         t.find(".toUpvote").addClass("active")
                         t.find(".toUpvote").attr("data-oper", "del")
-                    }
                 }
                 
             })

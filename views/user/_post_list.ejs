@@ -1,8 +1,8 @@
 <ul class="list-group" id="post_list">
-    <% for(let i=0, len=postList.length; i<len; i++){ var post = postList[i]; if(!post) continue;%><!-- for1 -->
+    <% for(let i=0, len=postList.length; i<len; i++){ var post = postList[i]; %><!-- for1 -->
     <li class="list-group-item post-item"> 
         <h1 class="author"> 
-            <a href="/user/user_view?userid=<%= post.poster._id %>"><img src="<%= post.poster.avatar %>"> 
+            <a href="/user/user_view?id=<%= post.poster._id %>"><img src="<%= post.poster.avatar %>"> 
             <%= post.poster.username %> 
             </a> 
             <small><%= post.created %></small> 
@@ -32,7 +32,7 @@
                 <% if(post.comments){ %>   
                     <% for(let i=0, len=post.comments.length; i<len; i++){ var comment = post.comments[i]; %><!-- for1-1 -->
                     <li class="comment-list-item"> 
-                        <a href="/user/user_view?userId=<%= comment.from._id %>" class="from"><%= comment.from.name %></a><% if(comment.to._id){ %><span>回复</span><a href="/user/user_view?userId=<%= comment.to._id %>" class="to"><%= comment.to.name %></a><% } %><span>:</span><a href="javascript:void(0)" onclick="<%if(me && comment.from._id == me._id){%>toDelete(this, '<%=comment._id%>')<% }else{%>toReply(this, '<%= comment.from._id %>', '<%= comment.from.name %>')<%}%>"><%= comment.content %></a> 
+                        <a href="/user/user_view?userId=<%= comment.from._id %>" class="from"><%= comment.from.name %></a><% if(comment.to._id){ %><span>回复</span><a href="/user/user_view?userId=<%= comment.to._id %>" class="to"><%= comment.to.name %></a><% } %><span>:</span><a href="javascript:void(0)" onclick="<%if(user && comment.from._id == user._id){%>toDelete(this, '<%=comment._id%>')<% }else{%>toReply(this, '<%= comment.from._id %>', '<%= comment.from.name %>')<%}%>"><%= comment.content %></a> 
                     </li>     
                 
                     <% } %><!-- end for1-1 -->
@@ -46,9 +46,9 @@
             </ul> 
             <div class="operation"> 
                 <div class="operation-list f-cb"> 
-<a href="javascript:void(0)" class="toComment operation-list-item link-no-decoration glyphicon glyphicon-comment" role="button"></a> 
-<a href="javascript:void(0)" class="toFavorite operation-list-item link-no-decoration op-right glyphicon glyphicon-heart" role="button" data-oper="add"></a> 
-<a href="javascript:void(0)" class="toUpvote operation-list-item link-no-decoration op-right glyphicon glyphicon-thumbs-up" role="button"  data-oper="add"></a> 
+<a href="javascript:void(0)" class="toComment operation-list-item link-no-decaration glyphicon glyphicon-comment" role="button"></a> 
+<a href="javascript:void(0)" class="toFavorite operation-list-item link-no-decaration op-right glyphicon glyphicon-heart" role="button" data-oper="add"></a> 
+<a href="javascript:void(0)" class="toUpvote operation-list-item link-no-decaration op-right glyphicon glyphicon-thumbs-up" role="button"  data-oper="add"></a> 
                 </div> 
                 <div class="say-input temp-hide"> 
                   <div class="input-group"> 

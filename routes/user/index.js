@@ -14,11 +14,11 @@ router.get('/', function(req, res, next) {
     var currentPage = req.query.currentPage*1 || 1
     var pageSize = req.query.pageSize*1 || 10;
     var condition = {}, skip = (currentPage-1)*pageSize, limit = pageSize;
-    var totalPages;
+    var totalPage;
     co(function*() {
         // here needs optimization someday
         let count = yield Post.getCount(condition);
-        totalPages = Math.ceil(count/pageSize)
+        totalPage = Math.ceil(count/pageSize)
         let posts = yield Post.getPosts(condition, skip, limit)
         for (let post of posts) {
             post.poster = yield User.getUserById(post.poster)
@@ -32,18 +32,19 @@ router.get('/', function(req, res, next) {
             for (let cmt of post.comments) {
                 cmt.from = { _id: cmt.from, name: yield getUsername(cmt.from) }
                 cmt.to = { _id: cmt.to, name: yield getUsername(cmt.to) }
+
             }
         }
         return posts
     }).then(function(data) {
         // debug(data)
         res.render('user/index', {
-            title: 'Ushare | home',
+            title: 'Home',
             index: 'index',
             toSearch: true,
-            totalPages: totalPages,
+            totalPage: totalPage,
             postList: data,
-            me: req.session.user
+            user: req.session.user
         })
     }, console.log)
         .catch(console.log);

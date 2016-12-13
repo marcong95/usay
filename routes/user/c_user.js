@@ -11,7 +11,7 @@ const router = express.Router()
 
 router.get("/*", function(req, res, next) {
     if(!req.session.user){
-        res.redirect("/user/login?url=" + encodeURIComponent(req.baseUrl));
+        res.redirect("/user/login?url=" + encodeURI(req.baseUrl));
         return;
     }
     next();
@@ -22,29 +22,38 @@ router.get('/', function(req, res, next) {
     var pageSize = req.query.pageSize*1 || 10;
     var condition = {}, skip = (currentPage-1)*pageSize, limit = pageSize;
     var userId = req.session.user._id;
-    var totalPages;
+    var totalPage;
     co(function*() {
         // here needs optimization someday
         let user = yield User.getUserById(userId);
-        let count = yield user.getFollowedCount()
-        totalPages = Math.ceil(count/pageSize)
-        let followeds = yield user.getFollowed()
-        for (let followed of followeds) {
-            followed.to = yield User.getUserById(followed.to)
-            followed.created = moment(followed.created).format('YYYY/MM/DD HH:mm')
-            if (!followed.to.avatar) {
-                followed.to.avatar = cfg.user.defaultAvatar
+        let count = yield Post.getCount(condition);
+        let totalPages = Math.ceil(count/pageSize)
+        let followers = yield user.getFollowers()
+        for (let follower of followers) {
+            post.poster = yield User.getUserById(post.poster)
+            post.created = moment(post.created).format('YYYY/MM/DD HH:mm')
+            if (!post.poster.nickname) {
+                post.poster.nickname = post.poster.username
+            }
+            if (!post.poster.avatar) {
+                post.poster.avatar = cfg.user.defaultAvatar
+            }
+            for (let cmt of post.comments) {
+                cmt.from = { _id: cmt.from, name: yield getUsername(cmt.from) }
+                cmt.to = { _id: cmt.to, name: yield getUsername(cmt.to) }
+
             }
         }
-        return followeds
+        return followers
     }).then(function(data) {
+        console.log(data)
         res.render('user/c_user', {
-            title: 'Ushare | follow',
+            title: 'User Collection',
             index: 'c_user',
             list: data,
-            totalPages: totalPages,
+            totalPage: totalPage,
             toSearch: true,
-            me: req.session.user
+            user: req.session.user
         });
     }, console.log)
         .catch(console.log);

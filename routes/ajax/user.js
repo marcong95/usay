@@ -112,8 +112,8 @@ router.get('/postsStatus', function(req, res, next) {
     let postIds = req.query.postIds.split(",");
     let userId = req.session.user._id;
     User.getUserById(userId).then(function(user) {
-        let favorites = user.favourites.map(function(elem, i){ return String(elem.to)})
-        let upvotes = user.upvoteds.map(function(elem, i){ return String(elem.to)})
+        let favorites = user.favourites.map(function(elem, i){ return String(elem._id)})
+        let upvotes = user.upvoteds.map(function(elem, i){ return String(elem._id)})
         let status = postIds.map(function(elem, i){
             return {
                 postId: elem,
@@ -191,60 +191,6 @@ router.post('/favorite', function(req, res, next) {
                 res.send({
                     done: true,
                     todo: "add"
-                })
-            }, function(err){
-                res.send({
-                    done: false,
-                    msg: err.toString()
-                })
-                console.log(arguments)
-            })
-        }, console.log)
-    }
-});
-
-
-router.post('/follow', function(req, res, next) {
-    let followId = Post._unifyId(req.body.userId);
-    let oper = req.body.oper;
-    let userId = req.session.user._id;
-    if(oper == "add"){
-        User.getUserById(userId).then(function(user) {
-            user.follow(followId).then(function(data){
-                res.send({
-                    done: true,
-                    todo: "del"
-                })
-            }, function(err){
-                res.send({
-                    done: false,
-                    msg: err.toString()
-                })
-                console.log(arguments)
-            })
-        }, console.log)
-    }else if(oper == "del"){
-        User.getUserById(userId).then(function(user) {
-            user.unfollow(followId).then(function(data){
-                res.send({
-                    done: true,
-                    todo: "add"
-                })
-            }, function(err){
-                res.send({
-                    done: false,
-                    msg: err.toString()
-                })
-                console.log(arguments)
-            })
-        }, console.log)
-    }else if(oper == "state"){
-        User.getUserById(userId).then(function(user) {
-            user.followId(followId).then(function(data){
-                todo = data==true?"del":"add"
-                res.send({
-                    done: true,
-                    todo: todo
                 })
             }, function(err){
                 res.send({
@@ -371,12 +317,10 @@ router.get('/getFollowedList', function(req, res, next) {
 });
 
 router.get('/getListByUserId', function(req, res, next) {
-    let isMe = false
-    let userId = req.query.userid
-    if(!userId || userId == "null"){
+    let userId = req.query.userId
+    if(!userId){
         if(req.session.user){
             userId = req.session.user._id
-            isMe = true
         }else{
             res.send({
                 done: false,
@@ -384,9 +328,6 @@ router.get('/getListByUserId', function(req, res, next) {
             })
             return;
         }
-    }
-    if( !isMe && req.session.user && userId == req.session.user._id){
-        isMe = true
     }
     let currentPage = req.query.currentPage*1
     let pageSize = req.query.pageSize*1;
@@ -419,7 +360,6 @@ router.get('/getListByUserId', function(req, res, next) {
         // debug(data)
         res.send({
             done: true,
-            isMe: isMe,
             list: data,
             pageInfo: {
                 currentPage:currentPage,

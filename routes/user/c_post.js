@@ -11,7 +11,7 @@ const router = express.Router()
 
 router.get("/*", function(req, res, next) {
     if(!req.session.user){
-        res.redirect("/user/login?url=" + encodeURIComponent(req.baseUrl));
+        res.redirect("/user/login?url=" + encodeURI(req.baseUrl));
         return;
     }
     next();
@@ -23,22 +23,17 @@ router.get('/', function(req, res, next) {
     var pageSize = req.query.pageSize*1 || 10;
     var condition = {}, skip = (currentPage-1)*pageSize, limit = pageSize;
     var userId = req.session.user._id;
-    var totalPages;
+    var totalPage;
     co(function*() {
             // here needs optimization someday
             let user = yield User.getUserById(userId);
-            let count = yield user.getFavouritedCount()
-            totalPages = Math.ceil(count/pageSize)
-            let c_posts = yield user.getFavourited()
-            for (let c_post of c_posts) {
-                var post = c_post.to
-                if(!post){
-                    delete c_posts[c_posts.indexOf(c_post)]
-                    continue;   
-                }
-                c_post.created = moment(c_post.created).format('YYYY年MM月DD日')
+            let count = yield Post.getCount(condition);
+            totalPage = Math.ceil(count/pageSize)
+            let posts = yield user.getFavouritePosts()
+            console.log(posts)
+            for (let post of posts) {
                 post.poster = yield User.getUserById(post.poster)
-                post.created = moment(post.created).format('YYYY/MM/DD HH:mm')
+                post.created = moment(post.created).format('YYYY年MM月DD日')
                 if (!post.poster.nickname) {
                     post.poster.nickname = post.poster.username
                 }
@@ -51,15 +46,15 @@ router.get('/', function(req, res, next) {
 
                 }
             }
-            return c_posts
+            return posts
         }).then(function(data) {
             res.render('user/c_post', {
-                title: 'Ushare | collection',
+                title: 'Post Collection',
                 index: 'c_post',
                 toSearch: true,
-                totalPages: totalPages,
+                totalPage: totalPage,
                 postList: data,
-                me: req.session.user
+                user: req.session.user
             })
         }, console.log)
         .catch(console.log);

@@ -53,11 +53,11 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <% var right = Upage.header.right; %>
-            <% if(!locals.me){ %>
+            <% if(!locals.user){ %>
               <li <% if(index==right.login.label){ %> class="active" <% } %>><a href="<%= right.login.link %>"><%= right.login.name %></a></li>
               <li <% if(index==right.reg.label){ %> class="active" <% } %>><a href="<%= right.reg.link %>"><%= right.reg.name %></a></li>
             <% }else{ %>
-              <li <% if(index==right.profile.label){ %> class="active" <% } %>><a href="<%= right.profile.link %>"><%= me.nickname?me.nickname:me.username %></a><input type="hidden" id="username" value="<%= me.username %>" ></li>
+              <li <% if(index==right.profile.label){ %> class="active" <% } %>><a href="<%= right.profile.link %>"><%= user.nickname?user.nickname:user.username %></a><input type="hidden" id="username" value="<%= user.username %>" ></li>
               <li <% if(index==right.logout.label){ %> class="active" <% } %>><a href="<%= right.logout.link %>"><i class="glyphicon glyphicon-log-out"></i></a></li>
             <% } %>
         </ul> 

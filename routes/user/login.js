@@ -12,7 +12,7 @@ const router = express.Router()
 
 router.get('/', function(req, res, next) {
     res.render('user/login', {
-        title: 'Ushare | login',
+        title: 'Login',
         index: 'login',
         user: req.session.user
     });

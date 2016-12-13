@@ -2,12 +2,9 @@
         <div class="user-view">
             <img class="banner" src="../../../common/images/picture/test2.jpg" width="100%">
             <div class="profile">
-                <img class="evator" src="<%= user.avatar %>">
-                <h1 class="name hidden-xs"><% if(user.nickname){%><%= user.nickname %><% }else{ %> <%= user.username %> <% } %></h1>
-                <h1 class="name visible-xs"><a href="/user/profile" ><%= user.nickname %><i class="toEdit link-no-decoration glyphicon glyphicon-edit"></i></a></h1>
-                <p class="sign"><%= user.bio %></p>
-                <% if(!isMe){ %>
-                    <a href="javascript:void(0)" data-userid="<%=user._id %>" data-oper="add" class="toFollow link-no-decoration glyphicon glyphicon-star"></a>
-                <% } %>
+                <img class="evator" src="<%= fetched.avatar %>">
+                <h1 class="name hidden-xs"><%= fetched.nickname %></h1>
+                <h1 class="name visible-xs"><a href="/user/profile" ><%= fetched.nickname %><i class="toEdit glyphicon glyphicon-edit"></i></a></h1>
+                <p class="sign"><%= fetched.bio %></p>
             </div>
         </div>

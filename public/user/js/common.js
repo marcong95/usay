@@ -75,25 +75,6 @@ function ajaxFavorite(postId, oper, callback) {
         }
     });
 }
-
-function ajaxFollow(userId, oper, callback) {
-    $.ajax({
-        url: "/ajax/user/follow",
-        type: "post",
-        data: {userId: userId, oper: oper},
-        dataType: "json",
-        success: function(data){
-            if(data.done){
-                callback(data.todo);
-            }else{
-            }
-        },
-        error:function(err, data){
-            // alert("访问异常");
-            console.error('访问异常');
-        }
-    });
-}
 function ajaxUpvote(postId, oper, callback){
     $.ajax({
         url: "/ajax/user/upvote",
@@ -112,11 +93,12 @@ function ajaxUpvote(postId, oper, callback){
         }
     });
 }
-function ajaxDelPost(postId, callback){
+
+function ajaxFollow(postId, userId, callback) {
     $.ajax({
-        url: "/ajax/post/del",
+        url: "/ajax/user/upvote",
         type: "post",
-        data: {postId: postId},
+        data: {postId: postId, oper: oper},
         dataType: "json",
         success: function(data){
             if(data.done){
@@ -126,9 +108,13 @@ function ajaxDelPost(postId, callback){
         },
         error:function(err, data){
             // alert("访问异常");
+            
             console.error('访问异常');
         }
     });
+}
+function ajaxCancelFollow(userId, callback){
+    callback();
 }
 
 function ajaxGetStatus(postIds, callback) {

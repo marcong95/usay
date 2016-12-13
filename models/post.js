@@ -51,17 +51,6 @@ Post.addPost = function(poster, content, images) {
   })
 }
 
-Post.delPost = function(postId) {
-  return new Promise((resolve, reject) => {
-    co(function*() {
-        let result = {};
-        yield PostModel.remove({'_id': Post._unifyId(postId)}, function(err, docs){ result = docs.result })
-        return {result}
-    }).then(resolve, reject)
-      .catch(reject)
-  })
-}
-
 Post.getPostById = function(postId) {
   return new Promise((resolve, reject) => {
     co(function*() {

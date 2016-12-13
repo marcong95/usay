@@ -34,11 +34,11 @@ router.get('/', function(req, res, next) {
     }).then(function(data) {
         // debug(data)
         res.render('user/post_view', {
-            title: 'Ushare | detail',
+            title: 'Home',
             index: 'post',
             toBack: true,
             post: data,
-            me: req.session.user
+            user: req.session.user
         })
     }, console.log)
         .catch(console.log);

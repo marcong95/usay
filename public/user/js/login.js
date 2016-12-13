@@ -6,11 +6,6 @@ $(function(){
         targetUrl = "/user/index";
     }else{
         targetUrl = decodeURIComponent(targetUrl)
-        $("#tip").html("需登录才能访问!");
-        $(".return-tip").removeClass("hidden");
-        setTimeout(function(){
-                $(".return-tip").addClass("hidden");
-        }, 3000);
     }
 });
 $().ready(function() {

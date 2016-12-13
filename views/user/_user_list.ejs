@@ -1,36 +1,26 @@
-<ul class="list-group" id="user_list">
-    <% for(let i=0, len=list.length; i<len; i++){ var follower = list[i].to; if(!follower) continue;%><!-- for1 -->
-     <li class="list-group-item post-item">
-        <h1 class="author">
-            <a href="#"><img src="<%= follower.avatar %>"></a>
-            <% if(follower.nickname){ %><%= follower.nickname %><% }else{ %><%= follower.username %><% } %>
-            <a href="javascript:void(0)" class="delFollow flr a-active link-no-decoration glyphicon glyphicon-trash" data-userid="<%= follower._id %>"></a>
-            <small><%= follower.bio %></small>
-        </h1>
-    </li>
-    <% } %>
-
+		<ul class="list-group" id="user_list">
+		    
 <!--		    <li class="list-group-item post-item">
-        <h1 class="author">
-            <a href="#"><img src="../../../common/images/picture/test2.jpg"></a>
-            分享者姓名<a href="#" class="collect link-no-decaration glyphicon glyphicon-star"></a>
-            <small>有志者，事竟成有志者，事竟成有志者，事竟成有志者，事竟成有志者，事竟成</small>
-        </h1>
-    </li>
-    <li class="list-group-item post-item">
-        <h1 class="author">
-            <a href="#"><img src="../../../common/images/picture/test2.jpg"></a>
-            分享者姓名<a href="#" class="collect link-no-decaration glyphicon glyphicon-star"></a>
-            <small>有志者，事竟成</small>
-        </h1>
-    </li>
-    <li class="list-group-item post-item">
-        <h1 class="author">
-            <a href="#"><img src="../../../common/images/picture/test2.jpg"></a>
-            分享者姓名<a href="#" class="collect link-no-decaration glyphicon glyphicon-star"></a>
-            <small>有志者，事竟成</small>
-        </h1>
-    </li>-->
+				<h1 class="author">
+					<a href="#"><img src="../../../common/images/picture/test2.jpg"></a>
+					分享者姓名<a href="#" class="collect link-no-decaration glyphicon glyphicon-star"></a>
+                    <small>有志者，事竟成有志者，事竟成有志者，事竟成有志者，事竟成有志者，事竟成</small>
+				</h1>
+			</li>
+		    <li class="list-group-item post-item">
+				<h1 class="author">
+					<a href="#"><img src="../../../common/images/picture/test2.jpg"></a>
+					分享者姓名<a href="#" class="collect link-no-decaration glyphicon glyphicon-star"></a>
+                    <small>有志者，事竟成</small>
+				</h1>
+			</li>
+		    <li class="list-group-item post-item">
+				<h1 class="author">
+					<a href="#"><img src="../../../common/images/picture/test2.jpg"></a>
+					分享者姓名<a href="#" class="collect link-no-decaration glyphicon glyphicon-star"></a>
+                    <small>有志者，事竟成</small>
+				</h1>
+			</li>-->
 		</ul>
  
 <div class="page">
