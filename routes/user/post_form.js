@@ -9,7 +9,7 @@ const router = express.Router()
 
 router.get("/*", function(req, res, next) {
     if(!req.session.user){
-        res.redirect("/user/login?url=" + encodeURI(req.baseUrl));
+        res.redirect("/user/login?url=" + encodeURIComponent(req.baseUrl));
         return;
     }
     next();
@@ -18,11 +18,11 @@ router.get("/*", function(req, res, next) {
 /* GET  page. */
 router.get('/', function(req, res, next) {
     res.render('user/post_form', {
-        title: 'Post edit',
+        title: 'Ushare | share',
         index: 'post_form',
         toBack: true,
         toUploadFile: true,
-        user: req.session.user
+        me: req.session.user
     });
 });
 
@@ -37,8 +37,6 @@ router.post('/', function(req, res, next) {
     }else{
         img = [];
     }
-
-    console.log(content, img,req.body.img_arr);
     //检验用户输入
     if(content == undefined || content == ''){
         res.send({

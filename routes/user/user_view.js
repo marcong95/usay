@@ -9,48 +9,51 @@ const User = require('../../models/user')
 var moment = require('moment');
 var router = express.Router();
 
+router.get("/*", function(req, res, next) {
+    if(!req.session.user && !req.query.userid){
+        res.redirect("/user/login?url=" + encodeURIComponent(req.baseUrl));
+        return;
+    }
+    next();
+});
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    
+    let isMe = false
     // console.log(condition, req.session.user);
     // console.log(req.session.user._id);
     co(function*() {
-        var _id;
-        var condition = { poster: _id }, skip=0, limit=100;
-        if (req.query.id) {
-            // id specified, fetch user info
-            _id = req.query.id;
-            let [user, post] = yield [User.getUserById(_id), 
-                Post.getPosts(condition, skip, limit)];
-            user.posts = post;
-            return user;
-        } else if (req.session.user) {
-            // id not specifed, but user has logged in, 
-            // use user info in session instead
-            _id = req.session.user._id;
-            let post = yield Post.getPosts(condition, skip, limit);
-            let user = req.session.user;
-            user.posts = post;
-            return user;
-        } else {
-            // otherwise, redirect to home page
-            res.redirect('/');
+        let _id = req.query.userid
+        if(!_id || _id == "null"){
+            if(req.session.user){
+                _id = req.session.user._id
+                isMe = true
+            }else{
+                res.send({
+                    done: false,
+                    msg: "用户未登录 && userId为空"
+                })
+                return;
+            }
         }
-    }).then(function(fetched) {
-        console.log(fetched)
-        if (!fetched.nickname) {
-            fetched.nickname = fetched.username;
+        if( !isMe && req.session.user && _id == req.session.user._id){
+            isMe = true
         }
-        if (!fetched.avatar) {
-            fetched.avatar = cfg.user.defaultAvatar;
+        // id specified, fetch user info
+        let user = yield User.getUserById(_id);
+        return user;
+    }).then(function(user) {
+        console.log(user)
+        if (!user.avatar) {
+            user.avatar = cfg.user.defaultAvatar;
         }
         res.render('user/user_view', {
-            title: 'Post Collection',
+            title: 'Ushare | user',
             index: 'user_view',
+            isMe: isMe,
             toBack: true,
             toSearch: true,
-            user: req.session.user,
-            fetched
+            me: req.session.user,
+            user
         });
     }, function(err) {
         console.log(err);

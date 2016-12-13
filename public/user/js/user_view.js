@@ -8,13 +8,35 @@ $(document).ready(function(){
     renderPosts();
     toPage(1);
     showPagination("#m_pag", pageInfo);
+    $(".toFollow").bind("click", function(){
+        var userId = $(this).attr("data-userid");
+        var oper = $(this).attr("data-oper");
+        var that = this;
+        checkSession(function(){
+                ajaxFollow(
+                    userId,
+                    oper,
+                    function(todo){
+                        if(todo == "del"){
+                            $(that).addClass("active")
+                        }else{
+                            $(that).removeClass("active")
+                        }
+                        $(that).attr("data-oper", todo)
+                    }
+                )
+            }
+        );
+    });
+    checkSession(function(){renderPage()}, function(){})
 })
 
 //获取某页的数据
 function toPage(currentPage){
+    var userId = queryUrl("userid");
     pageInfo.currentPage = currentPage;
     $.ajax({
-        url: "/ajax/user/getListByUserId",
+        url: "/ajax/user/getListByUserId?userid="+encodeURIComponent(userId),
         type: "get",
         data: {currentPage: pageInfo.currentPage, pageSize: pageInfo.pageSize},
         dataType: "json",
@@ -25,7 +47,7 @@ function toPage(currentPage){
                 var user = data.user;
                 var html = "";
                 for(var i=0, len=posts.length; i<len; i++) {
-                    var userStr = getPostStr(posts[i]);
+                    var userStr = getPostStr(posts[i], data.isMe);
                     html += userStr;
                 }
                 $("#post_list").html(html);
@@ -47,12 +69,10 @@ function renderPosts(){
     $(".post-item .delPost").bind("click", function(){
         var postId = $(this).attr("data-postid");
         var post = $(this).closest(".post-item");
-        var oper = "del";
         var that = this;
         checkSession(function(){
-                ajaxFavorite(
+                ajaxDelPost(
                     postId,
-                    oper,
                     function(){
                        post.remove();
                     }
@@ -66,8 +86,29 @@ function toSearch(){
     console.log("heh");
 }
 
+/*当用户登录时，渲染页面*/
+function renderPage(){
+    if($(".toFollow").length < 0){
+        return;
+    }
+    var userId = $(".toFollow").attr("data-userid");
+    var oper = "state";
+    ajaxFollow(
+            userId,
+            oper,
+            function(todo){
+                if(todo == "del"){
+                    $(".toFollow").addClass("active")
+                }else{
+                    $(".toFollow").removeClass("active")
+                }
+                $(".toFollow").attr("data-oper", todo)
+            }
+        )
+}
+
 //每个分享的模板
-function getPostStr(post) {
+function getPostStr(post, isMe) {
     var imgStr = "";
     if(post.images){
         for(let i=0, len=post.images.length; i<len; i++){ 
@@ -75,13 +116,17 @@ function getPostStr(post) {
             imgStr += '<img src="' + image.url +'" width="32%">';
         }
     }
+    var delStr = "";
+    if(isMe){
+        delStr = '<a href="javascript:void(0)" class="delPost flr a-active link-no-decoration glyphicon glyphicon-trash" data-postid="'
+        +post._id+
+        '"></a'
+    }
     var postStr = 
         '<li class="list-group-item post-item"> \
         <h1 class="author">'
-        +post.created+
-        '<a href="javascript:void(0)" class="delFavorite flr a-active link-no-decaration glyphicon glyphicon-trash" data-postid="'
-        +post._id+
-        '"></a></h1>\
+        +post.created+delStr+
+        '></h1>\
         <div class="content">\
             <a href="/user/post_view?id='
         +post._id+

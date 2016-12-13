@@ -10,7 +10,7 @@ const router = express.Router()
 
 router.get('/', function(req, res, next) {
     res.render('user/reg', {
-        title: 'Register',
+        title: 'Ushare | register',
         index: 'reg',
         toBack: true,
         user: req.session.user
