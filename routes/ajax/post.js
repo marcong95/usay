@@ -10,6 +10,79 @@ var moment = require('moment');
 const router = express.Router()
 
 
+router.post('/', function(req, res, next) {
+    debug(req.body)
+    var content = req.body.content;
+    var img, imgStr = req.body.img_arr;
+    if(imgStr && imgStr!==''){
+         img = imgStr.split(",").map(function(elem){
+            return {url: elem}
+        });   
+    }else{
+        img = [];
+    }
+    //检验用户输入
+    if(content == undefined || content == ''){
+        res.send({
+            done: false,
+            msg: "内容不能为空"
+        });
+        return;
+    }else if(content.legnth > 300){
+        res.send({
+            done: false,
+            msg: "内容长度不能大于300"
+        });
+        return;
+    }
+    co(function*() {
+		return yield Post.addPost(req.session.user, content, img);
+	}).then(function(user) {
+		res.send({
+			done: true
+		})
+	}, function(err) {
+        console.log(err);
+		let respBody = { done: false }
+		switch(err) {
+			case CONST.ERR_USER_NOT_FOUND:
+				respBody.msg = '该账户名不存在'
+				break
+			case CONST.ERR_WRONG_PASSWORD:
+				respBody.msg = '密码错误'
+				break
+			default:
+				respBody.msg = '未知错误'
+				//debug(err.toString() + ' returned when login with ' + req.body)
+				break
+		}
+        res.send(respBody)
+	}).catch(function(err) {
+        res.send({
+            done: false,
+            msg: err.toString()
+        })
+        console.log(err.stack)
+    })
+});
+
+router.post('/del', function(req, res, next) {
+    let postId = req.body.postId;
+    console.log(postId)
+    Post.delPost(postId).then(function(data){
+        res.send({
+            done: true,
+            data: data
+        })
+    }, function(err){
+        res.send({
+            done: false,
+            msg: err.toString()
+        })
+        console.log(arguments)
+    })
+});
+
 router.get('/getList', function(req, res, next) {
     let currentPage = req.query.currentPage*1
     let pageSize = req.query.pageSize*1;

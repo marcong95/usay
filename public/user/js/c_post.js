@@ -5,22 +5,44 @@ var pageInfo = {
 };
 
 $(document).ready(function(){
-    renderPosts();
+    renderPosts();    
+    if(totalPages){
+        pageInfo.totalPages = totalPages;
+    }
     showPagination("#m_pag", pageInfo);
 })
 
 //获取某页的数据
 function toPage(currentPage){
-    page.currentPage = currentPage;
-    var posts = [1, 2, 3, 4, 5];
-    var html = "";
-    for(var i=0, len=posts.length; i<len; i++) {
-        var userStr = getPostStr(posts[i]);
-        html += userStr;
-    }
-    $("#post_list").html(html);
-    renderPosts();
-    showPagination("#m_pag", pageInfo);
+    pageInfo.currentPage = currentPage;
+    checkSession(function(){
+        $.ajax({
+            url: "/ajax/user/getFavoriteList",
+            type: "get",
+            data: {currentPage: pageInfo.currentPage, pageSize: pageInfo.pageSize},
+            dataType: "json",
+            success: function(data){
+                if(data.done){
+                    pageInfo = data.pageInfo;
+                    var posts = data.list;
+                    var html = "";
+                    for(var i=0, len=posts.length; i<len; i++) {
+                        var userStr = getPostStr(posts[i]);
+                        html += userStr;
+                    }
+                    $("#post_list").html(html);
+                    renderPosts();
+                    showPagination("#m_pag", pageInfo);
+                }else{
+                }
+            },
+            error:function(err, data){
+                // alert("访问异常");
+
+                console.error('访问异常');
+            }
+        });
+    });
 }
 
 //渲染新增的分享
@@ -46,19 +68,7 @@ function renderPosts(){
 function toSearch(){
     console.log("heh");
 }
-function toReply(elem, to) {
-    var bottom = $(elem).closest(".bottom");
-    $(bottom).find(".toComment").click();
-    $(bottom).find(".say").attr("data-to", to);
-    $(bottom).find(".toSay").attr("placeholder", "回复:"+ to);
-}
 
-function toDelete(elem) {
-    var sure = confirm("删除", "删除评论？");
-    if(sure){
-        $(elem).closest(".comment-list-item").remove();
-    }
-}
 //每个分享的模板
 function getPostStr(post) {
     var postStr = '<li class="list-group-item post-item"> \

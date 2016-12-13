@@ -60,6 +60,7 @@ body{
     z-index: -1;
 }
 .user-view .profile {
+    position: relative;
     width: 300px;
     margin: 10px auto;
     padding: 20px;
@@ -76,6 +77,16 @@ body{
 .user-view .profile .name{
     margin: 5px;
     font-size: 24px;
+}
+.user-view .profile .toFollow{
+    position: absolute;
+    right: 70px;
+    top: 20px;
+    font-size: 20px;
+    color: #fff;
+}
+.user-view .profile a.active{
+    color: #b32020;
 }
 
 /* 分享列表 */
@@ -282,9 +293,9 @@ body{
 .flr {
     float: right
 }
-.link-no-decaration,
-.link-no-decaration:hover,
-.link-no-decaration:visited {
+.link-no-decoration,
+.link-no-decoration:hover,
+.link-no-decoration:visited {
     text-decoration: none;
 }
 .f-cb:after {

@@ -6,34 +6,63 @@ var pageInfo = {
 };
 
 $(document).ready(function(){
-    renderUsers();
+    renderUsers();    
+    if(totalPages){
+        pageInfo.totalPages = totalPages;
+    }
     showPagination("#m_pag", pageInfo);
 })
 
 //获取某页的数据
 function toPage(currentPage){
     pageInfo.currentPage = currentPage;
-    var users = [1, 2, 3, 4, 5];
-    var html = "";
-    for(var i=0, len=users.length; i<len; i++) {
-        var userStr = getUserStr(users[i]);
-        html += userStr;
-    }
-    $("#user_list").html(html);
-    renderUsers();
-    showPagination("#m_pag", pageInfo);
+    checkSession(function(){
+        $.ajax({
+            url: "/ajax/user/getFollowedList",
+            type: "get",
+            data: {currentPage: pageInfo.currentPage, pageSize: pageInfo.pageSize},
+            dataType: "json",
+            success: function(data){
+                if(data.done){
+                    pageInfo = data.pageInfo;
+                    var users = data.list;
+                    var html = "";
+                    for(var i=0, len=posts.length; i<len; i++) {
+                        var userStr = getUserStr(users[i]);
+                        html += userStr;
+                    }
+                    $("#post_list").html(html);
+                    renderUsers();
+                    showPagination("#m_pag", pageInfo);
+                }else{
+                }
+            },
+            error:function(err, data){
+                // alert("访问异常");
+
+                console.error('访问异常');
+            }
+        });
+    });
 }
 
 //渲染新增的用户
 function renderUsers(){
-    $(".post-item .delFollow").each(function(){
-        var userId = $(this).attr("data-userid");
+    $(".post-item .delFollow").bind("click", function(){
+        var userid = $(this).attr("data-userid");
         var user = $(this).closest(".post-item");
-        $(this).bind("click", function(){
-            ajaxCancelFollow(userId, function(){
-               user.remove();
-            });
-        });
+        var oper = "del";
+        var that = this;
+        checkSession(function(){
+                ajaxFollow(
+                    userid,
+                    oper,
+                    function(){
+                       user.remove();
+                    }
+                )
+            }
+        );
     });
 }
 
@@ -47,7 +76,7 @@ function getUserStr(user) {
         '<li class="list-group-item post-item"> \
             <h1 class="author"> \
                 <a href="/user/user_view?userId=123"><img src="../../../common/images/picture/test2.jpg"></a> \
-                分享者姓名<a href="#" class="delFollow flr link-no-decaration glyphicon glyphicon-star" data-userId="123"></a> \
+                分享者姓名<a href="#" class="delFollow flr link-no-decoration glyphicon glyphicon-star" data-userId="123"></a> \
                 <small>有志者，事竟成</small> \
             </h1> \
         </li>';

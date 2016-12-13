@@ -187,7 +187,7 @@ User.prototype.unfavorite = function(postId) {
   return new Promise((resolve, reject) => {
     co(function*() {
       let indexToDelete = that.favourites.findIndex(
-        elmt => elmt.to._id == postId.toString())
+        elmt => elmt.to == postId.toString())
       if (indexToDelete >= 0) {
         that.favourites.splice(indexToDelete, 1)
         that._model.favourites.splice(indexToDelete, 1)
@@ -199,7 +199,18 @@ User.prototype.unfavorite = function(postId) {
   })
 }
 
-User.prototype.getFavouritePosts = function() {
+User.prototype.getFavouritedCount = function() {
+  let that = this
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let favourites = that.favourites
+      return favourites.length;
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
+
+User.prototype.getFavourited = function() {
   let that = this
   return new Promise((resolve, reject) => {
     co(function*() {
@@ -223,8 +234,9 @@ User.prototype.upvote = function(postId) {
   let that = this
   return new Promise((resolve, reject) => {
     co(function*() {
-      that.upvoteds.push(postId)
-      that._model.upvoteds.push(postId)
+      let subdoc = { to: postId, created: new Date }
+      that.upvoteds.push(subdoc)
+      that._model.upvoteds.push(subdoc)
       yield that._model.save()
       return that
     }).then(resolve, reject)
@@ -237,7 +249,7 @@ User.prototype.unupvote = function(postId) {
   return new Promise((resolve, reject) => {
     co(function*() {
       let indexToDelete = that.upvoteds.findIndex(
-        elmt => elmt._id == postId.toString())
+        elmt => elmt.to == postId.toString())
       debug(postId.toString(), indexToDelete)
       if (indexToDelete >= 0) {
         that.upvoteds.splice(indexToDelete, 1)
@@ -255,17 +267,19 @@ User.prototype.getUpvotedPosts = function() {
 }
 
 
-User.prototype.follow = function(user) {
+User.prototype.follow = function(userId) {
   let that = this
   return new Promise((resolve, reject) => {
     co(function*() {
-      let userId = User._unifyId(user)
-      that.followeds.push(userId)
-      that._model.followeds.push(userId)
+      let subdoc = { to: userId, created: new Date }
+      that.followeds.push(subdoc)
+      that._model.followeds.push(subdoc)
       yield that._model.save()
+      
       let followedUser = yield User.getUserById(userId)
-      followedUser.followers.push(that._id)
-      followedUser._model.followers.push(that._id)
+      let subdoc1 = { from: that._id, created: new Date }
+      followedUser.followers.push(subdoc1)
+      followedUser._model.followers.push(subdoc1)
       yield followedUser._model.save()
       return that
     }).then(resolve, reject)
@@ -273,15 +287,14 @@ User.prototype.follow = function(user) {
   })
 }
 
-User.prototype.unfollow = function(user) {
+User.prototype.unfollow = function(userId) {
   let that = this
   return new Promise((resolve, reject) => {
     co(function*() {
-      let userId = User._unifyId(user)
       // elmt: Object       elmt._id: String
       // userId: ObjectId   userId.toString(): String
       let followedToDelete = that.followeds.findIndex(
-        elmt => elmt._id == userId.toString())
+        elmt => elmt.to == userId.toString())
       if (followedToDelete >= 0) {
         that.followeds.splice(followedToDelete, 1)
         that._model.followeds.splice(followedToDelete, 1)
@@ -289,25 +302,71 @@ User.prototype.unfollow = function(user) {
       }
       let followedUser = yield User.getUserById(userId)
       let followerToDelete = followedUser.followers.findIndex(
-        elmt => elmt._id == that._id.toString())
+        elmt => elmt.from == that._id.toString())
       if (followerToDelete >= 0) {
         followedUser.followers.splice(followerToDelete, 1)
         followedUser._model.followers.splice(followerToDelete, 1)
         yield followedUser._model.save()
       }
-      debug(followedToDelete, followerToDelete)
+      debug(followedToDelete, '===', followerToDelete)
       return that
     }).then(resolve, reject)
       .catch(reject)
   })
 }
 
-User.prototype.getFollowedUsers = function() {
-  return Post.getPosts({ _id: { $in: this.followeds }})
+User.prototype.followId = function(userId) {
+  let that = this
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      // elmt: Object       elmt._id: String
+      // userId: ObjectId   userId.toString(): String
+      let followedToDelete = that.followeds.findIndex(
+        elmt => elmt.to == userId.toString())
+      if (followedToDelete >= 0) {
+         return true
+      }else{
+          return false
+      }
+      return that
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
+
+User.prototype.getFollowedCount = function() {
+  let that = this
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let followeds = that.followeds
+      return followeds.length;
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
+
+User.prototype.getFollowed = function() {
+  let that = this
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let followeds = that.followeds.map((elmt) => elmt.to)
+      let users = yield User.getUsers({ _id: { $in: followeds }})
+      let userMap = new Map()   // post._id: post
+      for (let p of users) {
+        userMap.set(p._id.toString(), p)
+      }
+      let ret = Array.from(that.followeds)
+      for (let p of ret) {
+        p.to = userMap.get(p.to.toString())
+      }
+      return ret
+    }).then(resolve, reject)
+      .catch(reject)
+  })
 }
 
 User.prototype.getFollowers = function() {
-  return Post.getPosts({ _id: { $in: this.followers }})
+  return User.getUsers({ _id: { $in: this.followers }})
 }
 
 
