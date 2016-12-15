@@ -16,28 +16,31 @@ try{
     
 }
 
-router.get("/*", function(req, res, next) {
-    if(req.url == "/login") next();
-    else if(!req.session.manager) res.redirect("/manager/login");
+router.get("/default/*", function(req, res, next) {
+    if(!req.session.admin){
+        res.redirect("/admin/common/default/login");
+        return;
+    }
+    console.log("ok")
     next();
 });
-router.get("/*", function(req, res, next) {
-    if(req.url == "/login" || req.url =="/ajax/login" ) next();
-    else if(!req.session.manager) res.send({"done": false, "dealMsg": {"state": "notLogin", "msg": "Not login"}});
+router.get("/ajax/*", function(req, res, next) {
+    if(!req.session.admin) res.send({"done": false, "dealMsg": {"state": "notLogin", "msg": "Not login"}});
     next();
 });
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/default/index', function(req, res, next) {
+    console.log("hehr")
     res.render('admin/index', {
         title: '首页',
-        manager: req.session.manager,
+        admin: req.session.admin,
         config: config
     });
 });
 
 /* GET home page. */
-router.get('/ajax', function(req, res, next) {
+router.get('/ajax/index', function(req, res, next) {
     res.render('admin/_index', {}, function(err, html){
         if(err){
             res.send( {
@@ -52,59 +55,5 @@ router.get('/ajax', function(req, res, next) {
         });
     });
 
-});
-
-/* GET login page. */
-router.get('/login', function(req, res, next) {
-    res.render('admin/login', {
-        title: '登录'
-    });
-});
-/* GET login page. */
-router.post('/login', function(req, res, next) {
-    req.session.manager = { 
-        username: "Wen",
-        nickname: "jungleW",
-        avator: "/admin/img/user2-160x160.jpg"
-    };
-    if(req.session.manager){
-        res.redirect("/admin/index");
-    }else{
-        res.redirect("/manager/login");
-    }
-});
-/* GET login page. */
-router.post('/ajax/login', function(req, res, next) {
-    req.session.manager = { 
-        username: "Wen",
-        nickname: "jungleW",
-        avator: "/admin/img/user2-160x160.jpg"
-    };
-    res.send({
-        done: true
-    });
-});
-/* GET home page. */
-router.get('/ajax/tableOptions', function(req, res, next) {
-    req.session.manager = manager;
-    res.send({
-        done: false
-    });
-});
-//锁屏
-router.get('/ajax/lock', function(req, res, next) {
-    res.render('admin/_lock', { manager: req.session.manager }, function(err, html){
-            if(err){
-                res.send( {
-                    done: false,
-                    msg: err
-                });
-                return;
-            }
-            res.send( {
-                done: true,
-                html: html
-            });
-    });
 });
 module.exports = router;

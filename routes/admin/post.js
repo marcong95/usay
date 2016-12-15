@@ -1,6 +1,7 @@
 var express = require('express');
 var crypto = require('crypto');
-var User = require("../../models/user");
+var Post = require("../../models/post");
+var user = require("../../models/user");
 var router = express.Router();
 var path = require('path');
 var ejs = require('ejs');
@@ -28,11 +29,11 @@ router.get("/ajax/*", function(req, res, next) {
 
 /* GET User page. */
 router.get('/ajax/index', function(req, res, next) {
-    var projection = {"username":true, 'nickname':true, 'authority':true,'followers':true, 'favourites':true,'upvoteds':true,'created':true};
+    var projection = {"poster":true, 'upvoters':true, 'comments':true, 'created':true};
     var skip = 0;
     var limit = 1000;
     //搜用户
-    User.getUsers({}, projection, skip, limit, true).then(function(data) {
+    Post.getPosts({}, projection, skip, limit, true).then(function(data) {
         console.log(data);
         for (let elmt of data) {
             for (let prop in elmt) {
@@ -42,21 +43,17 @@ router.get('/ajax/index', function(req, res, next) {
             }
             elmt.created = moment(elmt.created).format('YYYY-MM-DD HH:mm:ss')
         }
-        res.render('admin/_user', {
+        res.render('admin/_post', {
             table:{
                 id: "table",
                 titles: [
-                    {name: '账号', label: 'username', url: ''}, 
-                    {name: '昵称', label: 'nickname'},
-                    {name: '角色', label: 'authority'},
-                    {name: '关注数', label: 'followers'},
-                    {name: '收藏数', label: 'favourites'},
-                    {name: '点赞数', label: 'upvoteds'},
-                    {name: '注册时间', label: 'created'},
+                    {name: '分享者', label: 'poster', url: ''}, 
+                    {name: '点赞数', label: 'upvoters'},
+                    {name: '评论数', label: 'comments'},
+                    {name: '分享时间', label: 'created'},
                     {name: '操作', opers: 
                         [  
-                            {name: '详情',  oper: 'show'}, 
-                            {name: '删除',  oper: 'del'}
+                            {name: '详情',  oper: 'show'}
                         ]
                     }
                 ],
@@ -64,11 +61,11 @@ router.get('/ajax/index', function(req, res, next) {
             }
         }, function(err, html){
             res.send({
-                title:"读者",
+                title:"分享",
                 html: html,
                 table:{
                     id: "table",
-                    noSortArr: [7]
+                    noSortArr: [4]
                 },
                 done: true
             });

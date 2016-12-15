@@ -1,0 +1,272 @@
+<div class="row">
+    <% if(user.username == me.username ){ %>
+    <div class="col-md-4">
+    <% }else{ %>
+    <div class="col-md-12">
+    <% } %>
+      <!-- Profile Image -->
+        <div class="box box-widget widget-user">
+            <!-- Add the bg color to the header using any of the bg-* classes -->
+            <div class="widget-user-header bg-aqua-active">
+              <h3 class="widget-user-username"><%= user.username %></h3>
+              <h5 class="widget-user-desc">Founder &amp; CEO</h5>
+            </div>
+            <div class="widget-user-image">
+              <img class="img-circle" src="<%= user.avator %>" alt="User Avatar">
+            </div>
+
+            <% if(user.username == me.username || user.authority == "user"){ %>
+            <div class="box-footer">
+            <% if( user.authority == "user" ){ %>
+              <div class="row">
+                <div class="col-sm-4 border-right">
+                  <div class="description-block">
+                    <h5 class="description-header">3,200</h5>
+                    <span class="description-text">SALES</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-4 border-right">
+                  <div class="description-block">
+                    <h5 class="description-header">13,000</h5>
+                    <span class="description-text">FOLLOWERS</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-4">
+                  <div class="description-block">
+                    <h5 class="description-header">35</h5>
+                    <span class="description-text">PRODUCTS</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+              </div>
+              <% } %>
+                  <!-- /.row -->
+
+              <% if(user.username == me.username){ %>
+              <div class="row">
+                <div class="col-sm-6">
+                  <a href="javascript:edit()" class="btn btn-primary btn-block description-block"><b>编辑信息</b></a>
+                </div>
+                <div class="col-sm-6">
+                  <a href="javascript:DGet('profile', 'resetPwd')" class="btn btn-primary btn-block description-block"><b>修改密码</b></a>
+                </div>
+              </div>
+              <% } %>
+            </div>
+            <% } %>
+          </div>
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">简介</h3>
+              <div class="box-tools pull-right"></div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-footer">
+              <div class="row">
+                <div class="col-sm-3"><h4>座右铭</h4></div>
+                <div class="col-sm-9"><h4>Message Subject Is Placed Here</h4></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"><h4>真实姓名</h4></div>
+                <div class="col-sm-9"><h4>温建状</h4></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"><h4>手机</h4></div>
+                <div class="col-sm-9"><h4>18814120000</h4></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"><h4>邮箱</h4></div>
+                <div class="col-sm-9"><h4>315954840@qq.com</h4></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"><h4>关注</h4></div>
+                <div class="col-sm-9"><h4>
+                  <span class="label label-info">Javascript</span>
+                  <span class="label label-info">Javascript</span>
+                  <span class="label label-info">Javascript</span>
+                  <span class="label label-info">Javascript</span>
+                </h4></div>
+              </div>
+               
+            </div>
+              <!-- /.mailbox-read-info -->
+        </div>
+          <!-- /.box -->
+      </div>
+        <!-- /.col -->
+       <% if(user.username == me.username ){ %>
+      <div class="col-md-8">
+      <% }else{ %>
+      <div class="col-md-12">
+      <% } %>
+        <div class="box box-warning">
+          <div class="box-header with-border">
+              <h3 class="box-title">博文</h3>
+              <div class="box-tools pull-right">
+                <span data-toggle="tooltip" title="" class="badge bg-green" data-original-title="3 New Messages">3</span>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+              <!-- /.box-tools -->
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body no-padding">
+              <table class="table">
+                <tbody><tr>
+                  <th style="width: 10px">#</th>
+                  <th style="width: 80px">状态</th>
+                  <th>比例</th>
+                  <th style="width: 70px">数量</th>
+                </tr>
+                <tr>
+                  <td>1.</td>
+                  <td>发表</td>
+                  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-red">55</span></td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>锁定</td>
+                  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-yellow">70</span></td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>编辑中</td>
+                  <td>
+                    <div class="progress progress-xs progress-striped active">
+                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light-blue">30</span></td>
+                </tr>
+              </tbody></table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+        <div class="box box-warning">
+          <div class="box-header with-border">
+              <h3 class="box-title">照片墙</h3>
+              <div class="box-tools pull-right">
+                <span data-toggle="tooltip" title="" class="badge bg-green" data-original-title="3 New Messages">3</span>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+              <!-- /.box-tools -->
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body no-padding">
+              <table class="table">
+                <tbody><tr>
+                  <th style="width: 10px">#</th>
+                  <th style="width: 80px">状态</th>
+                  <th>比例</th>
+                  <th style="width: 70px">数量</th>
+                </tr>
+                <tr>
+                  <td>1.</td>
+                  <td>发表</td>
+                  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-red">55</span></td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>锁定</td>
+                  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-yellow">70</span></td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>编辑中</td>
+                  <td>
+                    <div class="progress progress-xs progress-striped active">
+                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light-blue">30</span></td>
+                </tr>
+              </tbody></table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+        <div class="box box-warning">
+          <div class="box-header with-border">
+              <h3 class="box-title">随笔</h3>
+              <div class="box-tools pull-right">
+                <span data-toggle="tooltip" title="" class="badge bg-green" data-original-title="3 New Messages">3</span>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+              <!-- /.box-tools -->
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body no-padding">
+              <table class="table">
+                <tbody><tr>
+                  <th style="width: 10px">#</th>
+                  <th style="width: 80px">状态</th>
+                  <th>比例</th>
+                  <th style="width: 70px">数量</th>
+                </tr>
+                <tr>
+                  <td>1.</td>
+                  <td>发表</td>
+                  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-red">55</span></td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>锁定</td>
+                  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-yellow">70</span></td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>编辑中</td>
+                  <td>
+                    <div class="progress progress-xs progress-striped active">
+                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light-blue">30</span></td>
+                </tr>
+              </tbody></table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+<!-- /.col -->
+</div>
+<!-- /.row -->

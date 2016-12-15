@@ -6,7 +6,7 @@ $(function () {
         $("#m_title").html($(this).find(".title").html());
         role = $(this).attr("data-role");
         $.ajax({
-            url: "/admin/" + role + "/ajax",
+            url: "/admin/" + role + "/ajax/index",
             type: "get",
             data: {},
             dataType:"json",
@@ -20,8 +20,8 @@ $(function () {
                     howToDo(data.dealMsg);
                 }
             },
-            error: function(err, data){
-                showBlock(data.html);
+            error: function(err){
+                showBlock(err.responseJSON.html);
             }
         });
     });
@@ -55,7 +55,7 @@ $(function () {
         }
     }, function(){
            $.ajax({
-                url: "/manager/ajax/lock",
+                url: "/admin/common/ajax/lock",
                 type: "get",
                 data: {},
                 dataType:"json",
@@ -66,8 +66,8 @@ $(function () {
                         howToDo(data.dealMsg);
                     }
                 },
-                error: function(err, data){
-                    $("#lock_sidebar .content").html(data.html);
+                error: function(err){
+                    $("#lock_sidebar .content").html(err.responseJSON.html);
                 }
             });
     });
@@ -141,7 +141,7 @@ function show(id, myRole) {
                     howToDo(data.dealMsg);
                 }
             },
-        error: function(err, data){
+        error: function(err, data){debugger;
              $("#right_sidebar .content").html(data.html);
         }
     });
@@ -290,7 +290,7 @@ function DPost(myRole, myOper){
 };
 function unlock(){
     $.ajax({
-        url: "/manager/ajax/login",
+        url: "/admin/common/ajax/login",
         type: "post",
         data: $("#lockForm").serialize(),
         dataType:"json",
@@ -308,6 +308,11 @@ function unlock(){
     });
 }
 
-function howToDo(dealMsg){
-    debugger;
+function howToDo(dealMsg){debugger;
+    if(!(dealMsg && dealMsg.state)) return;
+    switch(dealMsg.state){
+        case "notLogin":
+            lockLayer.show();
+            break;
+    }
 };
