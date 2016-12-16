@@ -4,14 +4,21 @@
             <div class="profile">
                 <% if(isMe){ %>
                     <img class="evator" src="<%= user.avatar %>">
-                    <h1 class="name hidden-xs"><% if(user.nickname){%><%= user.nickname %><% }else{ %> <%= user.username %> <% } %></h1>
-                    <h1 class="name visible-xs"><a href="/user/profile" ><% if(user.nickname){%><%= user.nickname %><% }else{ %> <%= user.username %> <% } %><i class="toEdit link-no-decoration glyphicon glyphicon-edit"></i></a></h1>
-                    <p class="sign"><% if(user.bio){%><%= user.bio %><% }else{ %>(未设置)<% } %></p>
+                    <input class="name" <% if(user.nickname){%>value='<%= user.nickname %>'<% }else{ %>placeholder='昵称...'<% } %>/>
+                    <h2 class="name">账号：<%= user.username %></h1>
+                    <input class="bio" <% if(user.bio){%>value='<%= user.bio %>'<% }else{ %>placeholder='个性签名...'<% } %> >
                 <% }else{ %>
                     <img class="evator" src="<%= user.avatar %>">
-                    <h1 class="name"><% if(user.nickname){%><%= user.nickname %><% }else{ %> <%= user.username %> <% } %></h1>
-                    <p class="sign"><% if(user.bio){%><%= user.bio %><% }else{ %>(未设置)<% } %></p>
+                    <% if(user.nickname){%>
+                        <h1 class="name"><%= user.nickname %></h1>
+                        <h2 class="name">账号：<%= user.username %></h2>
+                    <% }else{ %>
+                        <h1 class="name"> <%= user.username %></h1> 
+                    <% } %>
+                    <p class="bio"><% if(user.bio){%><%= user.bio %><% }else{ %>个性签名...<% } %></p>
                     <a href="javascript:void(0)" data-userid="<%=user._id %>" data-oper="add" class="toFollow link-no-decoration glyphicon glyphicon-star"></a>
                 <% } %>
             </div>
         </div>
+<!--
+                    <h1 class="name visible-xs"><a href="/user/profile" ><% if(user.nickname){%><%= user.nickname %><% }else{ %> <%= user.username %> <% } %><i class="toEdit link-no-decoration glyphicon glyphicon-edit"></i></a></h1>-->

@@ -146,7 +146,7 @@ function getPostStr(post, isMe) {
          + (post.comments?post.comments.length:"0")+
         '</span>\
         <span class="show-list-item"><i class="glyphicon glyphicon-heart"></i>'
-         + (post.upvotes?post.upvotes.length:"0")+
+         + (post.upvoters?post.upvoters.length:"0")+
         '</span>\
         <span class="show-list-item"><i class="glyphicon glyphicon-thumbs-up"></i>'
         + (post.favourites?post.favourites.length:"0")+
