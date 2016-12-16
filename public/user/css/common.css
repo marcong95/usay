@@ -63,7 +63,7 @@ body{
     position: relative;
     width: 300px;
     margin: 10px auto;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.16);
@@ -75,8 +75,32 @@ body{
     margin: 0 auto;
 }
 .user-view .profile .name{
-    margin: 5px;
-    font-size: 24px;
+    background-color: rgba(93, 116, 154, 0);
+    border: none;
+    text-align: center;
+}
+.user-view .profile input.name{
+    margin: 2px;
+    font-size: 18px;
+}
+.user-view .profile h1.name{
+    margin: 2px;
+    font-size: 18px;
+}
+.user-view .profile h2.name{
+    margin: 0;
+    font-size: 12px;
+}
+.user-view .profile p.bio{
+    margin: 2px;
+    font-size: 14px;
+}
+.user-view .profile input.bio{
+    background-color: rgba(93, 116, 154, 0);
+    border: none;
+    margin: 2px;
+    font-size: 14px;
+    text-align: center;
 }
 .user-view .profile .toFollow{
     position: absolute;
@@ -295,7 +319,10 @@ body{
 }
 .link-no-decoration,
 .link-no-decoration:hover,
-.link-no-decoration:visited {
+.link-no-decoration:visited,
+.link-no-decoration:active,
+.link-no-decoration:focus,
+.link-no-decoration:link {
     text-decoration: none;
 }
 .f-cb:after {

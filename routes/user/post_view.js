@@ -29,6 +29,9 @@ router.get('/', function(req, res, next) {
             cmt.from = { _id: cmt.from, name: yield getUsername(cmt.from) }
             cmt.to = { _id: cmt.to, name: yield getUsername(cmt.to) }
 
+        } 
+        for (let cmt of post.upvoters) {
+            cmt.from = { _id: cmt.from, name: yield getUsername(cmt.from) }
         }
         return post;
     }).then(function(data) {
