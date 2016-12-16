@@ -135,7 +135,7 @@ function renderPosts(){
                             }else{
                                 html += '<a href="/user/user_view" class="me">,我</a>';
                             }
-                           $(div).find(".like-start").after(html)
+                           $(div).append(html)
                             $(that).addClass("active")
                         }else{
                             var div = $(bottom).find(".like-list")

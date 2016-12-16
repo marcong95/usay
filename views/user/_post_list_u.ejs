@@ -1,13 +1,13 @@
 <ul class="list-group" id="post_list">
-     <% for(let i=0, len=postList.length; i<len; i++){ var post = postList[i]; if(!post) continue;%><!-- for1 -->
+     <% for(let i=0, len=postList.length; i<len; i++){ var c_post = postList[i]; if(!c_post) continue; var post=c_post.to %><!-- for1 -->
     <li class="list-group-item post-item">
-        <h1 class="author"><%= post.created %></h1>
+        <h1 class="author"><%= c_post.created %></h1>
         <h1 class="author"> 
-            <a href="/user/user_view?userid=<%= post.to.poster._id %>"><img src="<%= post.to.poster.avatar %>"> 
-            <%= post.to.poster.username %> 
+            <a href="/user/user_view?userid=<%= post.poster._id %>"><img src="<%= post.poster.avatar %>"> 
+            <%= post.poster.username %> 
             </a> 
-            <a href="javascript:void(0)" class="delFavorite flr a-active link-no-decoration glyphicon glyphicon-trash" data-postid="<%= post.to._id %>"></a>
-            <small><%= post.to.created %></small> 
+            <a href="javascript:void(0)" class="delFavorite flr a-active link-no-decoration glyphicon glyphicon-trash" data-postid="<%= post._id %>"></a>
+            <small><%= post.created %></small> 
         </h1> 
         <div class="content">
             <a href="/user/post_view?postId=<%= post._id %>">
@@ -25,7 +25,7 @@
                 <div class="show-list f-cb">
                     <span class="show-list-item"><i class="glyphicon glyphicon-comment"></i>
                     <% if(post.comments){ %><%=post.comments.length%><% }else{ %>0<%}%></span>                       
-                    <span class="show-list-item"><i class="glyphicon glyphicon-heart"></i><% if(post.upvotes){ %><%=post.upvotes.length%><% }else{ %>0<%}%></span> </span>
+                    <span class="show-list-item"><i class="glyphicon glyphicon-heart"></i><% if(post.upvoters){ %><%=post.upvoters.length%><% }else{ %>0<%}%></span> </span>
                     <span class="show-list-item"><i class="glyphicon glyphicon-thumbs-up"></i>
                         <% if(post.favourites){ %><%=post.favourites.length%><% }else{ %>0<%}%></span> </span>
                 </div>
