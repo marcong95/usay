@@ -26,10 +26,10 @@ function toPage(currentPage){
             if(data.done){
                 pageInfo = data.pageInfo;
                 var posts = data.list;
-                var user = data.user;
+                var me = data.user;
                 var html = "";
                 for(var i=0, len=posts.length; i<len; i++) {
-                    var userStr = getPostStr(posts[i]);
+                    var userStr = getPostStr(posts[i], me);
                     html += userStr;
                 }
                 $("#post_list").html(html);
@@ -117,7 +117,6 @@ function renderPosts(){
     $(".operation .toUpvote").on("click", function(){
         var bottom = $(this).closest(".bottom");
         var postId = $(bottom).attr("data-postid");
-        var like = '<a href="#">我,</a>';
         var oper = $(this).attr("data-oper");
         var that = this;
         checkSession(function(){
@@ -127,9 +126,23 @@ function renderPosts(){
                     function(todo){
                         $(that).attr("data-oper", todo)
                         if(todo == "del"){
+                            var div = $(bottom).find(".like-list")
+                            var html = "";
+                            var like =  '<span class="like-start glyphicon glyphicon-heart-empty"></span>';
+                            if($(div).find(".like-start").length==0){
+                               $(div).html(like)
+                               html += '<a href="/user/user_view" class="me">我</a>';
+                            }else{
+                                html += '<a href="/user/user_view" class="me">,我</a>';
+                            }
+                           $(div).find(".like-start").after(html)
                             $(that).addClass("active")
-                            $(bottom).find(".like-start").after(like);
                         }else{
+                            var div = $(bottom).find(".like-list")
+                            $(div).find(".me").remove()
+                            if($(div).find("a").length==0){
+                               div.html("")
+                            }
                             $(that).removeClass("active")
                         }
                     }
@@ -190,7 +203,7 @@ function toDelete(elem, commentId) {
     }
 }
 //每个分享的模板
-function getPostStr(post) {
+function getPostStr(post, me) {
     var imgStr = '';
     if(post.images){
         for(let i=0, len=post.images.length; i<len; i++){ 
@@ -199,16 +212,28 @@ function getPostStr(post) {
         }
     }
     var upvoteStr = "";
-    if(post.upvotes){
-        upvoteStr +=  '<span class="like-start glyphicon glyphicon-heart-empty"></span>';
-        for(let i=0, len=post.upvotes.length; i<len; i++){ 
-            var upvote = post.upvotes[i];
-            upvoteStr +=  '<a href="">姓名,</a><a href="#">姓名</a>'
+    if(post.upvoters.length){
+        upvoteStr += '<span class="like-start glyphicon glyphicon-heart-empty"></span>'
+        for(let i=0, len=post.upvoters.length; i<len; i++){ 
+            var upvoter = post.upvoters[i].from;
+            if(i==0){
+                if(me && me._id == upvoter._id){
+                    upvoteStr+= '<a href="/user/user_view" class="me">我</a>' 
+                 }else{
+                    upvoteStr+= '<a href="/user/user_view?userId=' +upvoter._id +'">'+upvoter.name+'</a>'
+                 }
+             }else{
+                if(me && me._id == upvoter._id){
+                     upvoteStr+= '<a href="/user/user_view" class="me">,我</a>'
+                }else{
+                     upvoteStr+='<a href="/user/user_view?userId=' +upvoter._id +'">,'+upvoter.name+'</a>'
+                }
+             }
         }
     }
     
     var commentStr = "";
-    if(post.comments){
+    if(post.comments.length){
          for(let i=0, len=post.comments.length; i<len; i++){ 
              var comment = post.comments[i];
              commentStr += 
@@ -255,14 +280,14 @@ function getPostStr(post) {
             '</ul> \
             <div class="operation"> \
                 <div class="operation-list f-cb"> \
-<a href="javascript:void(0)" class="toComment operation-list-item link-no-decaration glyphicon glyphicon-comment" role="button"></a> \
-<a href="javascript:void(0)" class="toFavorite operation-list-item link-no-decaration op-right glyphicon glyphicon-heart" role="button" data-oper="add"></a> \
-<a href="javascript:void(0)" class="toUpvote operation-list-item link-no-decaration op-right glyphicon glyphicon-thumbs-up" role="button"  data-oper="add"></a> \
+<a href="javascript:void(0)" class="toComment operation-list-item link-no-decaration glyphicon glyphicon-comment" role="button"  title="评论"></a> \
+<a href="javascript:void(0)" class="toFavorite operation-list-item link-no-decaration op-right glyphicon glyphicon-heart" role="button" data-oper="add" title="收藏"></a> \
+<a href="javascript:void(0)" class="toUpvote operation-list-item link-no-decaration op-right glyphicon glyphicon-thumbs-up" role="button"  data-oper="add" title="点赞"></a> \
                 </div> \
                 <div class="say-input temp-hide"> \
                   <div class="input-group"> \
                     <input type="text" class="toSay form-control" placeholder="输入评论内容...">\
-                    <a class="input-group-addon say" data-to=""><i class="glyphicon glyphicon-share-alt"></i></a> \
+                    <a class="input-group-addon say" data-to=""><i class="glyphicon glyphicon-share-alt" title="发送"></i></a> \
                   </div> \
                 </div> \
             </div> \

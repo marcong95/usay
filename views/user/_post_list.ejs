@@ -21,15 +21,28 @@
         </div> 
         <div class="bottom" data-postId="<%= post._id %>"> 
             <div class="like-list">
-                <% if(post.upvotes){ %> 
+                <% if(post.upvoters.length>0){ %> 
                     <span class="like-start glyphicon glyphicon-heart-empty"></span>
-                    <% for(let i=0, len=post.upvotes.length; i<len; i++){ var upvote = post.upvotes[i]; %><!-- for1-1 -->
-                        <a href="">姓名,</a><a href="#">姓名</a><% } %><!-- end for1-1 -->
+                    <% for(let i=0, len=post.upvoters.length; i<len; i++){ var upvoter = post.upvoters[i].from; %><!-- for1-1 -->
+                        <% if(i==0){ %>
+                            <% if(me && me._id == upvoter._id){ %>
+                            <a href="/user/user_view" class="me">我</a>
+                            <% }else{ %>
+                            <a href="/user/user_view?userId=<%=upvoter._id%>"><%=upvoter.name%></a>
+                            <% } %>
+                        <% }else{ %> 
+                            <% if(me && me._id == upvoter._id){ %>
+                            <a href="/user/user_view" class="me">,我</a>
+                            <% }else{ %>
+                            <a href="/user/user_view?userId=<%=upvoter._id%>">,<%=upvoter.name%></a>
+                            <% } %>
+                        <% } %>
+                    <% } %><!-- end for1-1 -->
                 <% } %>
                  
             </div> 
             <ul class="comment-list">
-                <% if(post.comments){ %>   
+                <% if(post.comments.length>0){ %>   
                     <% for(let i=0, len=post.comments.length; i<len; i++){ var comment = post.comments[i]; %><!-- for1-1 -->
                     <li class="comment-list-item"> 
                         <a href="/user/user_view?userId=<%= comment.from._id %>" class="from"><%= comment.from.name %></a><% if(comment.to._id){ %><span>回复</span><a href="/user/user_view?userId=<%= comment.to._id %>" class="to"><%= comment.to.name %></a><% } %><span>:</span><a href="javascript:void(0)" onclick="<%if(me && comment.from._id == me._id){%>toDelete(this, '<%=comment._id%>')<% }else{%>toReply(this, '<%= comment.from._id %>', '<%= comment.from.name %>')<%}%>"><%= comment.content %></a> 
@@ -46,14 +59,14 @@
             </ul> 
             <div class="operation"> 
                 <div class="operation-list f-cb"> 
-<a href="javascript:void(0)" class="toComment operation-list-item link-no-decoration glyphicon glyphicon-comment" role="button"></a> 
-<a href="javascript:void(0)" class="toFavorite operation-list-item link-no-decoration op-right glyphicon glyphicon-heart" role="button" data-oper="add"></a> 
-<a href="javascript:void(0)" class="toUpvote operation-list-item link-no-decoration op-right glyphicon glyphicon-thumbs-up" role="button"  data-oper="add"></a> 
+<a href="javascript:void(0)" class="toComment operation-list-item link-no-decoration glyphicon glyphicon-comment" role="button"  title="评论"></a> 
+<a href="javascript:void(0)" class="toFavorite operation-list-item link-no-decoration op-right glyphicon glyphicon-heart" role="button" data-oper="add"  title="收藏"></a> 
+<a href="javascript:void(0)" class="toUpvote operation-list-item link-no-decoration op-right glyphicon glyphicon-thumbs-up" role="button"  data-oper="add"  title="点赞"></a> 
                 </div> 
                 <div class="say-input temp-hide"> 
                   <div class="input-group"> 
                     <input type="text" class="toSay form-control" placeholder="输入评论内容...">
-                    <a class="input-group-addon say" data-to=""><i class="glyphicon glyphicon-share-alt"></i></a> 
+                    <a class="input-group-addon say" data-to="" title="发送"><i class="glyphicon glyphicon-share-alt"></i></a> 
                   </div> 
                 </div> 
             </div> 

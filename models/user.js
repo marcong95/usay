@@ -82,6 +82,7 @@ User.register = function(username, password) {
         baned: false,
         avatar: config.user.defaultAvatar,
         salt,
+        bio:"",
         created: new Date()
       })
       yield user.save()
@@ -244,6 +245,13 @@ User.prototype.upvote = function(postId) {
       that.upvoteds.push(subdoc)
       that._model.upvoteds.push(subdoc)
       yield that._model.save()
+      
+      let post = yield Post.getPostById(postId)
+      let subdoc1 = { from: that._id, created: new Date }
+      post.upvoters.push(subdoc1)
+      post ._model.upvoters.push(subdoc1)
+      yield post._model.save()
+      
       return that
     }).then(resolve, reject)
       .catch(reject)
@@ -260,6 +268,14 @@ User.prototype.unupvote = function(postId) {
       if (indexToDelete >= 0) {
         that.upvoteds.splice(indexToDelete, 1)
         that._model.upvoteds.splice(indexToDelete, 1)
+      }
+      let post = yield Post.getPostById(postId)
+      let upvoterToDelete = post.upvoters.findIndex(
+        elmt => elmt.from == that._id.toString())
+      if (upvoterToDelete >= 0) {
+        post.upvoters.splice(upvoterToDelete, 1)
+        post._model.upvoters.splice(upvoterToDelete, 1)
+        yield post._model.save()
       }
       yield that._model.save()
       return that

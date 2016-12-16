@@ -33,6 +33,10 @@ router.get('/', function(req, res, next) {
                 cmt.from = { _id: cmt.from, name: yield getUsername(cmt.from) }
                 cmt.to = { _id: cmt.to, name: yield getUsername(cmt.to) }
             }
+            console.log(post.upvoters)
+            for (let cmt of post.upvoters) {
+                cmt.from = { _id: cmt.from, name: yield getUsername(cmt.from) }
+            }
         }
         return posts
     }).then(function(data) {

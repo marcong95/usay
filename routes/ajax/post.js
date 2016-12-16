@@ -84,13 +84,14 @@ router.post('/del', function(req, res, next) {
 });
 
 router.get('/getList', function(req, res, next) {
-    let currentPage = req.query.currentPage*1
-    let pageSize = req.query.pageSize*1;
+    var currentPage = req.query.currentPage*1 || 1
+    var pageSize = req.query.pageSize*1 || 10;
     var condition = {}, skip = (currentPage-1)*pageSize, limit = pageSize;
+    var totalPages;
     co(function*() {
         // here needs optimization someday
         let count = yield Post.getCount(condition);
-        let totalPages = Math.ceil(count/pageSize)
+        totalPages = Math.ceil(count/pageSize)
         let posts = yield Post.getPosts(condition, skip, limit)
         for (let post of posts) {
             post.poster = yield User.getUserById(post.poster)
@@ -104,7 +105,10 @@ router.get('/getList', function(req, res, next) {
             for (let cmt of post.comments) {
                 cmt.from = { _id: cmt.from, name: yield getUsername(cmt.from) }
                 cmt.to = { _id: cmt.to, name: yield getUsername(cmt.to) }
-
+            }
+            console.log(post.upvoters)
+            for (let cmt of post.upvoters) {
+                cmt.from = { _id: cmt.from, name: yield getUsername(cmt.from) }
             }
         }
         return {

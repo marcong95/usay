@@ -5,7 +5,7 @@
             <a href="#"><img src="<%= follower.avatar %>"></a>
             <% if(follower.nickname){ %><%= follower.nickname %><% }else{ %><%= follower.username %><% } %>
             <a href="javascript:void(0)" class="delFollow flr a-active link-no-decoration glyphicon glyphicon-trash" data-userid="<%= follower._id %>"></a>
-            <small><%= follower.bio %></small>
+            <small><% if(follower.bio){ %><%= follower.bio %><% }else{ %>&nbsp;<% } %></small>
         </h1>
     </li>
     <% } %>
