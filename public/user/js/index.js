@@ -26,10 +26,9 @@ function toPage(currentPage){
             if(data.done){
                 pageInfo = data.pageInfo;
                 var posts = data.list;
-                var me = data.user;
                 var html = "";
                 for(var i=0, len=posts.length; i<len; i++) {
-                    var userStr = getPostStr(posts[i], me);
+                    var userStr = getPostStr(posts[i]);
                     html += userStr;
                 }
                 $("#post_list").html(html);
@@ -203,7 +202,7 @@ function toDelete(elem, commentId) {
     }
 }
 //每个分享的模板
-function getPostStr(post, me) {
+function getPostStr(post) {
     var imgStr = '';
     if(post.images){
         for(let i=0, len=post.images.length; i<len; i++){ 
@@ -250,19 +249,19 @@ function getPostStr(post, me) {
     var postStr = 
         '<li class="list-group-item post-item"> \
         <h1 class="author"> \
-            <a href="/user/user_view?id='
+            <a href="/user/user_view?userId='
             + post.poster._id+
             '"><img src="'
             + post.poster.avatar+
             '">'
-            + post.poster.username+
+            + (post.poster.nickname?(post.poster.nickname+"("+post.poster.username+")"):post.poster.username)+
             '</a> \
             <small>'
             + post.created+
             '</small> \
         </h1> \
         <div class="content"> \
-            <a class="detail" href="/user/post_view">'
+            <a class="detail" href="/user/post_view?postId='+ post._id+'">'
             + post.content+
             '</a> \
             <div class="picture">'

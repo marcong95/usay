@@ -101,6 +101,7 @@ body{
     margin: 2px;
     font-size: 14px;
     text-align: center;
+    width: 100%;
 }
 .user-view .profile .toFollow{
     position: absolute;
@@ -366,4 +367,12 @@ body{
     display: inline-block;
     font-size: 12px;
     color: #fff;
+}
+.show-layer{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }

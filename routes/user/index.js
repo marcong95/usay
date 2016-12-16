@@ -26,9 +26,6 @@ router.get('/', function(req, res, next) {
         for (let post of posts) {
             post.poster = yield User.getUserById(post.poster)
             post.created = moment(post.created).format('YYYY/MM/DD HH:mm')
-            if (!post.poster.nickname) {
-                post.poster.nickname = post.poster.username
-            }
             if (!post.poster.avatar) {
                 post.poster.avatar = cfg.user.defaultAvatar
             }

@@ -78,7 +78,7 @@ User.register = function(username, password) {
         username,
         password: pwd.encrypt(password, salt),
         authority: 'admin',
-        bantext:"#",
+        bantext:"",
         baned: false,
         avatar: config.user.defaultAvatar,
         salt,

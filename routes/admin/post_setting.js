@@ -37,7 +37,6 @@ router.get('/ajax/index', function(req, res, next) {
     let id = req.session.admin._id;
    User.getUserById(id).then(function(user) {
        var text = user.bantext;
-       text = text.substring(text.indexOf("#")+1);
        res.render("admin/_post_setting", {
            text: text
        }, function(err, html){

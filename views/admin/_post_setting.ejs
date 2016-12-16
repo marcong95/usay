@@ -11,7 +11,7 @@
       <label class="control-label" for="inputSuccess">分享内容屏蔽关键字</label>
         <div class="input-group">
             <input type="text" class="form-control" value="<%=text%>" placeholder="格式如：xxx,xxx,xxx..." id="bantext">
-            <span class="input-group-addon" onclick='var text="#"+$("#bantext").val(); banText(text)'><i class="fa fa-save "></i></span>
+            <span class="input-group-addon" onclick='var text=$("#bantext").val(); banText(text)'><i class="fa fa-save "></i></span>
          </div>
       <span class="help-block">tip:设置分享屏蔽关键字，多个关键字以","隔开</span>
       <span class="help-block" style="color: #00BCD4;" id="result"></span>

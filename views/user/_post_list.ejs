@@ -2,8 +2,8 @@
     <% for(let i=0, len=postList.length; i<len; i++){ var post = postList[i]; if(!post) continue;%><!-- for1 -->
     <li class="list-group-item post-item"> 
         <h1 class="author"> 
-            <a href="/user/user_view?userid=<%= post.poster._id %>"><img src="<%= post.poster.avatar %>"> 
-            <%= post.poster.username %> 
+            <a href="/user/user_view?userId=<%= post.poster._id %>"><img src="<%= post.poster.avatar %>"> 
+            <% if(post.poster.nickname){ %> <%= post.poster.nickname %>(<%= post.poster.username %>) <% }else{%><%= post.poster.username %><% } %> 
             </a> 
             <small><%= post.created %></small> 
         </h1> 

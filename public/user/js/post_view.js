@@ -71,10 +71,10 @@ function renderPosts(){
         );
     });
     
+    
     $(".operation .toUpvote").on("click", function(){
         var bottom = $(this).closest(".bottom");
         var postId = $(bottom).attr("data-postid");
-        var like = '<a href="#">我,</a>';
         var oper = $(this).attr("data-oper");
         var that = this;
         checkSession(function(){
@@ -84,9 +84,23 @@ function renderPosts(){
                     function(todo){
                         $(that).attr("data-oper", todo)
                         if(todo == "del"){
+                            var div = $(bottom).find(".like-list")
+                            var html = "";
+                            var like =  '<span class="like-start glyphicon glyphicon-heart-empty"></span>';
+                            if($(div).find(".like-start").length==0){
+                               $(div).html(like)
+                               html += '<a href="/user/user_view" class="me">我</a>';
+                            }else{
+                                html += '<a href="/user/user_view" class="me">,我</a>';
+                            }
+                           $(div).append(html)
                             $(that).addClass("active")
-                            $(bottom).find(".like-start").after(like);
                         }else{
+                            var div = $(bottom).find(".like-list")
+                            $(div).find(".me").remove()
+                            if($(div).find("a").length==0){
+                               div.html("")
+                            }
                             $(that).removeClass("active")
                         }
                     }
@@ -94,6 +108,15 @@ function renderPosts(){
             }
         );
     });
+    
+    $(".picture > img").bind("click", function(){
+        var layer = $(".show-layer");
+        $(layer).find("img").attr("src", $(this).attr("src"));
+        $(layer).show();
+    })
+    $(".show-layer").bind("click", function(){
+        $(this).hide();
+    })
 }
 
 /*当用户登录时，渲染列表*/

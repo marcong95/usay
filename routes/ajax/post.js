@@ -11,7 +11,6 @@ const router = express.Router()
 
 
 router.post('/', function(req, res, next) {
-    debug(req.body)
     var content = req.body.content;
     var img, imgStr = req.body.img_arr;
     if(imgStr && imgStr!==''){
@@ -96,9 +95,6 @@ router.get('/getList', function(req, res, next) {
         for (let post of posts) {
             post.poster = yield User.getUserById(post.poster)
             post.created = moment(post.created).format('YYYY/MM/DD HH:mm')
-            if (!post.poster.nickname) {
-                post.poster.nickname = post.poster.username
-            }
             if (!post.poster.avatar) {
                 post.poster.avatar = cfg.user.defaultAvatar
             }

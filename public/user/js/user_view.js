@@ -29,6 +29,28 @@ $(document).ready(function(){
         );
     });
     checkSession(function(){renderPage()}, function(){})
+    $("input[data-role]").bind("change", function(){
+        var key = $(this).attr("data-role");
+        var value = $(this).val();
+        $.ajax({
+            url: "/ajax/user/update",
+            type: "post",
+            data: {key: key, value: value},
+            dataType: "json",
+            success: function(data){
+               if(data.done){
+                   console.log("修改成功")
+               }else{
+                   alert(data.msg)
+               }
+            },
+            error:function(err, data){
+                // alert("访问异常");
+
+                console.error('访问异常');
+            }
+        });
+    })
 })
 
 //获取某页的数据

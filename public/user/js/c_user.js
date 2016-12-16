@@ -27,7 +27,7 @@ function toPage(currentPage){
                     pageInfo = data.pageInfo;
                     var users = data.list;
                     var html = "";
-                    for(var i=0, len=posts.length; i<len; i++) {
+                    for(var i=0, len=users.length; i<len; i++) {
                         var userStr = getUserStr(users[i]);
                         html += userStr;
                     }
@@ -71,14 +71,21 @@ function toSearch(){
 }
 
 //每个用户的模板
-function getUserStr(user) {
+function getUserStr(follower) {
+    var name = "";
+    if(follower.nickname){
+        name += follower.nickname+'('+ follower.username+')';
+    }else{
+        name += follower.username;
+    }
     var userStr = 
-        '<li class="list-group-item post-item"> \
-            <h1 class="author"> \
-                <a href="/user/user_view?userId=123"><img src="../../../common/images/picture/test2.jpg"></a> \
-                分享者姓名<a href="#" class="delFollow flr link-no-decoration glyphicon glyphicon-star" data-userId="123"></a> \
-                <small>有志者，事竟成</small> \
-            </h1> \
-        </li>';
+        '<li class="list-group-item post-item">\
+        <h1 class="author">\
+            <a href="#"><img src="'+ follower.avatar+'"></a>'
+            + name +
+            '<a href="javascript:void(0)" class="delFollow flr a-active link-no-decoration glyphicon glyphicon-trash" data-userid="'+ follower._id+'"></a>\
+            <small>'+ (follower.bio?follower.bio:'个性签名...') + '</small>\
+        </h1>\
+    </li>';
     return userStr;
 }

@@ -4,9 +4,9 @@
             <div class="profile">
                 <% if(isMe){ %>
                     <img class="evator" src="<%= user.avatar %>">
-                    <input class="name" <% if(user.nickname){%>value='<%= user.nickname %>'<% }else{ %>placeholder='昵称...'<% } %>/>
+                    <input class="name" data-role="nickname" <% if(user.nickname){%>value='<%= user.nickname %>'<% }else{ %>placeholder='昵称...'<% } %>/>
                     <h2 class="name">账号：<%= user.username %></h1>
-                    <input class="bio" <% if(user.bio){%>value='<%= user.bio %>'<% }else{ %>placeholder='个性签名...'<% } %> >
+                    <input class="bio" data-role="bio" <% if(user.bio){%>value='<%= user.bio %>'<% }else{ %>placeholder='个性签名...'<% } %> >
                 <% }else{ %>
                     <img class="evator" src="<%= user.avatar %>">
                     <% if(user.nickname){%>

@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
     // console.log(condition, req.session.user);
     // console.log(req.session.user._id);
     co(function*() {
-        let _id = req.query.userid
+        let _id = req.query.userId
         if(!_id || _id == "null"){
             if(req.session.user){
                 _id = req.session.user._id
