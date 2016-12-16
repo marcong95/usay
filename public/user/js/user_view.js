@@ -128,7 +128,7 @@ function getPostStr(post, isMe) {
         +post.created+delStr+
         '</h1>\
         <div class="content">\
-            <a href="/user/post_view?id='
+            <a href="/user/post_view?postId='
         +post._id+
         '">\
         <span class="detail">'
