@@ -8,6 +8,7 @@ const config = require('../configs/global')
 const postSchema = mongoose.Schema({
   poster: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   created: Date,
+  baned: Boolean,
   content: String,
   upvoters: [{
     from: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
@@ -42,7 +43,8 @@ Post.addPost = function(poster, content, images) {
         poster: poster._id,
         content,
         images,
-        created: new Date()
+        created: new Date(),
+        baned: false
       })
       yield post.save()
       return new Post(post)
@@ -89,6 +91,20 @@ Post.getPosts = function(condition, skip, limit) {
   return new Promise((resolve, reject) => {
     co(function*() {
       let query = PostModel.find(condition).sort({ created: -1 })
+      skip && query.skip(skip)
+      limit && query.limit(limit)
+      let posts = yield query.exec()
+      // posts.forEach(debug)
+      return posts.map((post) => new Post(post))
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
+// db.posts.aggregate({$unwind: '$comments'}, {$sort: {created: -1, 'comments.created': -1}}).pretty()
+Post.getPurePosts = function(condition, projection, skip, limit) {
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let query = PostModel.find(condition, projection).sort({ created: -1 })
       skip && query.skip(skip)
       limit && query.limit(limit)
       let posts = yield query.exec()
@@ -170,5 +186,16 @@ Post.prototype.removeComment = function(commentId) {
       .catch(reject)
   })
 }
-
+Post.prototype.modify = function(key, value) {
+  let that = this
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      that._model[key] = value
+      yield that._model.save()
+      that[key] = value
+      resolve(that)
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
 module.exports = Post

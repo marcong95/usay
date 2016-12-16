@@ -1,6 +1,7 @@
 var express = require('express');
 var crypto = require('crypto');
-var User = require("../../models/user");
+var Post = require("../../models/post");
+var user = require("../../models/user");
 var router = express.Router();
 var path = require('path');
 var ejs = require('ejs');
@@ -28,11 +29,11 @@ router.get("/ajax/*", function(req, res, next) {
 
 /* GET User page. */
 router.get('/ajax/index', function(req, res, next) {
-    var projection = {"username":true, 'nickname':true, 'authority':true,'followers':true, 'favourites':true,'upvoteds':true,'created':true};
+    var projection = {"poster":true, 'upvoters':true, 'comments':true, 'created':true};
     var skip = 0;
     var limit = 1000;
     //搜用户
-    User.getUsers({'baned':false}, projection, skip, limit, true).then(function(data) {
+    Post.getPurePosts({'baned':true}, projection, skip, limit).then(function(data) {
         console.log(data);
         for (let elmt of data) {
             for (let prop in elmt) {
@@ -42,21 +43,18 @@ router.get('/ajax/index', function(req, res, next) {
             }
             elmt.created = moment(elmt.created).format('YYYY-MM-DD HH:mm:ss')
         }
-        res.render('admin/_user', {
+        res.render('admin/_post', {
             table:{
                 id: "table",
                 titles: [
-                    {name: '账号', label: 'username', url: ''}, 
-                    {name: '昵称', label: 'nickname'},
-                    {name: '角色', label: 'authority'},
-                    {name: '关注数', label: 'followers'},
-                    {name: '收藏数', label: 'favourites'},
-                    {name: '点赞数', label: 'upvoteds'},
-                    {name: '注册时间', label: 'created'},
+                    {name: '分享者', label: 'poster', url: ''}, 
+                    {name: '点赞数', label: 'upvoters'},
+                    {name: '评论数', label: 'comments'},
+                    {name: '分享时间', label: 'created'},
                     {name: '操作', opers: 
                         [  
-                            {name: '详情',  oper: 'show'}, 
-                            {name: '冻结',  oper: 'ban'}
+                            {name: '详情',  oper: 'show'},
+                            {name: '解除屏蔽',  oper: 'release'}
                         ]
                     }
                 ],
@@ -64,11 +62,11 @@ router.get('/ajax/index', function(req, res, next) {
             }
         }, function(err, html){
             res.send({
-                title:"读者",
+                title:"分享",
                 html: html,
                 table:{
                     id: "table",
-                    noSortArr: [7]
+                    noSortArr: [4]
                 },
                 done: true
             });
@@ -132,10 +130,32 @@ router.get('/ajax/edit/:id', function(req, res, next) {
     });
 });
 
-router.post('/ajax/ban/:id', function(req, res, next) {
+
+
+router.post('/ajax/del/:id', function(req, res, next) {
     var id = req.params.id;
-    User.getUserById(id).then(function(user) {
-        user.modify('baned', true).then(function(){
+    User.delete({_id: id}, function(err) {
+        if(err){        
+            res.send({
+                done: false,
+                msg: "删除失败"
+            });
+            return;
+        } else {
+            res.send({
+                done: true,
+                msg: "删除成功"
+            });
+            return;
+        }
+
+    });
+});
+
+router.post('/ajax/release/:id', function(req, res, next) {
+    var id = req.params.id;
+    Post.getPostById(id).then(function(post) {
+        post.modify('baned', false).then(function(){
             res.send({
                 done: true
             });
@@ -159,25 +179,6 @@ router.post('/ajax/ban/:id', function(req, res, next) {
     });
 });
 
-router.post('/ajax/del/:id', function(req, res, next) {
-    var id = req.params.id;
-    User.delete({_id: id}, function(err) {
-        if(err){        
-            res.send({
-                done: false,
-                msg: "删除失败"
-            });
-            return;
-        } else {
-            res.send({
-                done: true,
-                msg: "删除成功"
-            });
-            return;
-        }
-
-    });
-});
 router.post('/ajax/update', function(req, res, next) {
     var _id = req.body._id;
     //检验用户输入

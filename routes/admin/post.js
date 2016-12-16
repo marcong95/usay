@@ -33,7 +33,7 @@ router.get('/ajax/index', function(req, res, next) {
     var skip = 0;
     var limit = 1000;
     //搜用户
-    Post.getPosts({}, projection, skip, limit, true).then(function(data) {
+    Post.getPurePosts({'baned':false}, projection, skip, limit).then(function(data) {
         console.log(data);
         for (let elmt of data) {
             for (let prop in elmt) {
@@ -53,7 +53,8 @@ router.get('/ajax/index', function(req, res, next) {
                     {name: '分享时间', label: 'created'},
                     {name: '操作', opers: 
                         [  
-                            {name: '详情',  oper: 'show'}
+                            {name: '详情',  oper: 'show'},
+                            {name: '屏蔽',  oper: 'ban'}
                         ]
                     }
                 ],
@@ -150,6 +151,34 @@ router.post('/ajax/del/:id', function(req, res, next) {
 
     });
 });
+
+router.post('/ajax/ban/:id', function(req, res, next) {
+    var id = req.params.id;
+    Post.getPostById(id).then(function(post) {
+        post.modify('baned', true).then(function(){
+            res.send({
+                done: true
+            });
+        },function(err){
+            res.send({
+                done: false,
+                dealMsg:{
+                    state: "error",
+                    html:"删除失败"
+                } 
+            });
+        })
+    }, function(err) {
+        res.send({
+            done: false,
+            dealMsg:{
+                state: "error",
+                html:"删除失败"
+            } 
+        });
+    });
+});
+
 router.post('/ajax/update', function(req, res, next) {
     var _id = req.body._id;
     //检验用户输入

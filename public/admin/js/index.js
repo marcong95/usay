@@ -3,27 +3,8 @@ var lockLayer;
 var role;
 $(function () {
     $(".main-block").bind("click", function() {
-        $("#m_title").html($(this).find(".title").html());
         role = $(this).attr("data-role");
-        $.ajax({
-            url: "/admin/" + role + "/ajax/index",
-            type: "get",
-            data: {},
-            dataType:"json",
-            success: function(data) {
-                if(data.done){
-                    showBlock(data.html);
-                    if(data.table){
-                        updateTable(data.table);
-                    }
-                }else{
-                    howToDo(data.dealMsg);
-                }
-            },
-            error: function(err){
-                showBlock(err.responseJSON.html);
-            }
-        });
+        refresh();
     });
     //右导航栏的样式改变
     $(".main-link").bind("click", function() {
@@ -73,6 +54,28 @@ $(function () {
     });
 });
 
+function refresh(){
+    $.ajax({
+        url: "/admin/" + role + "/ajax/index",
+        type: "get",
+        data: {},
+        dataType:"json",
+        success: function(data) {
+            if(data.done){
+                $("#m_title").html($(this).find(".title").html());
+                showBlock(data.html);
+                if(data.table){
+                    updateTable(data.table);
+                }
+            }else{
+                howToDo(data.dealMsg);
+            }
+        },
+        error: function(err){
+            showBlock(err.responseJSON.html);
+        }
+    });
+}
 
 function showBlock(data) {
     $("#m_content").html(data);
@@ -308,7 +311,46 @@ function unlock(){
     });
 }
 
-function howToDo(dealMsg){debugger;
+function ban(id){
+    var url = "/admin/" + role + "/ajax/ban/"+id;
+    $.ajax({
+        url: url,
+        type: "post",
+        data: {},
+        dataType:"json",
+        success: function(data) {
+            if(data.done){
+                refresh()
+            }else{
+                    howToDo(data.dealMsg);
+                }
+            },
+        error: function(err){
+             alert(err.responseJSON.msg);
+        }
+    }); 
+}
+function release(id){
+    var url = "/admin/" + role + "/ajax/release/"+id;
+    $.ajax({
+        url: url,
+        type: "post",
+        data: {},
+        dataType:"json",
+        success: function(data) {
+            if(data.done){
+                refresh()
+            }else{
+                    howToDo(data.dealMsg);
+                }
+            },
+        error: function(err){
+             alert(err.responseJSON.msg);
+        }
+    }); 
+}
+
+function howToDo(dealMsg){
     if(!(dealMsg && dealMsg.state)) return;
     switch(dealMsg.state){
         case "notLogin":

@@ -14,14 +14,36 @@
 			"header": "数据管理",
 			"list": [
 				{
-					"title": "分享",
+					"title": "分享管理",
 					"icon" :"fa-file-image-o",
-					"data_role": "post"	
+					"list": [
+						{
+							"title": "分享",
+							"icon" :"fa-file-image-o",
+							"data_role": "post"	
+						},
+						{
+							"title": "屏蔽分享",
+							"icon" :"fa-file-image-o",
+							"data_role": "post_baned"	
+						}
+					]
 				},
 				{
-					"title": "用户",
-					"icon" :"fa-user",
-					"data_role": "user"	
+					"title": "用户管理",
+					"icon" :"fa-user",					
+					"list": [
+						{
+							"title": "用户",
+							"icon" :"fa-user",
+							"data_role": "user"	
+						},
+						{
+							"title": "冻结用户",
+							"icon" :"fa-user",
+							"data_role": "user_baned"	
+						}
+					]
 				}
 			]
 		},

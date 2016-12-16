@@ -18,6 +18,7 @@ const userSchema = mongoose.Schema({
   },
   bio: String,
   created: Date,
+  baned: Boolean,
   lastOnline: Date,
   favourites: [{
     to: { type: mongoose.Schema.Types.ObjectId, ref: 'Post' },
@@ -75,6 +76,7 @@ User.register = function(username, password) {
         username,
         password: pwd.encrypt(password, salt),
         authority: 'user',
+        baned: false,
         salt,
         created: new Date()
       })
@@ -328,7 +330,6 @@ User.prototype.followId = function(userId) {
       }else{
           return false
       }
-      return that
     }).then(resolve, reject)
       .catch(reject)
   })

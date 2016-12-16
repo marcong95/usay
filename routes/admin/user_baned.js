@@ -32,7 +32,7 @@ router.get('/ajax/index', function(req, res, next) {
     var skip = 0;
     var limit = 1000;
     //搜用户
-    User.getUsers({'baned':false}, projection, skip, limit, true).then(function(data) {
+    User.getUsers({'baned': true}, projection, skip, limit, true).then(function(data) {
         console.log(data);
         for (let elmt of data) {
             for (let prop in elmt) {
@@ -56,7 +56,7 @@ router.get('/ajax/index', function(req, res, next) {
                     {name: '操作', opers: 
                         [  
                             {name: '详情',  oper: 'show'}, 
-                            {name: '冻结',  oper: 'ban'}
+                            {name: '解除冻结',  oper: 'release'}
                         ]
                     }
                 ],
@@ -132,10 +132,31 @@ router.get('/ajax/edit/:id', function(req, res, next) {
     });
 });
 
-router.post('/ajax/ban/:id', function(req, res, next) {
+
+
+router.post('/ajax/del/:id', function(req, res, next) {
+    var id = req.params.id;
+    User.delete({_id: id}, function(err) {
+        if(err){        
+            res.send({
+                done: false,
+                msg: "删除失败"
+            });
+            return;
+        } else {
+            res.send({
+                done: true,
+                msg: "删除成功"
+            });
+            return;
+        }
+
+    });
+});
+router.post('/ajax/release/:id', function(req, res, next) {
     var id = req.params.id;
     User.getUserById(id).then(function(user) {
-        user.modify('baned', true).then(function(){
+        user.modify('baned', false).then(function(){
             res.send({
                 done: true
             });
@@ -156,26 +177,6 @@ router.post('/ajax/ban/:id', function(req, res, next) {
                 html:"删除失败"
             } 
         });
-    });
-});
-
-router.post('/ajax/del/:id', function(req, res, next) {
-    var id = req.params.id;
-    User.delete({_id: id}, function(err) {
-        if(err){        
-            res.send({
-                done: false,
-                msg: "删除失败"
-            });
-            return;
-        } else {
-            res.send({
-                done: true,
-                msg: "删除成功"
-            });
-            return;
-        }
-
     });
 });
 router.post('/ajax/update', function(req, res, next) {
