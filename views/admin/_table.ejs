@@ -23,14 +23,11 @@
         <%   var listNum = table.list.length;   %>
         <%   for(var i=0; i<listNum; i++){ %>                           
             <tr>
-                <td>
-                    <a href="javascript:show('<%= table.list[i]._id %>')">
-                        <%= table.list[i][table.titles[0].label] %>
-                    </a>
-                </td>
-        <%    for(var j=1; j<colNum; j++){ %>
+        <%    for(var j=0; j<colNum; j++){ %>
         <%       if(table.titles[j].label){ %>
                     <td><%= table.list[i][table.titles[j].label] %></td>
+        <%       } else if(table.titles[j].url){ %>
+                    <td><a target="_blank" href="<%=table.titles[j].url%><%= table.list[i]._id %>"><%= table.titles[j].name %></a></td>
         <%       } else { %>
         <%          var opers = table.titles[j].opers;  %>
                     <td>

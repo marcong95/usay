@@ -4,6 +4,7 @@ var role;
 $(function () {
     $(".main-block").bind("click", function() {
         role = $(this).attr("data-role");
+        $("#m_title").html($(this).find(".title").html());
         refresh();
     });
     //右导航栏的样式改变
@@ -62,7 +63,6 @@ function refresh(){
         dataType:"json",
         success: function(data) {
             if(data.done){
-                $("#m_title").html($(this).find(".title").html());
                 showBlock(data.html);
                 if(data.table){
                     updateTable(data.table);
@@ -138,13 +138,15 @@ function show(id, myRole) {
         dataType:"json",
         success: function(data) {
             if(data.done){
-                $("#right_sidebar .content").html(data.html);
+                var html = data.html;
+                if(!html) html = "";
+                $("#right_sidebar .content").html(html);
                 rightLayer.show();
             }else{
                     howToDo(data.dealMsg);
                 }
             },
-        error: function(err, data){debugger;
+        error: function(err, data){
              $("#right_sidebar .content").html(data.html);
         }
     });
@@ -294,7 +296,7 @@ function DPost(myRole, myOper){
 function unlock(){
     $.ajax({
         url: "/admin/common/ajax/login",
-        type: "post",
+        type: "get",
         data: $("#lockForm").serialize(),
         dataType:"json",
         success: function(data) {
@@ -310,7 +312,25 @@ function unlock(){
         }
     });
 }
-
+function banText(text){
+    var url = "/admin/" + role + "/ajax/ban";
+    $.ajax({
+        url: url,
+        type: "post",
+        data: {bantext: text},
+        dataType:"json",
+        success: function(data) {;
+            if(data.done){
+                $("#result").html("设置成功");
+            }else{
+                    howToDo(data.dealMsg);
+                }
+            },
+        error: function(err){
+             alert(err.responseJSON.msg);
+        }
+    }); 
+}
 function ban(id){
     var url = "/admin/" + role + "/ajax/ban/"+id;
     $.ajax({

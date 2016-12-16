@@ -16,8 +16,10 @@ const userSchema = mongoose.Schema({
   avatar: {
     url: String
   },
+  avatar: String,
   bio: String,
   created: Date,
+  bantext: String,
   baned: Boolean,
   lastOnline: Date,
   favourites: [{
@@ -75,8 +77,10 @@ User.register = function(username, password) {
       let user = new UserModel({
         username,
         password: pwd.encrypt(password, salt),
-        authority: 'user',
+        authority: 'admin',
+        bantext:"#",
         baned: false,
+        avatar: config.user.defaultAvatar,
         salt,
         created: new Date()
       })

@@ -1,6 +1,8 @@
+const co = require('co')
 var express = require('express');
 var crypto = require('crypto');
 var User = require("../../models/user");
+var Post = require("../../models/post");
 var router = express.Router();
 var path = require('path');
 var ejs = require('ejs');
@@ -94,22 +96,42 @@ router.get('/ajax/list', function(req, res, next) {
 
 router.get('/ajax/show/:id', function(req, res, next) {
     var id = req.params.id;
-    User.getUserById(id).then(function(data) {
-        console.log(data);
+    co(function*() {
+        let user = yield User.getUserById(id)
+        let followersLen=user.followers.length,favoriteLen=user.favourites.length;
+        let postsLen = yield Post.getCount({poster: user._id})
+        let total = postsLen+followersLen+favoriteLen;
+        if(total == 0) total = 1;
+        let preview = [
+            {
+                label: "分享",
+                prop: postsLen/total*100,
+                amount: postsLen
+            },
+            {
+                label: "关注",
+                prop: followersLen/total*100,
+                amount: followersLen
+            },
+            {
+                label: "收藏",
+                prop: favoriteLen/total*100,
+                amount: favoriteLen
+            }
+        ]
         res.render('admin/_user_show', {
-           user: data,
+           user: user,
+           preview: preview,
            me: req.session.admin,
         }, function(err, html){
             res.send({
-                title:"读者",
+                title:"用户",
                 html: html,
                 done: true
             });
         });
-    }, function(err) {
-    
-    
-    });
+        return null
+        }).then(function(data) { }, console.log).catch(console.log);
 });
 //修改用户
 router.get('/ajax/edit', function(req, res, next) {

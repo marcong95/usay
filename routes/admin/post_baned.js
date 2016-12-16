@@ -1,7 +1,8 @@
+const co = require('co')
 var express = require('express');
 var crypto = require('crypto');
 var Post = require("../../models/post");
-var user = require("../../models/user");
+var User = require("../../models/user");
 var router = express.Router();
 var path = require('path');
 var ejs = require('ejs');
@@ -28,13 +29,26 @@ router.get("/ajax/*", function(req, res, next) {
 });
 
 /* GET User page. */
+/* GET User page. */
 router.get('/ajax/index', function(req, res, next) {
     var projection = {"poster":true, 'upvoters':true, 'comments':true, 'created':true};
     var skip = 0;
     var limit = 1000;
-    //搜用户
-    Post.getPurePosts({'baned':true}, projection, skip, limit).then(function(data) {
-        console.log(data);
+    
+    co(function*() {
+        // here needs optimization someday
+        let posts = yield Post.getPurePosts({'baned':true}, projection, skip, limit)
+        for (let post of posts) {
+            let poster = yield User.getUserById(post.poster)
+            if(poster.nickname){
+                post.poster = poster.nickname+"("+poster.username+")"
+            }else{
+                post.poster = poster.username
+            }
+        }
+        console.log(posts)
+        return posts
+    }).then(function(data) {
         for (let elmt of data) {
             for (let prop in elmt) {
                 if (elmt[prop] instanceof Array) {
@@ -47,14 +61,14 @@ router.get('/ajax/index', function(req, res, next) {
             table:{
                 id: "table",
                 titles: [
-                    {name: '分享者', label: 'poster', url: ''}, 
+                    {name: '分享者', label: 'poster'}, 
                     {name: '点赞数', label: 'upvoters'},
                     {name: '评论数', label: 'comments'},
+                    {name: '详情', url: '/user/post_view?postId='}, 
                     {name: '分享时间', label: 'created'},
                     {name: '操作', opers: 
                         [  
-                            {name: '详情',  oper: 'show'},
-                            {name: '解除屏蔽',  oper: 'release'}
+                            {name: '屏蔽',  oper: 'ban'}
                         ]
                     }
                 ],
@@ -71,11 +85,8 @@ router.get('/ajax/index', function(req, res, next) {
                 done: true
             });
         });
-    }, function(err) {
-    
-    
-    });
-
+    }, console.log)
+        .catch(console.log);
 });
 
 /* GET User list page. */
