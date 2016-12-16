@@ -37,12 +37,20 @@ router.get('/favourites', function(req, res, next) {
     let skip = (currentPage - 1)*pageSize, limit = pageSize
     co(function*() {
         // TODO: finish
-        return []
+        let user
+        if (req.query.id) {
+            user = yield User.getUserById(req.query.id)
+        } else {
+            user = req.session.user.favourites
+            // user = yield User.getUserById(req.session.user._id)
+        }
+        condition._id = {$in: user.favourites.map((elmt) => elmt.to)}
+        return yield Post.posts(condition, skip, limit)
     })
         .then(function(users) {
             res.send({
                 done: true,
-                users
+                posts
             })
         }, () => _wrapErrmsg(err))
         .catch(() => _wrapErrmsg(err))
