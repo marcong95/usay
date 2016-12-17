@@ -28,6 +28,7 @@ function ajaxSay(content, postId, userId, callback) {
         success: function(data){
             if(data.done){
                 callback(data);
+                showTip(data.msg)
             }else{
                 alert(data.msg)
             }
@@ -47,6 +48,7 @@ function ajaxDelSay(commentId, postId, callback) {
         success: function(data){
             if(data.done){
                 callback(data);
+                showTip(data.msg)
             }else{
                 alert(data.msg)
             }
@@ -66,6 +68,7 @@ function ajaxFavorite(postId, oper, callback) {
         success: function(data){
             if(data.done){
                 callback(data.todo);
+                showTip(data.msg)
             }else{
             }
         },
@@ -85,6 +88,7 @@ function ajaxFollow(userId, oper, callback) {
         success: function(data){
             if(data.done){
                 callback(data.todo);
+                showTip(data.msg)
             }else{
             }
         },
@@ -103,6 +107,7 @@ function ajaxUpvote(postId, oper, callback){
         success: function(data){
             if(data.done){
                 callback(data.todo);
+                showTip(data.msg)
             }else{
             }
         },
@@ -121,6 +126,7 @@ function ajaxDelPost(postId, callback){
         success: function(data){
             if(data.done){
                 callback();
+                showTip(data.msg)
             }else{
             }
         },
@@ -232,6 +238,7 @@ function showPagination(target, page){console.log(page)
 
 function showTip(text){
     var layer = $(".tip-layer");
+    if(!text) return;
     $(layer).find("p").html(text);
     $(layer).animate({top:"50%"});
     setTimeout(function(){

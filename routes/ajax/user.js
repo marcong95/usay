@@ -70,7 +70,8 @@ router.post('/update', function(req, res, next) {
     User.getUserById(id).then(function(user) {
         user.modify(key, value).then(function(){
             res.send({
-                done: true
+                done: true,
+                msg:"修改成功"
             });
         },function(err){
             res.send({
@@ -116,6 +117,7 @@ router.post('/upvote', function(req, res, next) {
             user.upvote(postId).then(function(data){
                 res.send({
                     done: true,
+                    msg:"已点赞",
                     todo: "del"
                 })
             }, function(err){
@@ -131,6 +133,7 @@ router.post('/upvote', function(req, res, next) {
             user.unupvote(postId).then(function(data){
                 res.send({
                     done: true,
+                    msg:"已取消点赞",
                     todo: "add"
                 })
             }, function(err){
@@ -153,6 +156,7 @@ router.post('/favorite', function(req, res, next) {
             user.favorite(postId).then(function(data){
                 res.send({
                     done: true,
+                    msg:"已收藏",
                     todo: "del"
                 })
             }, function(err){
@@ -168,6 +172,7 @@ router.post('/favorite', function(req, res, next) {
             user.unfavorite(postId).then(function(data){
                 res.send({
                     done: true,
+                    msg:"已取消收藏",
                     todo: "add"
                 })
             }, function(err){
@@ -191,6 +196,7 @@ router.post('/follow', function(req, res, next) {
             user.follow(followId).then(function(data){
                 res.send({
                     done: true,
+                    msg:"已关注",
                     todo: "del"
                 })
             }, function(err){
@@ -206,6 +212,7 @@ router.post('/follow', function(req, res, next) {
             user.unfollow(followId).then(function(data){
                 res.send({
                     done: true,
+                    msg:"已取消关注",
                     todo: "add"
                 })
             }, function(err){

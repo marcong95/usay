@@ -39,9 +39,9 @@ $(document).ready(function(){
             dataType: "json",
             success: function(data){
                if(data.done){
-                   console.log("修改成功")
+                   showTip(data.msg)
                }else{
-                   alert(data.msg)
+                   showTip(data.msg)
                }
             },
             error:function(err, data){
