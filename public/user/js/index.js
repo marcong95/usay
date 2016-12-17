@@ -12,6 +12,10 @@ $(document).ready(function(){
     renderPosts();
     showPagination("#m_pag", pageInfo);
     checkSession(function(){renderList()}, function(){})
+    var search = queryUrl("search");
+    if(search){
+        $("#search_post").val(search)
+    }
 })
 
 //获取某页的数据
@@ -20,7 +24,7 @@ function toPage(currentPage){
     $.ajax({
         url: "/ajax/post/getList",
         type: "get",
-        data: {currentPage: pageInfo.currentPage, pageSize: pageInfo.pageSize},
+        data: {currentPage: pageInfo.currentPage, pageSize: pageInfo.pageSize, search: $("#search_post").val()},
         dataType: "json",
         success: function(data){
             if(data.done){
@@ -261,12 +265,13 @@ function getPostStr(post) {
             '</small> \
         </h1> \
         <div class="content"> \
-            <a class="detail" href="/user/post_view?postId='+ post._id+'">'
+            <a class="detail" href="/user/post_view?postId='+ post._id+'">\
+            <span class="detail">'
             + post.content+
-            '</a> \
+            '</span> \
             <div class="picture">'
                 +imgStr+
-            '</div> \
+            '</div> </a>\
         </div> \
         <div class="bottom" data-postId="'
         + post._id+

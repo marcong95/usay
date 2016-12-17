@@ -6,6 +6,7 @@ const cfg = require('../../configs/global')
 const db = require('../../models/db')
 const Post = require('../../models/post')
 const User = require('../../models/user')
+const pwd = require('../../models/password')
 var moment = require('moment');
 const router = express.Router()
 
@@ -25,6 +26,40 @@ router.get('/edit', function(req, res, next) {
         title: 'User_edit',
         index: 'user_edit',
         user: {}
+    });
+});
+router.post('/modifyPwd', function(req, res, next) {
+    let id = req.session.user._id;
+    let newPwd = req.body.new_pwd;
+    let oldPwd = req.body.old_pwd;
+
+    User.getUserById(id).then(function(user) {
+        if(pwd.encrypt(oldPwd, user.salt) != user.password){
+            res.send({
+                done: false,
+                msg:"旧密码错误"
+            });
+        }else{
+            user.modify('password', newPwd).then(function(){
+            res.send({
+                done: true,
+                msg:"密码修改成功"
+            });
+        },function(err){
+                res.send({
+                    done: false,
+                    msg: "密码修改成功"
+
+                });
+            })
+        }
+
+    }, function(err) {
+        res.send({
+            done: false,
+            msg:"密码修改失败"
+        
+        });
     });
 });
 
@@ -312,6 +347,59 @@ router.get('/getFollowedList', function(req, res, next) {
     }, console.log)
         .catch(console.log);
 });
+
+router.get('/getFavoritesList', function(req, res, next) {
+    var currentPage = req.query.currentPage*1 || 1
+    var pageSize = req.query.pageSize*1 || 10;
+    let condition = { content: { 
+        $regex: req.query.search == null || req.query.search == undefined ?
+         '' : req.query.search } }
+    let skip = (currentPage-1)*pageSize, limit = pageSize;
+    var userId = req.session.user._id;
+    var totalPages;
+    co(function*() {
+            // here needs optimization someday
+            let user = yield User.getUserById(userId);
+            let count = yield user.getFavouritedCount(condition)
+            totalPages = Math.ceil(count/pageSize)
+            let c_posts = yield user.getFavourited(condition, skip, limit)
+            for (let c_post of c_posts) {
+                var post = c_post.to
+                if(!post){
+                    delete c_posts[c_posts.indexOf(c_post)]
+                    continue;   
+                }
+                c_post.created = moment(c_post.created).format('YYYY年MM月DD日')
+                post.poster = yield User.getUserById(post.poster)
+                post.created = moment(post.created).format('YYYY/MM/DD HH:mm')
+                if (!post.poster.nickname) {
+                    post.poster.nickname = post.poster.username
+                }
+                if (!post.poster.avatar) {
+                    post.poster.avatar = cfg.user.defaultAvatar
+                }
+                for (let cmt of post.comments) {
+                    cmt.from = { _id: cmt.from, name: yield getUsername(cmt.from) }
+                    cmt.to = { _id: cmt.to, name: yield getUsername(cmt.to) }
+
+                }
+            }
+            return c_posts
+        }).then(function(data) {
+            res.send({
+                done: true,
+                list: data,
+                pageInfo: {
+                    currentPage:currentPage,
+                    user: req.session.user,
+                    pageSize: pageSize,
+                    totalPages: totalPages
+                }
+            })
+            }, console.log)
+        .catch(console.log);
+});
+
 
 router.get('/getListByUserId', function(req, res, next) {
     let isMe = false

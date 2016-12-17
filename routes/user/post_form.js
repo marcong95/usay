@@ -5,6 +5,7 @@ const CONST = require('../../models/constants')
 const cfg = require('../../configs/global')
 const db = require('../../models/db')
 const Post = require('../../models/post')
+const User = require('../../models/user')
 const router = express.Router()
 
 router.get("/*", function(req, res, next) {
@@ -52,6 +53,16 @@ router.post('/', function(req, res, next) {
         return;
     }
     co(function*() {
+        let bantexts = yield User.getBanText();
+        for(let txt of bantexts){
+            if(content.indexOf(txt) >= 0){
+                res.send({
+                    done: false,
+                    msg: '分享内容不能包含"'+txt+'"'
+                });
+                return;
+            }
+        }
 		return yield Post.addPost(req.session.user, content, img);
 	}).then(function(user) {
 		res.send({

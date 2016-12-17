@@ -85,7 +85,10 @@ router.post('/del', function(req, res, next) {
 router.get('/getList', function(req, res, next) {
     var currentPage = req.query.currentPage*1 || 1
     var pageSize = req.query.pageSize*1 || 10;
-    var condition = {}, skip = (currentPage-1)*pageSize, limit = pageSize;
+    var condition = { content: { 
+        $regex: req.query.search == null || req.query.search == undefined ?
+         '' : req.query.search } };     // search post
+    var skip = (currentPage - 1) * pageSize, limit = pageSize;
     var totalPages;
     co(function*() {
         // here needs optimization someday

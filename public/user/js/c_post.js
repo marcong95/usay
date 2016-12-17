@@ -17,9 +17,9 @@ function toPage(currentPage){
     pageInfo.currentPage = currentPage;
     checkSession(function(){
         $.ajax({
-            url: "/ajax/user/getFavoriteList",
+            url: "/ajax/user/getFavoritesList",
             type: "get",
-            data: {currentPage: pageInfo.currentPage, pageSize: pageInfo.pageSize},
+            data: {currentPage: pageInfo.currentPage, pageSize: pageInfo.pageSize, search: $("#search").val()},
             dataType: "json",
             success: function(data){
                 if(data.done){
@@ -45,6 +45,9 @@ function toPage(currentPage){
     });
 }
 
+function toSearch(){
+    toPage(1);
+}
 //渲染新增的分享
 function renderPosts(){
     $(".post-item .delFavorite").bind("click", function(){
@@ -63,10 +66,6 @@ function renderPosts(){
             }
         );
     });
-}
-
-function toSearch(){
-    console.log("heh");
 }
 
 //每个分享的模板

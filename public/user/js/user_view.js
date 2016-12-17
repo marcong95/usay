@@ -51,6 +51,44 @@ $(document).ready(function(){
             }
         });
     })
+    $(".pwd-btn").bind("click", function(){
+        if($(this).text() == "修改"){
+            $(".pwd").show();
+            $(this).text("提交")
+        }else{
+            var old_pwd = $("#old_pwd").val();
+            var new_pwd = $("#new_pwd").val();
+            var confirm_pwd = $("#confirm_pwd").val();
+            if(!old_pwd || !new_pwd){
+                showTip("输入不能为空")
+                return;
+            }
+            if(confirm_pwd != new_pwd){
+                showTip("确认密码不正确")
+                return;
+            }
+            $.ajax({
+                url: "/ajax/user/modifyPwd",
+                type: "post",
+                data: {old_pwd: old_pwd, new_pwd: new_pwd},
+                dataType: "json",
+                success: function(data){
+                   if(data.done){
+                       showTip("密码修改成功")
+                        $(".pwd").hide();
+            $           (this).text("修改")
+                   }else{
+                       showTip(data.msg)
+                   }
+                },
+                error:function(err, data){
+                    // alert("访问异常");
+
+                    console.error('访问异常');
+                }
+            });
+        }
+    })
 })
 
 //获取某页的数据

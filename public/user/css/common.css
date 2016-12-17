@@ -376,3 +376,22 @@ body{
     right: 0;
     bottom: 0;
 }
+.tip-layer {
+    position: fixed;
+    width: 100%;
+    top: 100%;
+    text-align:center;
+}
+.tip-layer > p {
+    width: 300px;
+    color: #ffffff;
+    padding: 10px;
+    margin: auto;
+    background-color: rgba(34, 34, 34, 0.53);
+}
+.pwd {
+    display: none;
+}
+.pwd > input {
+    width: 100%;
+}

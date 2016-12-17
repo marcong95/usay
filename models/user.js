@@ -139,6 +139,27 @@ User.getUsers = function(condition, projection, skip, limit, pure) {
   })
 }
 
+User.getBanText = function() {
+  // db.users.find({}).skip(skip).limit(count)
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let query = UserModel.find({authority: 'admin'}, {"bantext":true})
+      let list = yield query.exec()
+      let bantexts = [];
+      for(let item of list){
+          let bts = item.bantext.split(",");
+          for(i in bts){
+              if(bts[i]){
+                  bantexts.push(bts[i]);
+              }
+          }
+      }
+      return bantexts;
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
+
 User.getPostRanking = function(count = 10) {
   
 }
@@ -189,6 +210,20 @@ User.prototype.favorite = function(postId) {
   })
 }
 
+User.prototype.favorite = function(postId) {
+  let that = this
+  return new Promise((resolve, reject) => {
+    co(function*() {
+      let subdoc = { to: postId, created: new Date }
+      that.favourites.push(subdoc)
+      that._model.favourites.push(subdoc)
+      yield that._model.save()
+      return that
+    }).then(resolve, reject)
+      .catch(reject)
+  })
+}
+
 User.prototype.unfavorite = function(postId) {
   let that = this
   return new Promise((resolve, reject) => {
@@ -206,7 +241,7 @@ User.prototype.unfavorite = function(postId) {
   })
 }
 
-User.prototype.getFavouritedCount = function() {
+User.prototype.getFavouritedCount = function(condition) {
   let that = this
   return new Promise((resolve, reject) => {
     co(function*() {

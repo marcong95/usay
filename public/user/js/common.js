@@ -175,6 +175,11 @@ function checkSession(cb, cb2){
         }
     }); 
 }
+
+function searchPost(){
+    var search = $("#search_post").val();
+    location.href="/user/index?search=" + encodeURIComponent(search);
+}
 function queryUrl(key){
     var seg = location.search.replace(/^\?/,'').split('&');  
      for(var i=0, len=seg.length; i<len; i++) {  
@@ -223,4 +228,13 @@ function showPagination(target, page){console.log(page)
         }
     }
     $(target).html(lis);
+}
+
+function showTip(text){
+    var layer = $(".tip-layer");
+    $(layer).find("p").html(text);
+    $(layer).animate({top:"50%"});
+    setTimeout(function(){
+        $(layer).animate({top:"100%"});
+    }, 2000)
 }
