@@ -77,7 +77,7 @@ User.register = function(username, password) {
       let user = new UserModel({
         username,
         password: pwd.encrypt(password, salt),
-        authority: 'admin',
+        authority: 'user',
         bantext:"",
         baned: false,
         avatar: config.user.defaultAvatar,
