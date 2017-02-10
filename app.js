@@ -48,7 +48,7 @@ try {
 }
 
 // register logger
-app.use(logger('dev', {stream: accessLogFile}))
+app.use(logger('combined', {stream: accessLogFile}))
 
 // register routes
 let defaultRoutes = '/user'
