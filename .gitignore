@@ -29,3 +29,5 @@ logs/
 logs/*.log
 public/common/images/*
 routes/user/index.js
+npm-debug.log*
+yarn.lock

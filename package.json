@@ -5,9 +5,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "cross-env DEBUG=usay:server,usay:database nodemon bin/www",
-    "start": "cross-env DEBUG=usay:server forever start bin/www -l logs/forever.log -o logs/out.log -e logs/err.log",
-    "restart": "forever restart bin/www",
-    "stop": "forever stop bin/www",
+    "start": "cross-env DEBUG=usay:server,usay:database node bin/www",
     "test": "cross-env DEBUG=usay:server,usay:database,usay:test node tests/models"
   },
   "author": "Marco, et al.",
@@ -27,6 +25,7 @@
     "moment": "^2.17.1",
     "mongoose": "^4.6.8",
     "morgan": "^1.7.0",
+    "pm2": "^2.4.0",
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
