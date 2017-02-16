@@ -52,7 +52,9 @@ let User = function(model) {
 
 User.checkUsername = function(username) {
   return new Promise((resolve, reject) => {
-    if (!username.match(config.user.usernameRule.regexp)) {
+    if (!username.match(
+      new RegExp(config.user.usernameRule.pattern,
+      config.user.usernameRule.flags))) {
       reject(CONST.ERR_USERNAME_ILLEGAL)
     } else {
       UserModel.find({ username }).exec().then(function(users) {
@@ -70,7 +72,9 @@ User.register = function(username, password) {
   return new Promise((resolve, reject) => {
     co(function*() {
       yield User.checkUsername(username)
-      if (!password.match(config.user.passwordRule.regexp)) {
+      if (!password.match(
+        new RegExp(config.user.passwordRule.pattern,
+        config.user.passwordRule.flags))) {
         reject(CONST.ERR_PASSWORD_ILLEGAL)
       } 
       let salt = pwd.getSalt()
