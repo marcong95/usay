@@ -23,11 +23,18 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Something too big and unnecessary to upload
-node_modules/
+# logs
 logs/
 logs/*.log
-public/common/images/*
-routes/user/index.js
+
+# package manager stuffs
+node_modules/
 npm-debug.log*
 yarn.lock
+
+# user uploads
+public/common/images/*
+
+# editor settings
+.brackets.json
+.vscode/*
