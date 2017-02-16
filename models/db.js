@@ -1,4 +1,4 @@
-let config = require('../configs/global.js')
+let config = require('../configs/global.json')
 let mongoose = require('mongoose')
 let debug = require('debug')('usay:database')
 let assert = require('assert')
